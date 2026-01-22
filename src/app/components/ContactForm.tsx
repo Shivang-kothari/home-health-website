@@ -31,6 +31,8 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const fieldClass =
+    "rounded-xl border border-slate-200 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200 shadow-sm";
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -60,15 +62,22 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 p-6 elev-sm card-surface">
-      <div className="rounded-xl border border-slate-200 p-4 card-surface">
-        <div className="text-sm font-semibold text-slate-900">Send a request</div>
-        <p className="mt-1 text-sm text-slate-600">
-          Get a tailored demo covering HR onboarding, time tracking, and compliance workflows.
-        </p>
-        <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
-          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">HIPAA-aligned</div>
-          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">1-day response</div>
-          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">Guided onboarding</div>
+      <div className="rounded-xl border border-slate-200 p-5 card-surface">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+          <div className="flex-1">
+            <div className="text-sm font-semibold text-slate-900">Send a request</div>
+            <p className="mt-1 text-sm text-slate-600">
+              Get a tailored demo covering HR onboarding, time tracking, and compliance workflows.
+            </p>
+            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">HIPAA-aligned</div>
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">1-day response</div>
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">Guided onboarding</div>
+            </div>
+          </div>
+          <div className="w-full sm:w-40">
+            <Image src="/illustrations/contact-side.svg" alt="Home health support" width={240} height={240} className="w-full rounded-xl img-float" />
+          </div>
         </div>
         <Image
           src="/illustrations/services-hero.svg"
@@ -79,18 +88,14 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[200px_1fr] items-start">
-        <div className="hidden lg:block">
-          <div className="rounded-xl border border-slate-200 p-4 card-surface">
-            <Image src="/illustrations/contact-side.svg" alt="Home health support" width={240} height={240} className="rounded-lg img-float" />
-          </div>
-        </div>
-        <div className="grid gap-4">
-          <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="rounded-xl border border-slate-200 p-4 card-surface">
+          <div className="text-sm font-semibold text-slate-900">Contact details</div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Name</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                className={fieldClass}
                 value={state.name}
                 onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
                 placeholder="Jane Doe"
@@ -101,7 +106,7 @@ export default function ContactForm() {
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Work email</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                className={fieldClass}
                 value={state.email}
                 onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
                 placeholder="jane@company.com"
@@ -109,23 +114,11 @@ export default function ContactForm() {
                 required
               />
             </label>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-1 text-sm">
-              <span className="font-medium text-slate-900">Agency</span>
-              <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
-                value={state.company}
-                onChange={(e) => setState((s) => ({ ...s, company: e.target.value }))}
-                placeholder="Healthy Steps Home Care"
-              />
-            </label>
-
-            <label className="grid gap-1 text-sm">
+            <label className="grid gap-1 text-sm sm:col-span-2">
               <span className="font-medium text-slate-900">Phone</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                className={fieldClass}
                 value={state.phone}
                 onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
                 placeholder="(555) 123-4567"
@@ -133,29 +126,25 @@ export default function ContactForm() {
               />
             </label>
           </div>
+        </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-1 text-sm">
-              <span className="font-medium text-slate-900">Primary need</span>
-              <select
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
-                value={state.focus}
-                onChange={(e) => setState((s) => ({ ...s, focus: e.target.value }))}
-              >
-                <option value="">Select a focus</option>
-                <option>HR and onboarding</option>
-                <option>Time and attendance</option>
-                <option>Compliance and audits</option>
-                <option>Credential tracking</option>
-                <option>Payroll exports</option>
-                <option>Other</option>
-              </select>
+        <div className="rounded-xl border border-slate-200 p-4 card-surface">
+          <div className="text-sm font-semibold text-slate-900">Agency details</div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1 text-sm sm:col-span-2">
+              <span className="font-medium text-slate-900">Agency</span>
+              <input
+                className={fieldClass}
+                value={state.company}
+                onChange={(e) => setState((s) => ({ ...s, company: e.target.value }))}
+                placeholder="Healthy Steps Home Care"
+              />
             </label>
 
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Agency size</span>
               <select
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                className={fieldClass}
                 value={state.size}
                 onChange={(e) => setState((s) => ({ ...s, size: e.target.value }))}
               >
@@ -166,13 +155,11 @@ export default function ContactForm() {
                 <option>250+ employees</option>
               </select>
             </label>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-1 text-sm sm:col-span-2">
+            <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Service state</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                className={fieldClass}
                 value={state.state}
                 onChange={(e) => setState((s) => ({ ...s, state: e.target.value }))}
                 placeholder="e.g., Texas"
@@ -182,16 +169,38 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Tell us about your agency</span>
-        <textarea
-          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
-          value={state.message}
-          onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Share goals, timeline, and current tools."
-          required
-        />
-      </label>
+      <div className="rounded-xl border border-slate-200 p-4 card-surface">
+        <div className="text-sm font-semibold text-slate-900">Needs</div>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <label className="grid gap-1 text-sm">
+            <span className="font-medium text-slate-900">Primary need</span>
+            <select
+              className={fieldClass}
+              value={state.focus}
+              onChange={(e) => setState((s) => ({ ...s, focus: e.target.value }))}
+            >
+              <option value="">Select a focus</option>
+              <option>HR and onboarding</option>
+              <option>Time and attendance</option>
+              <option>Compliance and audits</option>
+              <option>Credential tracking</option>
+              <option>Payroll exports</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label className="grid gap-1 text-sm sm:col-span-2">
+            <span className="font-medium text-slate-900">Tell us about your agency</span>
+            <textarea
+              className={`${fieldClass} min-h-28`}
+              value={state.message}
+              onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
+              placeholder="Share goals, timeline, and current tools."
+              required
+            />
+          </label>
+        </div>
+      </div>
 
       <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
