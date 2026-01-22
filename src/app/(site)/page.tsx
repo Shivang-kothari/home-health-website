@@ -19,6 +19,12 @@ const stats = [
   { label: "Audit readiness", value: "100%" },
 ];
 
+const gallery = [
+  { title: "Caregiver portal", desc: "Mobile-friendly clock-in and daily notes.", image: "/illustrations/contact-hero.svg" },
+  { title: "HR onboarding", desc: "Digital forms, policies, and e-signatures.", image: "/illustrations/about-hero.svg" },
+  { title: "Compliance dashboard", desc: "Credential alerts and audit-ready reports.", image: "/illustrations/coverage-hero.svg" },
+];
+
 const services = [
   { title: "HR and onboarding", desc: "Digital checklists, forms, and policy acknowledgements.", icon: "/file.svg" },
   { title: "Time and attendance", desc: "Clock-in, approvals, and timesheets ready for payroll.", icon: "/window.svg" },
@@ -113,6 +119,26 @@ export default function HomePage() {
               <div key={stat.label}>
                 <div className="text-xs font-semibold text-slate-500">{stat.label}</div>
                 <div className="mt-2 text-2xl font-bold text-slate-900">{stat.value}</div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-12">
+        <Container>
+          <div className="grid gap-6 md:grid-cols-3">
+            {gallery.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 p-5 shadow-sm card-surface">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={900}
+                  height={520}
+                  className="w-full rounded-2xl img-float"
+                />
+                <div className="mt-4 text-base font-semibold">{item.title}</div>
+                <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>

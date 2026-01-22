@@ -21,6 +21,9 @@ export default function FeaturesPage() {
   return (
     <section className="py-14">
       <Container>
+        <div className="mx-auto mb-10 max-w-4xl">
+          <Image src="/illustrations/services-hero.svg" alt="HealthHR portal overview" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
+        </div>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">Features</h1>
