@@ -70,15 +70,19 @@ export default function ContactForm() {
           <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">1-day response</div>
           <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">Guided onboarding</div>
         </div>
+        <Image
+          src="/illustrations/services-hero.svg"
+          alt="HealthHR demo preview"
+          width={900}
+          height={320}
+          className="mt-4 w-full rounded-xl img-float"
+        />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[200px_1fr] items-start">
         <div className="hidden lg:block">
           <div className="rounded-xl border border-slate-200 p-4 card-surface">
             <Image src="/illustrations/contact-side.svg" alt="Home health support" width={240} height={240} className="rounded-lg img-float" />
-            <div className="mt-3 text-xs text-slate-600">
-              Secure portal access for caregivers, supervisors, and admins.
-            </div>
           </div>
         </div>
         <div className="grid gap-4">
