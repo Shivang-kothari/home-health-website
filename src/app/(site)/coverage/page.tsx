@@ -33,7 +33,7 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 	};
 
 	// Area list dynamic from site
-	const areas = site.serviceArea.concat([
+	const areas = Array.from(new Set(site.serviceArea.concat([
 		"Arizona",
 		"Georgia",
 		"Illinois",
@@ -42,7 +42,7 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 		"Pennsylvania",
 		"Virginia",
 		"Remote",
-	]);
+	])));
 
 	return (
 		<section className="py-14" style={rootStyle}>
