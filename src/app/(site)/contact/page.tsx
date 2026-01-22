@@ -19,18 +19,18 @@ export default function ContactPage() {
 
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Tell us what you need and where you’re located. We’ll respond as soon as possible.
+          Share your goals and timeline. We will respond within one business day to schedule a consultation.
         </p>
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="text-sm font-semibold">Call</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.phoneHref}>
+              <a className="mt-2 block text-sm text-blue-700 hover:text-blue-600" href={site.phoneHref}>
                 {site.phone}
               </a>
               <div className="mt-4 text-sm font-semibold">Email</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.emailHref}>
+              <a className="mt-2 block text-sm text-blue-700 hover:text-blue-600" href={site.emailHref}>
                 {site.email}
               </a>
             </div>
@@ -48,6 +48,15 @@ export default function ContactPage() {
                   <div key={l}>{l}</div>
                 ))}
               </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="text-sm font-semibold">What to include</div>
+              <ul className="mt-2 space-y-2 text-sm text-slate-600">
+                <li>Your goals and key metrics</li>
+                <li>Timeline and stakeholders</li>
+                <li>Budget range (if available)</li>
+              </ul>
             </div>
           </div>
  

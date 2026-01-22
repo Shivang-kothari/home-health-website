@@ -14,22 +14,22 @@ export default function CareersPage() {
       <Container>
         <h1 className="text-3xl font-bold tracking-tight">Careers</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Join a team that values clinical excellence, kindness, and clear communication.
+          Join a team that values craft, collaboration, and measurable outcomes.
         </p>
  
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {[
-            "Registered Nurse (RN)",
-            "Licensed Practical Nurse (LPN)",
-            "Physical Therapist (PT)",
-            "Occupational Therapist (OT)",
-            "Speech Therapist (ST)",
-            "Home Health Aide (HHA)",
+            "Strategy Consultant",
+            "Engagement Manager",
+            "Delivery Lead",
+            "Senior Data Analyst",
+            "Service Designer",
+            "Client Success Partner",
           ].map((role) => (
             <div key={role} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">{role}</div>
               <p className="mt-2 text-sm text-slate-600">
-                Competitive pay (placeholder), flexible scheduling, supportive leadership.
+                Competitive compensation, flexible work, and high-impact client engagements.
               </p>
             </div>
           ))}

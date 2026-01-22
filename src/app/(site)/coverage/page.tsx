@@ -34,7 +34,7 @@ import CoverageSearch from "../../components/CoverageSearch";
 
 export const metadata: Metadata = {
   title: "Coverage",
-  description: `Service coverage areas for ${site.name}.`,
+  description: `Delivery hubs and coverage for ${site.name}.`,
 };
 
 export default function CoveragePage({ searchParams }: { searchParams?: { theme?: string } }) {
@@ -61,7 +61,16 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 	};
 
 	// Area list dynamic from site
-	const areas = site.serviceArea.concat(["Area 1", "Area 2", "Area 3"]);
+	const areas = site.serviceArea.concat([
+		"San Francisco",
+		"New York",
+		"Chicago",
+		"London",
+		"Toronto",
+		"Singapore",
+		"Sydney",
+		"Remote",
+	]);
 
 	return (
 		<section className="py-14" style={rootStyle}>
@@ -69,9 +78,9 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Theme selector (server-side links) */}
 				<div className="mb-6 flex items-center justify-between gap-4">
 					<div>
-						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Coverage Areas</h1>
+						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Locations and delivery hubs</h1>
 						<p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
-							Service coverage areas for {site.name}. Choose a professional palette:
+							Global coverage for {site.name}. Choose a professional palette:
 						</p>
 					</div>
 
@@ -101,7 +110,8 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				</div>
 
 				<p className="mt-6 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-					We serve a broad area and specialize in flexible in-home care solutions. Below are the primary ZIPs and towns we support — if you don't see your location, reach out and we'll confirm coverage.
+					We serve clients across regions with flexible delivery options. Use the search to find a hub or reach out
+					if you need a dedicated on-site team.
 				</p>
 
 				{/* Search component keeps its API; pass dynamic areas */}
@@ -112,29 +122,29 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Info panels */}
 				<div className="mt-10 grid gap-6 lg:grid-cols-2">
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Who we serve</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Industries we support</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							We provide services for a range of people and professionals: patients/clients, family caregivers, private caregivers, nurses, physicians, and care agencies.
+							We partner with teams across financial services, healthcare, retail, technology, and public sector.
 						</p>
 						<ul className="mt-3 list-disc pl-5 text-sm" style={{ color: "var(--muted)" }}>
-							<li>Personal care and companionship</li>
-							<li>Medication reminders and basic clinical support</li>
-							<li>Post-discharge follow-up and care coordination</li>
-							<li>Agency partnerships and staffing support</li>
+							<li>Transformation leadership and PMO support</li>
+							<li>Digital experience and service design</li>
+							<li>Analytics, data platforms, and AI enablement</li>
+							<li>Operations and cost optimization</li>
 						</ul>
 					</div>
 
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Not sure if you're covered?</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Need a local team?</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form — share your ZIP and profession and we'll confirm availability and next steps.
+							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form and we will confirm coverage and staffing options.
 						</p>
 					</div>
 				</div>
 
 				{/* Compact area list */}
 				<div className="mt-8">
-					<h3 className="text-sm font-medium" style={{ color: "var(--accent)" }}>Primary service areas</h3>
+					<h3 className="text-sm font-medium" style={{ color: "var(--accent)" }}>Primary delivery hubs</h3>
 					<div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
 						{areas.map((a) => (
 							<span key={a} className="rounded-md px-3 py-2 text-sm" style={{ background: "rgba(15,23,42,0.03)", color: "var(--muted)" }}>

@@ -6,16 +6,16 @@ import { site } from "../lib/site";
 
 const nav = [
 	{ href: "/", label: "Home" },
-	{ href: "/features", label: "Features" },
-	{ href: "/pricing", label: "Pricing" },
-	{ href: "/demo", label: "Demo" },
+	{ href: "/services", label: "Services" },
+	{ href: "/features", label: "Expertise" },
+	{ href: "/pricing", label: "Engagements" },
 	{ href: "/about", label: "About" },
 	{ href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
 	return (
-		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
 			<Container>
 				<div className="flex h-16 items-center justify-between gap-4">
 					<Link href="/" className="flex items-center gap-3 font-bold tracking-tight">
@@ -32,7 +32,7 @@ export default function Header() {
 					</nav>
 
 					<div className="flex items-center gap-2">
-						<ButtonLink href="/demo" variant="ghost">
+						<ButtonLink href="/demo" variant="primary">
 							{site.ctaPrimary}
 						</ButtonLink>
 						<ButtonLink href={site.phoneHref} variant="secondary">

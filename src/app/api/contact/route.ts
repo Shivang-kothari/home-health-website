@@ -5,13 +5,15 @@ export async function POST(req: Request) {
     const body = await req.json().catch(() => null);
  
     const name = String(body?.name || "").trim();
-    const phone = String(body?.phone || "").trim();
     const email = String(body?.email || "").trim();
-    const profession = String(body?.profession || "").trim();
+    const company = String(body?.company || "").trim();
+    const phone = String(body?.phone || "").trim();
+    const focus = String(body?.focus || "").trim();
+    const budget = String(body?.budget || "").trim();
     const message = String(body?.message || "").trim();
- 
-    if (!name || !message) {
-      return Response.json({ ok: false, error: "Name and message are required." }, { status: 400 });
+
+    if (!name || !email || !message) {
+      return Response.json({ ok: false, error: "Name, email, and message are required." }, { status: 400 });
     }
  
     // If real SMTP is configured, use it. Otherwise use Ethereal (test inbox).
@@ -52,12 +54,14 @@ export async function POST(req: Request) {
       toEmail = testAccount.user; // send to the test inbox
     }
  
-    const subject = `New website inquiry — ${name}`;
+    const subject = `New consultation request - ${name}`;
     const text = [
       `Name: ${name}`,
-      `Profession: ${profession || "-"}`,
-      `Phone: ${phone || "-"}`,
       `Email: ${email || "-"}`,
+      `Company: ${company || "-"}`,
+      `Phone: ${phone || "-"}`,
+      `Project focus: ${focus || "-"}`,
+      `Budget: ${budget || "-"}`,
       "",
       message,
     ].join("\n");

@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Ava Johnson", role: "RN", status: "Active" },
-  { id: "2", name: "Noah Patel", role: "HHA", status: "Active" },
-  { id: "3", name: "Mia Chen", role: "PT", status: "Inactive" },
+  { id: "1", name: "Digital Experience Refresh", role: "Design", status: "In progress" },
+  { id: "2", name: "Operations Transformation", role: "Strategy", status: "Discovery" },
+  { id: "3", name: "Analytics Enablement", role: "Data", status: "Active" },
 ];
  
 export default function EmployeesPage() {
@@ -11,17 +11,17 @@ export default function EmployeesPage() {
     <div>
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Employees</h1>
-          <p className="mt-2 text-sm text-slate-600">Manage staff, credentials, and documents.</p>
+          <h1 className="text-2xl font-bold tracking-tight">Projects</h1>
+          <p className="mt-2 text-sm text-slate-600">Track project status, owners, and delivery updates.</p>
         </div>
-        <button className="rounded-xl bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500">
-          Add employee
+        <button className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500">
+          New project
         </button>
       </div>
  
       <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
         <div className="grid grid-cols-3 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
-          <div>Name</div><div>Role</div><div>Status</div>
+          <div>Project</div><div>Focus</div><div>Status</div>
         </div>
         {mock.map((u) => (
           <Link key={u.id} href={`/portal/employees/${u.id}`}
@@ -34,7 +34,7 @@ export default function EmployeesPage() {
       </div>
  
       <p className="mt-4 text-xs text-slate-500">
-        Next step: load employees from your backend `/api/users` and replace mock data.
+        Next step: connect this list to your project data and add status automation.
       </p>
     </div>
   );

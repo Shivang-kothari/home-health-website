@@ -1,8 +1,8 @@
 import Link from "next/link";
  
 const nav = [
-  { href: "/portal/dashboard", label: "Dashboard" },
-  { href: "/portal/employees", label: "Employees" },
+  { href: "/portal/dashboard", label: "Overview" },
+  { href: "/portal/employees", label: "Projects" },
 ];
  
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
@@ -10,7 +10,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     <div className="min-h-dvh bg-slate-50">
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="font-semibold">Home Health • HR Portal</div>
+          <div className="font-semibold">Summitline Client Portal</div>
           <Link className="text-sm text-slate-600 hover:text-slate-900" href="/login">Sign out</Link>
         </div>
       </div>
