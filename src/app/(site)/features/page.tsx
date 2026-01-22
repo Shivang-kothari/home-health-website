@@ -3,18 +3,18 @@ import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
 
 const capabilities = [
-  { title: "Brand strategy", desc: "Positioning, naming, and identity systems.", icon: "/file.svg" },
-  { title: "UX and UI design", desc: "Research-driven flows and polished interfaces.", icon: "/window.svg" },
-  { title: "Web experiences", desc: "Marketing sites and launch-ready pages.", icon: "/globe.svg" },
-  { title: "Product design", desc: "Feature concepts, prototypes, and specs.", icon: "/icons/location.svg" },
-  { title: "Content systems", desc: "Components, guidelines, and editorial patterns.", icon: "/icons/service-therapy.svg" },
-  { title: "Motion and interaction", desc: "Micro-interactions that feel premium.", icon: "/icons/service-nursing.svg" },
+  { title: "HIPAA-aligned security", desc: "Role-based access, audit logs, and secure document storage.", icon: "/file.svg" },
+  { title: "Time tracking", desc: "PIN clock-in, location notes, and approval workflows.", icon: "/window.svg" },
+  { title: "Onboarding and HR", desc: "Digital checklists, policy signoff, and employee records.", icon: "/globe.svg" },
+  { title: "Credential management", desc: "Expiration alerts, training logs, and compliance tracking.", icon: "/icons/location.svg" },
+  { title: "Payroll exports", desc: "Accurate timesheets and payroll-ready exports.", icon: "/icons/service-therapy.svg" },
+  { title: "Agency portal", desc: "Admin, supervisor, and caregiver views in one portal.", icon: "/icons/service-nursing.svg" },
 ];
 
 const outcomes = [
-  "A brand kit with tokens, typography, and color rules.",
-  "Production-ready specs for your engineering team.",
-  "Launch guidance with QA and post-launch tuning.",
+  "Reduced onboarding time with digital forms and checklists.",
+  "Faster payroll runs with clean, approved timesheets.",
+  "Audit-ready compliance reporting at any time.",
 ];
 
 export default function FeaturesPage() {
@@ -23,12 +23,12 @@ export default function FeaturesPage() {
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Studio</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Features</h1>
             <p className="mt-2 max-w-2xl text-sm text-slate-600">
-              A design-led studio that blends brand, product, and web experiences into one cohesive system.
+              The HealthHR platform is built for home health agencies to manage HR, time, and compliance.
             </p>
           </div>
-          <ButtonLink href="/contact" variant="primary">Start a project</ButtonLink>
+          <ButtonLink href="/demo" variant="primary">Request a demo</ButtonLink>
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +47,7 @@ export default function FeaturesPage() {
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-lg font-semibold">What you can expect</h2>
             <p className="mt-2 text-sm text-slate-600">
-              We align early, keep feedback tight, and deliver assets your team can launch immediately.
+              Clear workflows, simplified compliance, and a portal your caregivers can use on any device.
             </p>
             <ul className="mt-4 grid gap-2 text-sm text-slate-600">
               {outcomes.map((o) => (
@@ -58,15 +58,15 @@ export default function FeaturesPage() {
             </ul>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-base font-semibold">Studio pods</h3>
+            <h3 className="text-base font-semibold">Team access</h3>
             <p className="mt-2 text-sm text-slate-600">
-              Assemble a custom pod of strategists, designers, and developers based on your scope.
+              Give the right access to admins, supervisors, and field caregivers.
             </p>
             <div className="mt-4 grid gap-2 text-sm text-slate-600">
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Brand strategist</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Design lead</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Front-end engineering</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Content designer</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Agency admin</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Supervisor</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Caregiver</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Compliance manager</div>
             </div>
           </div>
         </div>

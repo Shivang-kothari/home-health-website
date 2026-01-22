@@ -6,8 +6,8 @@ import ServicesList from "../../components/ServicesList";
 import { site } from "../../lib/site";
  
 export const metadata: Metadata = {
-  title: "Services",
-  description: `Studio services delivered by ${site.name}.`,
+  title: "Modules",
+  description: `Core modules available in ${site.name}.`,
 };
  
 export default function ServicesPage() {
@@ -18,9 +18,9 @@ export default function ServicesPage() {
           <Image src="/illustrations/services-hero.svg" alt="Services" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
         </div>
 
-        <h1 className="text-3xl font-bold tracking-tight">Services</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Modules</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          A full-service studio covering brand, product, and web experiences with a cohesive style system.
+          Modular HRMS capabilities tailored to home health agencies.
         </p>
  
         <div className="mt-10">
@@ -32,7 +32,7 @@ export default function ServicesPage() {
             {site.ctaPrimary}
           </ButtonLink>
           <ButtonLink href={site.phoneHref} variant="secondary">
-            {site.ctaSecondary}: {site.phone}
+            Call sales: {site.phone}
           </ButtonLink>
         </div>
       </Container>

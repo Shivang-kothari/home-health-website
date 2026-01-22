@@ -6,7 +6,7 @@ import CoverageSearch from "../../components/CoverageSearch";
 
 export const metadata: Metadata = {
   title: "Coverage",
-  description: `Studio locations and coverage for ${site.name}.`,
+  description: `Coverage and compliance support for ${site.name}.`,
 };
 
 export default function CoveragePage({ searchParams }: { searchParams?: { theme?: string } }) {
@@ -34,14 +34,13 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 
 	// Area list dynamic from site
 	const areas = site.serviceArea.concat([
-		"San Francisco",
-		"New York",
-		"Los Angeles",
-		"Austin",
-		"London",
-		"Toronto",
-		"Singapore",
-		"Sydney",
+		"Arizona",
+		"Georgia",
+		"Illinois",
+		"North Carolina",
+		"Ohio",
+		"Pennsylvania",
+		"Virginia",
 		"Remote",
 	]);
 
@@ -51,9 +50,9 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Theme selector (server-side links) */}
 				<div className="mb-6 flex items-center justify-between gap-4">
 					<div>
-						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Studio locations</h1>
+						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Coverage and compliance</h1>
 						<p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
-							Global coverage for {site.name}. Choose a studio palette:
+							Regions supported by {site.name}. Choose a palette:
 						</p>
 					</div>
 
@@ -83,8 +82,8 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				</div>
 
 				<p className="mt-6 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-					We serve clients across regions with flexible studio pods. Use the search to find a hub or reach out
-					if you need an on-site team.
+					We support agencies across multiple states with HIPAA-aligned workflows. Use the search to see if your
+					state is covered or request a custom rollout.
 				</p>
 
 				{/* Search component keeps its API; pass dynamic areas */}
@@ -95,29 +94,29 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Info panels */}
 				<div className="mt-10 grid gap-6 lg:grid-cols-2">
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Where we work</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Compliance coverage</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							We partner with teams across technology, retail, healthcare, finance, and consumer brands.
+							We support multi-state home health agencies with role-based access and audit-ready reporting.
 						</p>
 						<ul className="mt-3 list-disc pl-5 text-sm" style={{ color: "var(--muted)" }}>
-							<li>Brand and product launches</li>
-							<li>Marketing and growth initiatives</li>
-							<li>Design systems and content frameworks</li>
-							<li>New digital experiences</li>
+							<li>HIPAA-aligned security controls</li>
+							<li>Credential and training tracking</li>
+							<li>Timesheet approvals with audit trails</li>
+							<li>Secure document storage</li>
 						</ul>
 					</div>
 
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Need a studio visit?</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Need coverage in a new state?</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form and we will confirm availability.
+							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form and we will confirm rollout options.
 						</p>
 					</div>
 				</div>
 
 				{/* Compact area list */}
 				<div className="mt-8">
-					<h3 className="text-sm font-medium" style={{ color: "var(--accent)" }}>Primary delivery hubs</h3>
+					<h3 className="text-sm font-medium" style={{ color: "var(--accent)" }}>Primary coverage areas</h3>
 					<div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
 						{areas.map((a) => (
 							<span key={a} className="rounded-md px-3 py-2 text-sm" style={{ background: "rgba(15,23,42,0.03)", color: "var(--muted)" }}>

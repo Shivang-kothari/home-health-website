@@ -6,10 +6,10 @@ import { site } from "../lib/site";
 
 const nav = [
 	{ href: "/", label: "Home" },
-	{ href: "/services", label: "Services" },
-	{ href: "/features", label: "Studio" },
-	{ href: "/pricing", label: "Plans" },
-	{ href: "/coverage", label: "Locations" },
+	{ href: "/features", label: "Features" },
+	{ href: "/services", label: "Modules" },
+	{ href: "/pricing", label: "Pricing" },
+	{ href: "/coverage", label: "Coverage" },
 	{ href: "/contact", label: "Contact" },
 ];
 
@@ -35,7 +35,7 @@ export default function Header() {
 						<ButtonLink href="/demo" variant="primary">
 							{site.ctaPrimary}
 						</ButtonLink>
-						<ButtonLink href={site.phoneHref} variant="secondary">
+						<ButtonLink href="/login" variant="secondary">
 							{site.ctaSecondary}
 						</ButtonLink>
 					</div>

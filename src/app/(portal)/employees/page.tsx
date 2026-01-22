@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Brand System Refresh", role: "Brand", status: "In progress" },
-  { id: "2", name: "Product Onboarding Flow", role: "Product", status: "Discovery" },
-  { id: "3", name: "Marketing Site Launch", role: "Web", status: "Active" },
+  { id: "1", name: "Mia Johnson", role: "RN", status: "Active" },
+  { id: "2", name: "Ethan Rivera", role: "HHA", status: "Active" },
+  { id: "3", name: "Lena Patel", role: "PT", status: "Inactive" },
 ];
  
 export default function EmployeesPage() {
@@ -11,17 +11,17 @@ export default function EmployeesPage() {
     <div>
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Projects</h1>
-          <p className="mt-2 text-sm text-slate-600">Track project status, owners, and delivery updates.</p>
+          <h1 className="text-2xl font-bold tracking-tight">Staff</h1>
+          <p className="mt-2 text-sm text-slate-600">Manage caregivers, roles, and credential status.</p>
         </div>
-        <button className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">
-          New project
+        <button className="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-500">
+          Add staff
         </button>
       </div>
  
       <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
         <div className="grid grid-cols-3 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
-          <div>Project</div><div>Focus</div><div>Status</div>
+          <div>Name</div><div>Role</div><div>Status</div>
         </div>
         {mock.map((u) => (
           <Link key={u.id} href={`/portal/employees/${u.id}`}
@@ -34,7 +34,7 @@ export default function EmployeesPage() {
       </div>
  
       <p className="mt-4 text-xs text-slate-500">
-        Next step: connect this list to your project data and add status automation.
+        Next step: connect this list to your employee directory and credential records.
       </p>
     </div>
   );

@@ -7,21 +7,21 @@ export default function DemoPage() {
       <Container>
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Book a studio call</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Request a demo</h1>
             <p className="mt-2 text-sm text-slate-600">
-              Share your goals and we will tailor a plan for brand, product, and web delivery.
+              Tell us about your agency and we will tailor a HealthHR demo.
             </p>
 
             <div className="mt-6 space-y-4 text-sm text-slate-600">
               <div>
                 <strong>What to expect</strong>
                 <br />
-                A 30-minute studio call and a tailored proposal within 10 business days.
+                A 30-minute walkthrough of onboarding, time tracking, and compliance workflows.
               </div>
               <div>
                 <strong>Availability</strong>
                 <br />
-                Weekdays 9:00am-6:00pm. We will confirm a specific time after your request.
+                Weekdays 8:00am-6:00pm. We will confirm a specific time after your request.
               </div>
             </div>
           </div>

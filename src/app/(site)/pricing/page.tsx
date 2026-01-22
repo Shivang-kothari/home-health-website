@@ -3,19 +3,19 @@ import ButtonLink from "../../components/ButtonLink";
 
 const tiers = [
   {
-    name: "Studio Sprint",
-    price: "From $12k",
-    bullets: ["2-3 week sprint", "Brand or product concept", "Launch-ready direction"],
+    name: "Starter",
+    price: "$79",
+    bullets: ["Up to 25 caregivers", "Core HR + onboarding", "Email support"],
   },
   {
-    name: "Launch Partnership",
-    price: "From $45k",
-    bullets: ["6-8 week delivery", "Design system + build support", "Weekly checkpoints"],
+    name: "Growth",
+    price: "$249",
+    bullets: ["Up to 150 caregivers", "Time tracking + compliance", "Priority support"],
   },
   {
-    name: "Studio Retainer",
+    name: "Enterprise",
     price: "Custom",
-    bullets: ["Dedicated pod", "Monthly design cycles", "Ongoing optimization"],
+    bullets: ["Unlimited caregivers", "Custom workflows", "Dedicated success manager"],
   },
 ];
 
@@ -25,12 +25,12 @@ export default function PricingPage() {
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Plans</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Pricing</h1>
             <p className="mt-2 text-sm text-slate-600">
-              Flexible studio plans designed for brand launches, product work, and ongoing support.
+              Transparent pricing for agencies of every size.
             </p>
           </div>
-          <ButtonLink href="/demo" variant="primary">Book a studio call</ButtonLink>
+          <ButtonLink href="/demo" variant="primary">Request a demo</ButtonLink>
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -42,7 +42,7 @@ export default function PricingPage() {
                 {t.bullets.map((b) => <li key={b}>- {b}</li>)}
               </ul>
               <div className="mt-4">
-                <ButtonLink href="/contact" variant="secondary">Talk to the studio</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">Talk to sales</ButtonLink>
               </div>
             </div>
           ))}

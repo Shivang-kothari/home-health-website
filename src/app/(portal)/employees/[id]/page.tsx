@@ -5,26 +5,26 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
  
   return (
     <div>
-      <Link href="/portal/employees" className="text-sm text-indigo-700 hover:text-indigo-600">{"<- Back to projects"}</Link>
+      <Link href="/portal/employees" className="text-sm text-sky-700 hover:text-sky-600">{"<- Back to staff"}</Link>
  
-      <h1 className="mt-3 text-2xl font-bold tracking-tight">Project #{id}</h1>
+      <h1 className="mt-3 text-2xl font-bold tracking-tight">Staff member #{id}</h1>
       <p className="mt-2 text-sm text-slate-600">
-        This page will show project milestones, owners, and deliverables (placeholder).
+        This page will show credentials, documents, and time tracking (placeholder).
       </p>
  
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <div className="text-sm font-semibold">Milestones</div>
+          <div className="text-sm font-semibold">Credentials</div>
           <ul className="mt-3 space-y-2 text-sm text-slate-700">
-            <li>Discovery complete - (date)</li>
-            <li>Design review - (date)</li>
-            <li>Launch readiness - (date)</li>
+            <li>Professional license - (date)</li>
+            <li>CPR certification - (date)</li>
+            <li>Background check - (date)</li>
           </ul>
         </section>
  
         <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <div className="text-sm font-semibold">Deliverables</div>
-          <p className="mt-2 text-sm text-slate-700">Upload/view weekly updates and executive summaries (coming next).</p>
+          <div className="text-sm font-semibold">Documents</div>
+          <p className="mt-2 text-sm text-slate-700">Upload/view signed forms and credential files (coming next).</p>
         </section>
       </div>
     </div>

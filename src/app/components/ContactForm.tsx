@@ -10,8 +10,8 @@ type FormState = {
   company: string;
   phone: string;
   focus: string;
-  budget: string;
-  style: string;
+  size: string;
+  state: string;
   message: string;
 };
 
@@ -21,8 +21,8 @@ const initialState: FormState = {
   company: "",
   phone: "",
   focus: "",
-  budget: "",
-  style: "",
+  size: "",
+  state: "",
   message: "",
 };
 
@@ -71,7 +71,7 @@ export default function ContactForm() {
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Name</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
                 value={state.name}
                 onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
                 placeholder="Jane Doe"
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Work email</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
                 value={state.email}
                 onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
                 placeholder="jane@company.com"
@@ -94,19 +94,19 @@ export default function ContactForm() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
-              <span className="font-medium text-slate-900">Company</span>
+              <span className="font-medium text-slate-900">Agency</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
                 value={state.company}
                 onChange={(e) => setState((s) => ({ ...s, company: e.target.value }))}
-                placeholder="Acme Corp"
+                placeholder="Healthy Steps Home Care"
               />
             </label>
 
             <label className="grid gap-1 text-sm">
               <span className="font-medium text-slate-900">Phone</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
                 value={state.phone}
                 onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
                 placeholder="(555) 123-4567"
@@ -117,46 +117,46 @@ export default function ContactForm() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
-              <span className="font-medium text-slate-900">Project focus</span>
+              <span className="font-medium text-slate-900">Primary need</span>
               <select
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
                 value={state.focus}
                 onChange={(e) => setState((s) => ({ ...s, focus: e.target.value }))}
               >
                 <option value="">Select a focus</option>
-                <option>Brand identity</option>
-                <option>Digital product</option>
-                <option>Marketing site</option>
-                <option>Content system</option>
-                <option>Experience audit</option>
+                <option>HR and onboarding</option>
+                <option>Time and attendance</option>
+                <option>Compliance and audits</option>
+                <option>Credential tracking</option>
+                <option>Payroll exports</option>
                 <option>Other</option>
               </select>
             </label>
 
             <label className="grid gap-1 text-sm">
-              <span className="font-medium text-slate-900">Estimated budget</span>
+              <span className="font-medium text-slate-900">Agency size</span>
               <select
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
-                value={state.budget}
-                onChange={(e) => setState((s) => ({ ...s, budget: e.target.value }))}
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                value={state.size}
+                onChange={(e) => setState((s) => ({ ...s, size: e.target.value }))}
               >
-                <option value="">Select a range</option>
-                <option>Under $25k</option>
-                <option>$25k-$100k</option>
-                <option>$100k-$250k</option>
-                <option>$250k+</option>
+                <option value="">Select a size</option>
+                <option>1-25 employees</option>
+                <option>26-100 employees</option>
+                <option>101-250 employees</option>
+                <option>250+ employees</option>
               </select>
             </label>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-1 text-sm sm:col-span-2">
-              <span className="font-medium text-slate-900">Style references (optional)</span>
+              <span className="font-medium text-slate-900">Service state</span>
               <input
-                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
-                value={state.style}
-                onChange={(e) => setState((s) => ({ ...s, style: e.target.value }))}
-                placeholder="Links to inspiration, brand guides, or references"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
+                value={state.state}
+                onChange={(e) => setState((s) => ({ ...s, state: e.target.value }))}
+                placeholder="e.g., Texas"
               />
             </label>
           </div>
@@ -164,12 +164,12 @@ export default function ContactForm() {
       </div>
 
       <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Tell us about your goals</span>
+        <span className="font-medium text-slate-900">Tell us about your agency</span>
         <textarea
-          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Share goals, timeline, and any constraints."
+          placeholder="Share goals, timeline, and current tools."
           required
         />
       </label>
@@ -178,7 +178,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-500 disabled:opacity-60 shadow-sm"
         >
           {status === "sending" ? "Sending..." : "Send request"}
         </button>

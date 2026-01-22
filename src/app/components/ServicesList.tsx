@@ -31,14 +31,14 @@ export default function ServicesList() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search services (e.g., brand, product, content)"
+          placeholder="Search modules (e.g., onboarding, time, compliance)"
           className="w-full rounded-lg border px-3 py-2"
         />
       </div>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
-        {loading && <div className="muted">Loading services...</div>}
-        {!loading && filtered.length === 0 && <div className="muted">No services found.</div>}
+        {loading && <div className="muted">Loading modules...</div>}
+        {!loading && filtered.length === 0 && <div className="muted">No modules found.</div>}
         {filtered.map((i) => (
           <div key={i.key} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex gap-4 items-start">
             {i.icon && (

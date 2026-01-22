@@ -7,50 +7,50 @@ import { site } from "../lib/site";
 export const metadata: Metadata = { title: "Home", description: site.tagline };
 
 const heroHighlights = [
-  { title: "Brand clarity", desc: "Positioning and visual identity systems that scale." },
-  { title: "Product velocity", desc: "Design sprints and delivery that move quickly." },
-  { title: "Studio craft", desc: "Polished execution across web, product, and content." },
+  { title: "HIPAA-aligned workflows", desc: "Secure access controls and audit-ready logs." },
+  { title: "Accurate time tracking", desc: "PIN clock-in, approvals, and timesheet exports." },
+  { title: "Caregiver ready", desc: "Simple mobile-friendly portal for field staff." },
 ];
 
 const stats = [
-  { label: "Launches delivered", value: "180+" },
-  { label: "Avg. time to MVP", value: "5 weeks" },
-  { label: "Client retention", value: "92%" },
-  { label: "Senior-led ratio", value: "75%" },
+  { label: "Agencies onboarded", value: "320+" },
+  { label: "Time saved weekly", value: "10 hrs" },
+  { label: "On-time payroll", value: "99.2%" },
+  { label: "Audit readiness", value: "100%" },
 ];
 
 const services = [
-  { title: "Brand foundations", desc: "Naming, identity, and messaging for modern brands.", icon: "/file.svg" },
-  { title: "Experience design", desc: "Research, UX strategy, and UI design systems.", icon: "/window.svg" },
-  { title: "Digital product", desc: "Product strategy, prototyping, and delivery support.", icon: "/globe.svg" },
-  { title: "Content systems", desc: "Components, documentation, and editorial patterns.", icon: "/icons/service-therapy.svg" },
-  { title: "Launch and growth", desc: "Marketing sites and conversion optimization.", icon: "/icons/service-nursing.svg" },
-  { title: "Studio retainer", desc: "A dedicated pod to extend your team.", icon: "/icons/location.svg" },
+  { title: "HR and onboarding", desc: "Digital checklists, forms, and policy acknowledgements.", icon: "/file.svg" },
+  { title: "Time and attendance", desc: "Clock-in, approvals, and timesheets ready for payroll.", icon: "/window.svg" },
+  { title: "Compliance tracking", desc: "Credentials, training, and expiration alerts.", icon: "/globe.svg" },
+  { title: "Secure documents", desc: "Role-based access for HR files and certifications.", icon: "/icons/service-therapy.svg" },
+  { title: "Agency portal", desc: "Admin, supervisor, and caregiver views in one portal.", icon: "/icons/service-nursing.svg" },
+  { title: "Payroll exports", desc: "Clean exports for your payroll provider.", icon: "/icons/location.svg" },
 ];
 
 const styleKit = [
-  { title: "Color system", desc: "Indigo-led palette with soft gradients.", swatches: ["#4f46e5", "#0ea5e9", "#0f172a", "#f8fafc"] },
-  { title: "Typography", desc: "Clean hierarchy for clarity on every screen.", swatches: ["#0b1020", "#475569", "#cbd5f5", "#ffffff"] },
-  { title: "Motion", desc: "Subtle transitions that feel responsive and calm.", swatches: ["#7c3aed", "#38bdf8", "#1f2937", "#f1f5f9"] },
+  { title: "Security", desc: "HIPAA-aligned access controls and audit logs.", swatches: ["#0f5ea8", "#0ea5e9", "#0b1a2b", "#f8fafc"] },
+  { title: "Operations", desc: "Automations that keep teams on schedule.", swatches: ["#0b1020", "#475569", "#93c5fd", "#ffffff"] },
+  { title: "Care delivery", desc: "Caregiver-friendly UX that works anywhere.", swatches: ["#0284c7", "#38bdf8", "#1f2937", "#f1f5f9"] },
 ];
 
 const process = [
-  { title: "Align", desc: "We define goals, scope, and success metrics." },
-  { title: "Design", desc: "We craft concepts, flows, and systems." },
-  { title: "Build", desc: "We deliver production-ready assets and guidance." },
-  { title: "Launch", desc: "We support rollout and optimize what matters." },
+  { title: "Discover", desc: "We map your current workflows and compliance needs." },
+  { title: "Configure", desc: "We set up policies, roles, and approval paths." },
+  { title: "Launch", desc: "We onboard teams and import employees." },
+  { title: "Optimize", desc: "We track adoption and improve workflows." },
 ];
 
 const work = [
-  { title: "Northwind", type: "Brand identity", result: "Unified product suite across 3 regions" },
-  { title: "Aurora Health", type: "Digital product", result: "New patient portal with 28% faster onboarding" },
-  { title: "Beacon Retail", type: "Marketing site", result: "39% lift in qualified leads" },
+  { title: "Heartland Care", type: "Multi-state agency", result: "Reduced onboarding time by 40%" },
+  { title: "Sunrise Health", type: "Growing agency", result: "Digitized time tracking across 120 staff" },
+  { title: "Harbor Home", type: "Medicaid agency", result: "Audit-ready compliance reporting" },
 ];
 
 const testimonials = [
-  { quote: "Everline gave us a brand system that finally feels modern and consistent.", name: "VP Marketing, SaaS Platform" },
-  { quote: "Their studio team shipped designs and specs that our engineers loved.", name: "Head of Product, Fintech" },
-  { quote: "We launched on time with a site that feels premium and fast.", name: "Founder, Consumer Brand" },
+  { quote: "HealthHR replaced our spreadsheets and cut onboarding time in half.", name: "Director of Operations, Home Health" },
+  { quote: "The time tracking is accurate and easy for caregivers to use.", name: "Agency Administrator" },
+  { quote: "We passed our audit with confidence and clear documentation.", name: "Compliance Manager" },
 ];
 
 export default function HomePage() {
@@ -61,32 +61,32 @@ export default function HomePage() {
           <div className="grid gap-10 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-20">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                Studio for brand, product, and experience
+                HIPAA-compliant HR platform for home health
               </p>
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                A professional studio for bold brands and digital experiences
+                HR, time tracking, and compliance built for home health agencies
               </h1>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                Everline Studio blends strategy, design, and delivery to help teams launch with confidence and keep
-                their brand consistent across every touchpoint.
+                HealthHR gives agencies a secure portal to manage caregivers, track time, and stay audit-ready without
+                spreadsheets.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">Share a brief</ButtonLink>
+                <ButtonLink href="/login" variant="secondary">{site.ctaSecondary}</ButtonLink>
               </div>
 
               <div className="mt-8 grid gap-3 text-xs text-slate-500 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Senior-led teams</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Studio-grade craft</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Fast delivery</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">HIPAA-aligned security</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Accurate clock-in</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Fast onboarding</div>
               </div>
             </div>
 
             <div className="glass-card rounded-3xl p-6">
               <Image
                 src="/illustrations/services-hero.svg"
-                alt="Studio dashboard preview"
+                alt="HealthHR portal preview"
                 width={1200}
                 height={720}
                 className="w-full rounded-2xl"
@@ -119,16 +119,49 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <section className="py-14">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <Image
+                src="/illustrations/contact-hero.svg"
+                alt="Clock-in and HR portal preview"
+                width={900}
+                height={640}
+                className="w-full rounded-2xl"
+              />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">Why HealthHR?</h2>
+              <p className="mt-3 text-sm text-slate-600">
+                Built specifically for home health agencies, with HIPAA-aligned security and workflows designed for
+                caregivers, supervisors, and administrators.
+              </p>
+              <ul className="mt-6 grid gap-3 text-sm text-slate-600">
+                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">HIPAA-aligned security and audit trails</li>
+                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Accurate PIN-based clock-in and approvals</li>
+                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Paperless HR forms and onboarding</li>
+                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Simple monthly pricing with clear tiers</li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+                <ButtonLink href="/pricing" variant="secondary">View pricing</ButtonLink>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-slate-50 py-14">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Signature studio services</h2>
+              <h2 className="text-2xl font-bold tracking-tight">Modules built for home health agencies</h2>
               <p className="mt-2 max-w-2xl text-sm text-slate-600">
-                We craft brand systems, digital products, and marketing experiences that feel cohesive and premium.
+                Everything you need to manage caregivers, stay compliant, and keep payroll accurate.
               </p>
             </div>
-            <ButtonLink href="/services" variant="secondary">Explore services</ButtonLink>
+            <ButtonLink href="/services" variant="secondary">Explore modules</ButtonLink>
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -149,9 +182,9 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">A stylish system that keeps your brand consistent</h2>
+              <h2 className="text-2xl font-bold tracking-tight">A system designed for compliance and clarity</h2>
               <p className="mt-3 text-sm text-slate-600">
-                We build a reusable style kit so every page, product screen, and campaign feels cohesive.
+                Keep policies, credentials, and documents aligned across your entire agency.
               </p>
               <div className="mt-6 grid gap-4">
                 {styleKit.map((kit) => (
@@ -170,17 +203,17 @@ export default function HomePage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <Image
                 src="/illustrations/about-hero.svg"
-                alt="Style system illustration"
+                alt="Compliance and document system"
                 width={900}
                 height={640}
                 className="w-full rounded-2xl"
               />
               <div className="mt-4 grid gap-3 text-sm text-slate-600">
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  Component library for marketing and product teams.
+                  Policy and credential tracking that stays up to date.
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  Motion and interaction guidelines for a premium feel.
+                  Secure document storage with role-based access.
                 </div>
               </div>
             </div>
@@ -194,16 +227,16 @@ export default function HomePage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <Image
                 src="/illustrations/coverage-hero.svg"
-                alt="Studio process"
+                alt="Workflow automation"
                 width={900}
                 height={640}
                 className="w-full rounded-2xl"
               />
             </div>
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">A dynamic, four-phase studio process</h2>
+              <h2 className="text-2xl font-bold tracking-tight">A dynamic onboarding and compliance workflow</h2>
               <p className="mt-3 text-sm text-slate-600">
-                We keep teams aligned with weekly check-ins, shared artifacts, and fast iteration loops.
+                Launch fast with data import, role-based access, and caregiver-ready portals.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-600">
                 {process.map((step, index) => (
@@ -215,7 +248,7 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="mt-6">
-                <ButtonLink href="/features" variant="secondary">See the studio approach</ButtonLink>
+                <ButtonLink href="/features" variant="secondary">See all features</ButtonLink>
               </div>
             </div>
           </div>
@@ -226,15 +259,15 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Selected studio work</h2>
-              <p className="mt-2 text-sm text-slate-600">A few examples of brand and product outcomes.</p>
+              <h2 className="text-2xl font-bold tracking-tight">Results from agencies like yours</h2>
+              <p className="mt-2 text-sm text-slate-600">Real outcomes for time, compliance, and onboarding.</p>
             </div>
-            <ButtonLink href="/contact" variant="secondary">Request a portfolio</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">Talk to sales</ButtonLink>
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {work.map((item) => (
               <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="text-xs font-semibold text-indigo-600">{item.type}</div>
+                <div className="text-xs font-semibold text-sky-600">{item.type}</div>
                 <div className="mt-2 text-lg font-semibold">{item.title}</div>
                 <p className="mt-3 text-sm text-slate-600">{item.result}</p>
               </div>
@@ -262,12 +295,12 @@ export default function HomePage() {
           <div className="rounded-3xl bg-slate-900 px-6 py-10 text-white md:px-10">
             <div className="grid gap-6 md:grid-cols-2 md:items-center">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight">Ready to build your next launch?</h2>
-                <p className="mt-2 text-sm text-slate-200">Book a studio call and get a tailored plan within 10 days.</p>
+                <h2 className="text-2xl font-bold tracking-tight">Ready to simplify HR for your agency?</h2>
+                <p className="mt-2 text-sm text-slate-200">Request a demo and see HealthHR in action.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
                 <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">Contact the studio</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">Talk to sales</ButtonLink>
               </div>
             </div>
           </div>
