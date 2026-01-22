@@ -59,11 +59,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 elev-sm">
+    <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 p-6 elev-sm card-surface">
       <div className="grid gap-6 lg:grid-cols-[180px_1fr] items-start">
         <div className="hidden lg:block">
           <div className="p-4">
-            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg img-float" />
           </div>
         </div>
         <div className="grid gap-4">

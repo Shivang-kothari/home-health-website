@@ -78,7 +78,7 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 
 				{/* Hero */}
 				<div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-sm" style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4))", border: "1px solid rgba(15,23,42,0.04)" }}>
-					<Image src="/illustrations/coverage-hero.svg" alt="Coverage" width={1200} height={360} className="w-full h-auto" priority />
+					<Image src="/illustrations/coverage-hero.svg" alt="Coverage" width={1200} height={360} className="w-full h-auto img-float" priority />
 				</div>
 
 				<p className="mt-6 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--muted)" }}>

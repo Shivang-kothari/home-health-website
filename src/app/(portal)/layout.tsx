@@ -16,7 +16,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
       </div>
  
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[220px_1fr] lg:px-8">
-        <aside className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <aside className="rounded-2xl border border-slate-200 p-4 shadow-sm card-surface">
           <div className="text-xs font-semibold text-slate-500">NAVIGATION</div>
           <nav className="mt-3 grid gap-1">
             {nav.map((n) => (
@@ -27,7 +27,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
           </nav>
         </aside>
  
-        <main className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <main className="rounded-2xl border border-slate-200 p-5 shadow-sm card-surface">
           {children}
         </main>
       </div>

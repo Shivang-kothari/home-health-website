@@ -12,7 +12,7 @@ export default function DashboardPage() {
           { k: "Expiring Credentials", v: "N/A" },
           { k: "Pending Timesheets", v: "N/A" },
         ].map((c) => (
-          <div key={c.k} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <div key={c.k} className="rounded-2xl border border-slate-200 p-4 card-surface">
             <div className="text-xs font-semibold text-slate-500">{c.k}</div>
             <div className="mt-2 text-2xl font-bold">{c.v}</div>
           </div>

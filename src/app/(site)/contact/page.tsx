@@ -14,7 +14,7 @@ export default function ContactPage() {
     <section className="py-14">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/contact-hero.svg" alt="Contact" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
+          <Image src="/illustrations/contact-hero.svg" alt="Home health portal support" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
@@ -24,7 +24,7 @@ export default function ContactPage() {
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-sm font-semibold">Call</div>
               <a className="mt-2 block text-sm text-sky-700 hover:text-sky-600" href={site.phoneHref}>
                 {site.phone}
@@ -35,7 +35,7 @@ export default function ContactPage() {
               </a>
             </div>
  
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-sm font-semibold">Office</div>
               <div className="mt-2 text-sm text-slate-600">
                 {site.addressLines.map((l) => (
@@ -50,7 +50,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-sm font-semibold">What to include</div>
               <ul className="mt-2 space-y-2 text-sm text-slate-600">
                 <li>Agency size and locations</li>

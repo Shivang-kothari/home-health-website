@@ -26,7 +26,7 @@ export default function CareersPage() {
             "QA Analyst",
             "Support Specialist",
           ].map((role) => (
-            <div key={role} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={role} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="font-semibold">{role}</div>
               <p className="mt-2 text-sm text-slate-600">
                 Competitive compensation, flexible work, and meaningful healthcare impact.

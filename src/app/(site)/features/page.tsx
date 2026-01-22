@@ -33,7 +33,7 @@ export default function FeaturesPage() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((f) => (
-            <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={f.title} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="flex items-center gap-3">
                 <Image src={f.icon} alt="" width={32} height={32} />
                 <div className="text-lg font-semibold">{f.title}</div>
@@ -44,29 +44,29 @@ export default function FeaturesPage() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
             <h2 className="text-lg font-semibold">What you can expect</h2>
             <p className="mt-2 text-sm text-slate-600">
               Clear workflows, simplified compliance, and a portal your caregivers can use on any device.
             </p>
             <ul className="mt-4 grid gap-2 text-sm text-slate-600">
               {outcomes.map((o) => (
-                <li key={o} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2">
+                <li key={o} className="rounded-xl border border-slate-200 px-4 py-2 card-surface">
                   {o}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <div className="rounded-2xl border border-slate-200 p-6 card-surface">
             <h3 className="text-base font-semibold">Team access</h3>
             <p className="mt-2 text-sm text-slate-600">
               Give the right access to admins, supervisors, and field caregivers.
             </p>
             <div className="mt-4 grid gap-2 text-sm text-slate-600">
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Agency admin</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Supervisor</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Caregiver</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Compliance manager</div>
+              <div className="rounded-xl border border-slate-200 px-3 py-2 card-surface">Agency admin</div>
+              <div className="rounded-xl border border-slate-200 px-3 py-2 card-surface">Supervisor</div>
+              <div className="rounded-xl border border-slate-200 px-3 py-2 card-surface">Caregiver</div>
+              <div className="rounded-xl border border-slate-200 px-3 py-2 card-surface">Compliance manager</div>
             </div>
           </div>
         </div>

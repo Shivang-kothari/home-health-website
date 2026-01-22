@@ -10,7 +10,7 @@ export default function LoginPage() {
  
   return (
     <div className="min-h-dvh bg-slate-50 flex items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="w-full max-w-md rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
         <h1 className="text-2xl font-bold tracking-tight">Agency Portal Login</h1>
         <p className="mt-2 text-sm text-slate-600">Sign in to manage staff, time, and compliance.</p>
  

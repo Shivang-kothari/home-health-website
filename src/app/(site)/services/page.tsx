@@ -15,7 +15,7 @@ export default function ServicesPage() {
     <section className="py-14">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/services-hero.svg" alt="Services" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
+          <Image src="/illustrations/services-hero.svg" alt="Home health services" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight">Modules</h1>

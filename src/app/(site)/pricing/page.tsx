@@ -35,7 +35,7 @@ export default function PricingPage() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {tiers.map((t) => (
-            <div key={t.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={t.name} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-lg font-semibold">{t.name}</div>
               <div className="mt-2 text-2xl font-bold">{t.price}</div>
               <ul className="mt-4 space-y-2 text-sm text-slate-600">

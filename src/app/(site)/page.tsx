@@ -89,13 +89,13 @@ export default function HomePage() {
                 alt="HealthHR portal preview"
                 width={1200}
                 height={720}
-                className="w-full rounded-2xl"
+                className="w-full rounded-2xl img-float"
                 priority
               />
 
               <div className="mt-6 grid gap-3">
                 {heroHighlights.map((h) => (
-                  <div key={h.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4">
+                  <div key={h.title} className="rounded-2xl border border-slate-200 p-4 card-surface">
                     <div className="text-sm font-semibold">{h.title}</div>
                     <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
                   </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
 
       <section className="py-10">
         <Container>
-          <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 rounded-2xl border border-slate-200 p-6 shadow-sm card-surface sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="text-xs font-semibold text-slate-500">{stat.label}</div>
@@ -122,13 +122,13 @@ export default function HomePage() {
       <section className="py-14">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-3xl border border-slate-200 p-6 shadow-sm card-surface">
               <Image
                 src="/illustrations/contact-hero.svg"
                 alt="Clock-in and HR portal preview"
                 width={900}
                 height={640}
-                className="w-full rounded-2xl"
+                className="w-full rounded-2xl img-float"
               />
             </div>
             <div>
@@ -138,10 +138,10 @@ export default function HomePage() {
                 caregivers, supervisors, and administrators.
               </p>
               <ul className="mt-6 grid gap-3 text-sm text-slate-600">
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">HIPAA-aligned security and audit trails</li>
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Accurate PIN-based clock-in and approvals</li>
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Paperless HR forms and onboarding</li>
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Simple monthly pricing with clear tiers</li>
+                <li className="rounded-xl border border-slate-200 px-4 py-3 card-surface">HIPAA-aligned security and audit trails</li>
+                <li className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Accurate PIN-based clock-in and approvals</li>
+                <li className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Paperless HR forms and onboarding</li>
+                <li className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Simple monthly pricing with clear tiers</li>
               </ul>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
@@ -166,7 +166,7 @@ export default function HomePage() {
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <div key={service.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={service.title} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
                 <div className="flex items-center gap-3">
                   <Image src={service.icon} alt="" width={36} height={36} />
                   <div className="text-lg font-semibold">{service.title}</div>
@@ -188,7 +188,7 @@ export default function HomePage() {
               </p>
               <div className="mt-6 grid gap-4">
                 {styleKit.map((kit) => (
-                  <div key={kit.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div key={kit.title} className="rounded-2xl border border-slate-200 p-5 shadow-sm card-surface">
                     <div className="text-base font-semibold">{kit.title}</div>
                     <p className="mt-2 text-sm text-slate-600">{kit.desc}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -200,19 +200,19 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-3xl border border-slate-200 p-6 shadow-sm card-surface">
               <Image
                 src="/illustrations/about-hero.svg"
                 alt="Compliance and document system"
                 width={900}
                 height={640}
-                className="w-full rounded-2xl"
+                className="w-full rounded-2xl img-float"
               />
               <div className="mt-4 grid gap-3 text-sm text-slate-600">
-                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">
                   Policy and credential tracking that stays up to date.
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">
                   Secure document storage with role-based access.
                 </div>
               </div>
@@ -224,13 +224,13 @@ export default function HomePage() {
       <section className="bg-slate-50 py-14">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-3xl border border-slate-200 p-6 shadow-sm card-surface">
               <Image
                 src="/illustrations/coverage-hero.svg"
                 alt="Workflow automation"
                 width={900}
                 height={640}
-                className="w-full rounded-2xl"
+                className="w-full rounded-2xl img-float"
               />
             </div>
             <div>
@@ -240,7 +240,7 @@ export default function HomePage() {
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-600">
                 {process.map((step, index) => (
-                  <div key={step.title} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                  <div key={step.title} className="rounded-xl border border-slate-200 px-4 py-3 card-surface">
                     <div className="text-xs font-semibold text-slate-500">Phase {index + 1}</div>
                     <div className="mt-1 font-semibold text-slate-900">{step.title}</div>
                     <div className="mt-1 text-sm text-slate-600">{step.desc}</div>
@@ -266,7 +266,7 @@ export default function HomePage() {
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {work.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={item.title} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
                 <div className="text-xs font-semibold text-sky-600">{item.type}</div>
                 <div className="mt-2 text-lg font-semibold">{item.title}</div>
                 <p className="mt-3 text-sm text-slate-600">{item.result}</p>
@@ -281,7 +281,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold tracking-tight">What clients say</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={t.name} className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
                 <p className="text-sm text-slate-600">"{t.quote}"</p>
                 <div className="mt-4 text-sm font-semibold">{t.name}</div>
               </div>

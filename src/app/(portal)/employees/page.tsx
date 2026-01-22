@@ -19,7 +19,7 @@ export default function EmployeesPage() {
         </button>
       </div>
  
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 card-surface">
         <div className="grid grid-cols-3 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
           <div>Name</div><div>Role</div><div>Status</div>
         </div>
