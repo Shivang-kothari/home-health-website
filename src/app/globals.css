@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfdfe; /* very light */
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #07132a; /* dark text */
+  --brand: #0f766e; /* teal accent */
+  --accent: #f0fdfa; /* subtle card tint */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Force a light-only design: remove dark-mode overrides */
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
+
+/* Headings */
+h1 { font-size: 1.875rem; line-height: 1.1; }
+h2 { font-size: 1.25rem; }
+
+.pro-card { background: var(--surface); border: 1px solid rgba(7,19,42,0.06); border-radius: 14px; }
+
+a { color: var(--brand); }
+
+.muted { color: var(--muted); }
+
+/* Form input refinement */
+input, textarea, select {
+  border: 1px solid rgba(7,19,42,0.08);
+  background: var(--surface);
+}
+
+/* Subtle elevated shadow used for hero cards */
+.elev-sm { box-shadow: 0 6px 20px rgba(15,23,42,0.06); }

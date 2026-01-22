@@ -1,4 +1,12 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules
+.env
+.DS_Store
+dist
+git remote add origin https://github.com/shivangkothari/home-health-website.git
+git branch -M main
+git push -u origin main
+
+\# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <rect width="800" height="240" rx="16" fill="#f0fdfa" />
+  <g transform="translate(36,28)" fill="#07585a">
+    <rect x="24" y="36" width="140" height="140" rx="12" fill="#0f766e" />
+    <text x="190" y="80" fill="#074a46" font-size="24" font-family="Arial">Get in touch with our care team</text>
+    <text x="190" y="110" fill="#0f766e" font-size="14" font-family="Arial" opacity="0.9">Share your needs and profession so we can match the right support.</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#e6fffa" />
+      <stop offset="1" stop-color="#f0fdfa" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="240" rx="16" fill="url(#g)" />
+  <g transform="translate(36,28)" fill="#05605a">
+    <circle cx="80" cy="80" r="36" fill="#0f766e" />
+    <rect x="150" y="40" width="520" height="120" rx="12" fill="#ffffff" opacity="0.9" />
+    <text x="170" y="80" fill="#084a47" font-size="24" font-family="Arial">Trusted in-home care across your community</text>
+    <text x="170" y="110" fill="#0f766e" font-size="14" font-family="Arial" opacity="0.9">Specialized care for patients, families, and agencies. Search by ZIP to check coverage.</text>
+  </g>
+</svg>

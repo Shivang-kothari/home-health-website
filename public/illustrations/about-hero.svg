@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <rect width="800" height="240" rx="16" fill="#f8fafb" />
+  <g transform="translate(36,28)" fill="#0f766e">
+    <circle cx="80" cy="80" r="36" fill="#0fb5a8" />
+    <text x="170" y="80" fill="#084a47" font-size="24" font-family="Arial">About our care approach</text>
+    <text x="170" y="110" fill="#0f766e" font-size="14" font-family="Arial" opacity="0.9">Compassionate, coordinated, and clinically-informed in-home support.</text>
+  </g>
+</svg>

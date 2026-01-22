@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <rect width="800" height="240" rx="16" fill="#ffffff" />
+  <g transform="translate(36,28)" fill="#0f766e">
+    <rect x="24" y="36" width="140" height="140" rx="12" fill="#e6fffa" />
+    <text x="190" y="80" fill="#084a47" font-size="24" font-family="Arial">Services we provide</text>
+    <text x="190" y="110" fill="#0f766e" font-size="14" font-family="Arial" opacity="0.9">Personal care, medication support, companionship, and agency staffing.</text>
+  </g>
+</svg>
