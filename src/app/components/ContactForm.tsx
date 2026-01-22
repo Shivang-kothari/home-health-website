@@ -60,10 +60,25 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 p-6 elev-sm card-surface">
-      <div className="grid gap-6 lg:grid-cols-[180px_1fr] items-start">
+      <div className="rounded-xl border border-slate-200 p-4 card-surface">
+        <div className="text-sm font-semibold text-slate-900">Send a request</div>
+        <p className="mt-1 text-sm text-slate-600">
+          Get a tailored demo covering HR onboarding, time tracking, and compliance workflows.
+        </p>
+        <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">HIPAA-aligned</div>
+          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">1-day response</div>
+          <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">Guided onboarding</div>
+        </div>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-[200px_1fr] items-start">
         <div className="hidden lg:block">
-          <div className="p-4">
-            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg img-float" />
+          <div className="rounded-xl border border-slate-200 p-4 card-surface">
+            <Image src="/illustrations/contact-side.svg" alt="Home health support" width={240} height={240} className="rounded-lg img-float" />
+            <div className="mt-3 text-xs text-slate-600">
+              Secure portal access for caregivers, supervisors, and admins.
+            </div>
           </div>
         </div>
         <div className="grid gap-4">
@@ -178,7 +193,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-500 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-900 hover:bg-sky-200 disabled:opacity-60 shadow-sm border border-sky-200"
         >
           {status === "sending" ? "Sending..." : "Send request"}
         </button>

@@ -58,6 +58,18 @@ export default function ContactPage() {
                 <li>Compliance needs</li>
               </ul>
             </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
+              <div className="text-sm font-semibold">Portal preview</div>
+              <p className="mt-2 text-sm text-slate-600">See how caregivers and supervisors use HealthHR.</p>
+              <Image
+                src="/illustrations/services-hero.svg"
+                alt="HealthHR portal preview"
+                width={800}
+                height={360}
+                className="mt-4 w-full rounded-xl img-float"
+              />
+            </div>
           </div>
  
           <ContactForm />
