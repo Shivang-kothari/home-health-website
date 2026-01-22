@@ -31,7 +31,7 @@ export default function ServicesList() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search services (e.g., strategy, analytics)"
+          placeholder="Search services (e.g., brand, product, content)"
           className="w-full rounded-lg border px-3 py-2"
         />
       </div>

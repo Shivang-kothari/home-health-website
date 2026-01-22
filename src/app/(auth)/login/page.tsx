@@ -11,8 +11,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-dvh bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h1 className="text-2xl font-bold tracking-tight">Client Portal Login</h1>
-        <p className="mt-2 text-sm text-slate-600">Sign in to review project updates and reports.</p>
+        <h1 className="text-2xl font-bold tracking-tight">Studio Portal Login</h1>
+        <p className="mt-2 text-sm text-slate-600">Sign in to review project updates and assets.</p>
  
         <div className="mt-6 grid gap-4">
           <label className="grid gap-1 text-sm">
@@ -27,7 +27,7 @@ export default function LoginPage() {
           </label>
  
           <button
-            className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500"
+            className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500"
             onClick={() => {
               // TEMP: mock auth
               localStorage.setItem("portal_session", JSON.stringify({ email, at: Date.now() }));

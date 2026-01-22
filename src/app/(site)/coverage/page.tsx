@@ -1,31 +1,3 @@
-/* 
-Quick Mac run instructions and optional script (save as scripts/run-mac.sh):
-
-#!/usr/bin/env bash
-set -e
-# from project root
-# 1) install deps
-npm install
-# 2) start dev server
-npm run dev
-
-# If port 3000 is occupied, free it:
-# lsof -ti tcp:3000 | xargs -r kill -9
-
-# For production:
-# npm run build
-# npm start
-
-# Alternatives:
-# pnpm install && pnpm dev
-# yarn install && yarn dev
-
-# Docker:
-# docker build -t my-app .
-# docker run -p 3000:3000 my-app
-
-*/
-
 import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "../../components/Container";
@@ -34,7 +6,7 @@ import CoverageSearch from "../../components/CoverageSearch";
 
 export const metadata: Metadata = {
   title: "Coverage",
-  description: `Delivery hubs and coverage for ${site.name}.`,
+  description: `Studio locations and coverage for ${site.name}.`,
 };
 
 export default function CoveragePage({ searchParams }: { searchParams?: { theme?: string } }) {
@@ -64,7 +36,8 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 	const areas = site.serviceArea.concat([
 		"San Francisco",
 		"New York",
-		"Chicago",
+		"Los Angeles",
+		"Austin",
 		"London",
 		"Toronto",
 		"Singapore",
@@ -78,9 +51,9 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Theme selector (server-side links) */}
 				<div className="mb-6 flex items-center justify-between gap-4">
 					<div>
-						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Locations and delivery hubs</h1>
+						<h1 className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>Studio locations</h1>
 						<p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
-							Global coverage for {site.name}. Choose a professional palette:
+							Global coverage for {site.name}. Choose a studio palette:
 						</p>
 					</div>
 
@@ -110,8 +83,8 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				</div>
 
 				<p className="mt-6 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-					We serve clients across regions with flexible delivery options. Use the search to find a hub or reach out
-					if you need a dedicated on-site team.
+					We serve clients across regions with flexible studio pods. Use the search to find a hub or reach out
+					if you need an on-site team.
 				</p>
 
 				{/* Search component keeps its API; pass dynamic areas */}
@@ -122,22 +95,22 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				{/* Info panels */}
 				<div className="mt-10 grid gap-6 lg:grid-cols-2">
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Industries we support</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Where we work</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							We partner with teams across financial services, healthcare, retail, technology, and public sector.
+							We partner with teams across technology, retail, healthcare, finance, and consumer brands.
 						</p>
 						<ul className="mt-3 list-disc pl-5 text-sm" style={{ color: "var(--muted)" }}>
-							<li>Transformation leadership and PMO support</li>
-							<li>Digital experience and service design</li>
-							<li>Analytics, data platforms, and AI enablement</li>
-							<li>Operations and cost optimization</li>
+							<li>Brand and product launches</li>
+							<li>Marketing and growth initiatives</li>
+							<li>Design systems and content frameworks</li>
+							<li>New digital experiences</li>
 						</ul>
 					</div>
 
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Need a local team?</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Need a studio visit?</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form and we will confirm coverage and staffing options.
+							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form and we will confirm availability.
 						</p>
 					</div>
 				</div>

@@ -14,22 +14,22 @@ export default function CareersPage() {
       <Container>
         <h1 className="text-3xl font-bold tracking-tight">Careers</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Join a team that values craft, collaboration, and measurable outcomes.
+          Join a studio that values craft, clarity, and premium digital experiences.
         </p>
  
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {[
-            "Strategy Consultant",
-            "Engagement Manager",
-            "Delivery Lead",
-            "Senior Data Analyst",
-            "Service Designer",
-            "Client Success Partner",
+            "Brand Designer",
+            "Product Designer",
+            "Design Director",
+            "Front-end Engineer",
+            "Content Designer",
+            "Studio Producer",
           ].map((role) => (
             <div key={role} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">{role}</div>
               <p className="mt-2 text-sm text-slate-600">
-                Competitive compensation, flexible work, and high-impact client engagements.
+                Competitive compensation, flexible work, and a senior-led studio culture.
               </p>
             </div>
           ))}

@@ -7,73 +7,86 @@ import { site } from "../lib/site";
 export const metadata: Metadata = { title: "Home", description: site.tagline };
 
 const heroHighlights = [
-  { title: "Executive alignment", desc: "Decision-ready roadmaps and measurable outcomes." },
-  { title: "Delivery velocity", desc: "Cross-functional teams that launch with speed." },
-  { title: "Sustained impact", desc: "Governance, analytics, and enablement built in." },
+  { title: "Brand clarity", desc: "Positioning and visual identity systems that scale." },
+  { title: "Product velocity", desc: "Design sprints and delivery that move quickly." },
+  { title: "Studio craft", desc: "Polished execution across web, product, and content." },
 ];
 
 const stats = [
-  { label: "Client retention", value: "94%" },
-  { label: "Programs delivered", value: "240+" },
-  { label: "Time to value", value: "6 weeks" },
-  { label: "Senior team ratio", value: "80%" },
+  { label: "Launches delivered", value: "180+" },
+  { label: "Avg. time to MVP", value: "5 weeks" },
+  { label: "Client retention", value: "92%" },
+  { label: "Senior-led ratio", value: "75%" },
 ];
 
 const services = [
-  { title: "Strategy and growth", desc: "Market analysis, growth planning, and portfolio clarity.", icon: "/file.svg" },
-  { title: "Experience design", desc: "Research, journey mapping, and product design systems.", icon: "/window.svg" },
-  { title: "Analytics and AI", desc: "Data foundations, dashboards, and practical AI delivery.", icon: "/globe.svg" },
-  { title: "Operations excellence", desc: "Process optimization, KPI alignment, and org enablement.", icon: "/icons/service-therapy.svg" },
-  { title: "Digital delivery", desc: "Product squads that build portals, tools, and platforms.", icon: "/icons/service-nursing.svg" },
-  { title: "Ongoing support", desc: "Continuous improvement, reporting, and leadership briefings.", icon: "/icons/location.svg" },
+  { title: "Brand foundations", desc: "Naming, identity, and messaging for modern brands.", icon: "/file.svg" },
+  { title: "Experience design", desc: "Research, UX strategy, and UI design systems.", icon: "/window.svg" },
+  { title: "Digital product", desc: "Product strategy, prototyping, and delivery support.", icon: "/globe.svg" },
+  { title: "Content systems", desc: "Components, documentation, and editorial patterns.", icon: "/icons/service-therapy.svg" },
+  { title: "Launch and growth", desc: "Marketing sites and conversion optimization.", icon: "/icons/service-nursing.svg" },
+  { title: "Studio retainer", desc: "A dedicated pod to extend your team.", icon: "/icons/location.svg" },
 ];
 
-const steps = [
-  { title: "Discover", desc: "We clarify priorities, diagnose constraints, and align on outcomes." },
-  { title: "Design", desc: "We translate strategy into executable plans, journeys, and playbooks." },
-  { title: "Deliver", desc: "We launch, measure, and enable your teams to scale what works." },
+const styleKit = [
+  { title: "Color system", desc: "Indigo-led palette with soft gradients.", swatches: ["#4f46e5", "#0ea5e9", "#0f172a", "#f8fafc"] },
+  { title: "Typography", desc: "Clean hierarchy for clarity on every screen.", swatches: ["#0b1020", "#475569", "#cbd5f5", "#ffffff"] },
+  { title: "Motion", desc: "Subtle transitions that feel responsive and calm.", swatches: ["#7c3aed", "#38bdf8", "#1f2937", "#f1f5f9"] },
+];
+
+const process = [
+  { title: "Align", desc: "We define goals, scope, and success metrics." },
+  { title: "Design", desc: "We craft concepts, flows, and systems." },
+  { title: "Build", desc: "We deliver production-ready assets and guidance." },
+  { title: "Launch", desc: "We support rollout and optimize what matters." },
+];
+
+const work = [
+  { title: "Northwind", type: "Brand identity", result: "Unified product suite across 3 regions" },
+  { title: "Aurora Health", type: "Digital product", result: "New patient portal with 28% faster onboarding" },
+  { title: "Beacon Retail", type: "Marketing site", result: "39% lift in qualified leads" },
 ];
 
 const testimonials = [
-  { quote: "Summitline helped us consolidate three programs into one roadmap without losing momentum.", name: "VP Operations, National Retailer" },
-  { quote: "Their delivery squads shipped in weeks and built trust with our internal teams.", name: "Chief Digital Officer, Financial Services" },
-  { quote: "We finally have a clear analytics strategy and executive dashboards that leadership uses.", name: "Director of Analytics, Healthcare Group" },
+  { quote: "Everline gave us a brand system that finally feels modern and consistent.", name: "VP Marketing, SaaS Platform" },
+  { quote: "Their studio team shipped designs and specs that our engineers loved.", name: "Head of Product, Fintech" },
+  { quote: "We launched on time with a site that feels premium and fast.", name: "Founder, Consumer Brand" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+      <section className="relative overflow-hidden hero-glow">
         <Container>
           <div className="grid gap-10 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-20">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                Strategy • Design • Delivery
+                Studio for brand, product, and experience
               </p>
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Build the next chapter of your organization with confidence
+                A professional studio for bold brands and digital experiences
               </h1>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                Summitline Consulting partners with leadership teams to align priorities, modernize operations,
-                and deliver digital experiences that customers and teams trust.
+                Everline Studio blends strategy, design, and delivery to help teams launch with confidence and keep
+                their brand consistent across every touchpoint.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">Start a conversation</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">Share a brief</ButtonLink>
               </div>
 
               <div className="mt-8 grid gap-3 text-xs text-slate-500 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Advisors, not vendors</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Cross-functional teams</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Clear governance</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Senior-led teams</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Studio-grade craft</div>
+                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Fast delivery</div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="glass-card rounded-3xl p-6">
               <Image
                 src="/illustrations/services-hero.svg"
-                alt="Consulting team dashboard preview"
+                alt="Studio dashboard preview"
                 width={1200}
                 height={720}
                 className="w-full rounded-2xl"
@@ -82,7 +95,7 @@ export default function HomePage() {
 
               <div className="mt-6 grid gap-3">
                 {heroHighlights.map((h) => (
-                  <div key={h.title} className="rounded-2xl border border-slate-200 p-4">
+                  <div key={h.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4">
                     <div className="text-sm font-semibold">{h.title}</div>
                     <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
                   </div>
@@ -110,9 +123,9 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Services built for modern leadership teams</h2>
+              <h2 className="text-2xl font-bold tracking-tight">Signature studio services</h2>
               <p className="mt-2 max-w-2xl text-sm text-slate-600">
-                We blend strategy, experience design, and delivery to make sure initiatives move from idea to impact.
+                We craft brand systems, digital products, and marketing experiences that feel cohesive and premium.
               </p>
             </div>
             <ButtonLink href="/services" variant="secondary">Explore services</ButtonLink>
@@ -136,17 +149,20 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">A clear, collaborative delivery model</h2>
+              <h2 className="text-2xl font-bold tracking-tight">A stylish system that keeps your brand consistent</h2>
               <p className="mt-3 text-sm text-slate-600">
-                You get a single accountable team that blends advisory, experience, and engineering. We keep work visible
-                and decisions documented so stakeholders stay aligned.
+                We build a reusable style kit so every page, product screen, and campaign feels cohesive.
               </p>
               <div className="mt-6 grid gap-4">
-                {steps.map((step, idx) => (
-                  <div key={step.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                    <div className="text-xs font-semibold text-slate-500">Step {idx + 1}</div>
-                    <div className="mt-1 text-base font-semibold">{step.title}</div>
-                    <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
+                {styleKit.map((kit) => (
+                  <div key={kit.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="text-base font-semibold">{kit.title}</div>
+                    <p className="mt-2 text-sm text-slate-600">{kit.desc}</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {kit.swatches.map((color) => (
+                        <span key={color} className="h-6 w-6 rounded-full border border-white shadow-sm" style={{ background: color }} />
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -154,17 +170,17 @@ export default function HomePage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <Image
                 src="/illustrations/about-hero.svg"
-                alt="Delivery approach illustration"
+                alt="Style system illustration"
                 width={900}
                 height={640}
                 className="w-full rounded-2xl"
               />
               <div className="mt-4 grid gap-3 text-sm text-slate-600">
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  Weekly executive updates with milestones, risks, and next steps.
+                  Component library for marketing and product teams.
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  Joint squads embedded with your teams to accelerate adoption.
+                  Motion and interaction guidelines for a premium feel.
                 </div>
               </div>
             </div>
@@ -178,26 +194,51 @@ export default function HomePage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <Image
                 src="/illustrations/coverage-hero.svg"
-                alt="Global delivery hubs"
+                alt="Studio process"
                 width={900}
                 height={640}
                 className="w-full rounded-2xl"
               />
             </div>
             <div>
-              <h2 className="text-2xl font-bold tracking-tight">Global delivery with local accountability</h2>
+              <h2 className="text-2xl font-bold tracking-tight">A dynamic, four-phase studio process</h2>
               <p className="mt-3 text-sm text-slate-600">
-                We combine on-site leadership with distributed delivery hubs to scale programs without losing quality.
+                We keep teams aligned with weekly check-ins, shared artifacts, and fast iteration loops.
               </p>
-              <ul className="mt-6 grid gap-3 text-sm text-slate-600">
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Primary hubs in San Francisco, New York, and London</li>
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Follow-the-sun operations for analytics and delivery</li>
-                <li className="rounded-xl border border-slate-200 bg-white px-4 py-3">Secure, compliant workflows for regulated industries</li>
-              </ul>
+              <div className="mt-6 grid gap-3 text-sm text-slate-600">
+                {process.map((step, index) => (
+                  <div key={step.title} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                    <div className="text-xs font-semibold text-slate-500">Phase {index + 1}</div>
+                    <div className="mt-1 font-semibold text-slate-900">{step.title}</div>
+                    <div className="mt-1 text-sm text-slate-600">{step.desc}</div>
+                  </div>
+                ))}
+              </div>
               <div className="mt-6">
-                <ButtonLink href="/coverage" variant="secondary">View locations</ButtonLink>
+                <ButtonLink href="/features" variant="secondary">See the studio approach</ButtonLink>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14">
+        <Container>
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">Selected studio work</h2>
+              <p className="mt-2 text-sm text-slate-600">A few examples of brand and product outcomes.</p>
+            </div>
+            <ButtonLink href="/contact" variant="secondary">Request a portfolio</ButtonLink>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {work.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="text-xs font-semibold text-indigo-600">{item.type}</div>
+                <div className="mt-2 text-lg font-semibold">{item.title}</div>
+                <p className="mt-3 text-sm text-slate-600">{item.result}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -221,12 +262,12 @@ export default function HomePage() {
           <div className="rounded-3xl bg-slate-900 px-6 py-10 text-white md:px-10">
             <div className="grid gap-6 md:grid-cols-2 md:items-center">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight">Ready to align your next initiative?</h2>
-                <p className="mt-2 text-sm text-slate-200">Schedule a consultation and get a tailored plan within 10 days.</p>
+                <h2 className="text-2xl font-bold tracking-tight">Ready to build your next launch?</h2>
+                <p className="mt-2 text-sm text-slate-200">Book a studio call and get a tailored plan within 10 days.</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
                 <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">Contact our team</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">Contact the studio</ButtonLink>
               </div>
             </div>
           </div>

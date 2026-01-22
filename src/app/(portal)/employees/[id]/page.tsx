@@ -5,7 +5,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
  
   return (
     <div>
-      <Link href="/portal/employees" className="text-sm text-blue-700 hover:text-blue-600">← Back to projects</Link>
+      <Link href="/portal/employees" className="text-sm text-indigo-700 hover:text-indigo-600">{"<- Back to projects"}</Link>
  
       <h1 className="mt-3 text-2xl font-bold tracking-tight">Project #{id}</h1>
       <p className="mt-2 text-sm text-slate-600">
@@ -17,7 +17,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
           <div className="text-sm font-semibold">Milestones</div>
           <ul className="mt-3 space-y-2 text-sm text-slate-700">
             <li>Discovery complete - (date)</li>
-            <li>Prototype review - (date)</li>
+            <li>Design review - (date)</li>
             <li>Launch readiness - (date)</li>
           </ul>
         </section>

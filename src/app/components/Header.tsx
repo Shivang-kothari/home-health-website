@@ -7,15 +7,15 @@ import { site } from "../lib/site";
 const nav = [
 	{ href: "/", label: "Home" },
 	{ href: "/services", label: "Services" },
-	{ href: "/features", label: "Expertise" },
-	{ href: "/pricing", label: "Engagements" },
-	{ href: "/about", label: "About" },
+	{ href: "/features", label: "Studio" },
+	{ href: "/pricing", label: "Plans" },
+	{ href: "/coverage", label: "Locations" },
 	{ href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
 	return (
-		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur">
 			<Container>
 				<div className="flex h-16 items-center justify-between gap-4">
 					<Link href="/" className="flex items-center gap-3 font-bold tracking-tight">

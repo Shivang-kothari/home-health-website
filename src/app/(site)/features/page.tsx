@@ -3,18 +3,18 @@ import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
 
 const capabilities = [
-  { title: "Executive strategy", desc: "Visioning, portfolio prioritization, and investment planning.", icon: "/file.svg" },
-  { title: "Customer experience", desc: "Research-led design, service blueprints, and prototyping.", icon: "/window.svg" },
-  { title: "Data and analytics", desc: "Data platforms, KPIs, and dashboards that leaders trust.", icon: "/globe.svg" },
-  { title: "Operating model", desc: "Org design, ways of working, and governance that scales.", icon: "/icons/location.svg" },
-  { title: "Technology delivery", desc: "Full-stack delivery teams and product management support.", icon: "/icons/service-therapy.svg" },
-  { title: "Change enablement", desc: "Communications, training, and adoption programs.", icon: "/icons/service-nursing.svg" },
+  { title: "Brand strategy", desc: "Positioning, naming, and identity systems.", icon: "/file.svg" },
+  { title: "UX and UI design", desc: "Research-driven flows and polished interfaces.", icon: "/window.svg" },
+  { title: "Web experiences", desc: "Marketing sites and launch-ready pages.", icon: "/globe.svg" },
+  { title: "Product design", desc: "Feature concepts, prototypes, and specs.", icon: "/icons/location.svg" },
+  { title: "Content systems", desc: "Components, guidelines, and editorial patterns.", icon: "/icons/service-therapy.svg" },
+  { title: "Motion and interaction", desc: "Micro-interactions that feel premium.", icon: "/icons/service-nursing.svg" },
 ];
 
 const outcomes = [
-  "A 90-day transformation roadmap with owners and milestones.",
-  "Executive-ready dashboards that measure progress and impact.",
-  "A delivery squad aligned to your tools and security standards.",
+  "A brand kit with tokens, typography, and color rules.",
+  "Production-ready specs for your engineering team.",
+  "Launch guidance with QA and post-launch tuning.",
 ];
 
 export default function FeaturesPage() {
@@ -23,9 +23,9 @@ export default function FeaturesPage() {
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Expertise</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Studio</h1>
             <p className="mt-2 max-w-2xl text-sm text-slate-600">
-              Our teams blend strategic advisory and hands-on delivery so leaders can move from intent to execution.
+              A design-led studio that blends brand, product, and web experiences into one cohesive system.
             </p>
           </div>
           <ButtonLink href="/contact" variant="primary">Start a project</ButtonLink>
@@ -47,7 +47,7 @@ export default function FeaturesPage() {
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-lg font-semibold">What you can expect</h2>
             <p className="mt-2 text-sm text-slate-600">
-              We establish clarity early and keep stakeholders aligned with weekly updates and decision logs.
+              We align early, keep feedback tight, and deliver assets your team can launch immediately.
             </p>
             <ul className="mt-4 grid gap-2 text-sm text-slate-600">
               {outcomes.map((o) => (
@@ -58,15 +58,15 @@ export default function FeaturesPage() {
             </ul>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-base font-semibold">Specialist pods</h3>
+            <h3 className="text-base font-semibold">Studio pods</h3>
             <p className="mt-2 text-sm text-slate-600">
-              Assemble a custom pod of strategists, designers, and delivery leads based on your scope.
+              Assemble a custom pod of strategists, designers, and developers based on your scope.
             </p>
             <div className="mt-4 grid gap-2 text-sm text-slate-600">
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Strategy lead</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Delivery manager</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Data and AI specialists</div>
-              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Product and design</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Brand strategist</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Design lead</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Front-end engineering</div>
+              <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Content designer</div>
             </div>
           </div>
         </div>

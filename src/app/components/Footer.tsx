@@ -17,7 +17,7 @@ export default function Footer() {
 							</div>
 						</div>
 						<p className="mt-4 text-sm muted">
-							Partnering with leaders to align strategy, unlock growth, and deliver measurable results.
+							A design-led studio helping ambitious teams deliver brands, products, and digital experiences.
 						</p>
 					</div>
 
@@ -47,8 +47,8 @@ export default function Footer() {
 						<div className="font-semibold text-slate-900">Quick links</div>
 						<div className="mt-2 grid gap-2 muted">
 							<Link className="hover:text-slate-900" href="/services">Services</Link>
-							<Link className="hover:text-slate-900" href="/features">Expertise</Link>
-							<Link className="hover:text-slate-900" href="/pricing">Engagements</Link>
+							<Link className="hover:text-slate-900" href="/features">Studio</Link>
+							<Link className="hover:text-slate-900" href="/pricing">Plans</Link>
 							<Link className="hover:text-slate-900" href="/careers">Careers</Link>
 							<Link className="hover:text-slate-900" href="/coverage">Locations</Link>
 							<Link className="hover:text-slate-900" href="/contact">Contact</Link>
@@ -57,9 +57,9 @@ export default function Footer() {
 				</div>
 
 				<div className="flex flex-col gap-2 border-t border-slate-200 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-					<div>© {new Date().getFullYear()} {site.name}. All rights reserved.</div>
+					<div>(c) {new Date().getFullYear()} {site.name}. All rights reserved.</div>
 					<div className="max-w-2xl muted">
-						All services are tailored to your goals and delivered by senior advisors and delivery teams.
+						Every engagement is tailored to your goals with a senior-led team and clear delivery milestones.
 					</div>
 				</div>
 			</Container>

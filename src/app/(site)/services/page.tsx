@@ -7,7 +7,7 @@ import { site } from "../../lib/site";
  
 export const metadata: Metadata = {
   title: "Services",
-  description: `Professional services delivered by ${site.name}.`,
+  description: `Studio services delivered by ${site.name}.`,
 };
  
 export default function ServicesPage() {
@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
         <h1 className="text-3xl font-bold tracking-tight">Services</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          We tailor every engagement to your goals and connect strategy with delivery so you can scale what works.
+          A full-service studio covering brand, product, and web experiences with a cohesive style system.
         </p>
  
         <div className="mt-10">

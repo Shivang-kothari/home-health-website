@@ -10,6 +10,7 @@ export async function POST(req: Request) {
     const phone = String(body?.phone || "").trim();
     const focus = String(body?.focus || "").trim();
     const budget = String(body?.budget || "").trim();
+    const style = String(body?.style || "").trim();
     const message = String(body?.message || "").trim();
 
     if (!name || !email || !message) {
@@ -54,7 +55,7 @@ export async function POST(req: Request) {
       toEmail = testAccount.user; // send to the test inbox
     }
  
-    const subject = `New consultation request - ${name}`;
+    const subject = `New studio brief - ${name}`;
     const text = [
       `Name: ${name}`,
       `Email: ${email || "-"}`,
@@ -62,6 +63,7 @@ export async function POST(req: Request) {
       `Phone: ${phone || "-"}`,
       `Project focus: ${focus || "-"}`,
       `Budget: ${budget || "-"}`,
+      `Style references: ${style || "-"}`,
       "",
       message,
     ].join("\n");

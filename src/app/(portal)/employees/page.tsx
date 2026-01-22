@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Digital Experience Refresh", role: "Design", status: "In progress" },
-  { id: "2", name: "Operations Transformation", role: "Strategy", status: "Discovery" },
-  { id: "3", name: "Analytics Enablement", role: "Data", status: "Active" },
+  { id: "1", name: "Brand System Refresh", role: "Brand", status: "In progress" },
+  { id: "2", name: "Product Onboarding Flow", role: "Product", status: "Discovery" },
+  { id: "3", name: "Marketing Site Launch", role: "Web", status: "Active" },
 ];
  
 export default function EmployeesPage() {
@@ -14,7 +14,7 @@ export default function EmployeesPage() {
           <h1 className="text-2xl font-bold tracking-tight">Projects</h1>
           <p className="mt-2 text-sm text-slate-600">Track project status, owners, and delivery updates.</p>
         </div>
-        <button className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500">
+        <button className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">
           New project
         </button>
       </div>
