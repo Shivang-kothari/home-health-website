@@ -167,6 +167,22 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-relaxed text-slate-600">
+            <p>
+              Home health operations move fast. When staff profiles, credential status, and required documents live in different places,
+              teams lose time—and risk missing critical deadlines. This platform centralizes the information that schedulers, admins, and
+              managers need every day.
+            </p>
+            <p>
+              Workflows are designed to be repeatable: onboarding checklists, document collection, and compliance review steps are clear and
+              consistent across the team. Instead of chasing updates, you can see what’s missing, what’s expiring, and what’s ready.
+            </p>
+            <p>
+              When it’s time to run payroll or reporting, exports are structured and predictable—reducing corrections and manual spreadsheet work.
+              The goal is simple: fewer surprises, faster onboarding, and calm operations.
+            </p>
+          </div>
         </Container>
       </section>
 
