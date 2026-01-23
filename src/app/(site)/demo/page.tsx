@@ -17,7 +17,7 @@ export default function DemoPage() {
           </div>
 
           <div>
-            <ContactForm variant="plain" />
+            <ContactForm variant="simple" />
           </div>
         </div>
       </Container>

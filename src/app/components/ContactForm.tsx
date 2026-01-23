@@ -13,7 +13,7 @@ type FormState = {
 };
  
 type Props = {
-  variant?: "default" | "plain";
+  variant?: "default" | "simple";
 };
 
 export default function ContactForm({ variant = "default" }: Props) {
@@ -52,13 +52,13 @@ export default function ContactForm({ variant = "default" }: Props) {
     <form
       onSubmit={onSubmit}
       className={
-        variant === "plain"
-          ? "grid gap-6 rounded-2xl border border-black/10 bg-white p-6"
+        variant === "simple"
+          ? "card grid gap-6 p-6"
           : "card grid gap-6 p-6"
       }
     >
-      <div className={`grid gap-6 items-start ${variant === "plain" ? "" : "lg:grid-cols-2"}`}>
-        {variant === "plain" ? null : (
+      <div className={`grid gap-6 items-start ${variant === "simple" ? "" : "lg:grid-cols-2"}`}>
+        {variant === "simple" ? null : (
           <div className="hidden lg:block">
             <div className="p-4">
               <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
@@ -73,7 +73,7 @@ export default function ContactForm({ variant = "default" }: Props) {
             className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.name}
             onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
-            placeholder={variant === "plain" ? "" : "Jane Doe"}
+            placeholder={variant === "simple" ? "" : "Jane Doe"}
             required
           />
         </label>
@@ -84,7 +84,7 @@ export default function ContactForm({ variant = "default" }: Props) {
             className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.phone}
             onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
-            placeholder={variant === "plain" ? "" : "(555) 123-4567"}
+            placeholder={variant === "simple" ? "" : "(555) 123-4567"}
           />
         </label>
           </div>
@@ -97,7 +97,7 @@ export default function ContactForm({ variant = "default" }: Props) {
           className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.email}
           onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
-          placeholder={variant === "plain" ? "" : "you@example.com"}
+          placeholder={variant === "simple" ? "" : "you@example.com"}
           required
         />
       </label>
@@ -127,7 +127,7 @@ export default function ContactForm({ variant = "default" }: Props) {
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
           placeholder={
-            variant === "plain"
+            variant === "simple"
               ? ""
               : "Tell us your team size, what you use today, and what you’d like to improve."
           }

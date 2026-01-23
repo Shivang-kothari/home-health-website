@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "../../components/Container";
 import ContactForm from "../../components/ContactForm";
 import { site } from "../../lib/site";
@@ -15,11 +14,7 @@ export default function ContactPage() {
   return (
     <section className="py-14">
       <Container>
-        <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/contact-hero.svg" alt="Contact" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
-        </div>
-
-        <h1 className="mt-10 text-slate-900">Contact</h1>
+        <h1 className="text-slate-900">Contact</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
           Tell us what you’re trying to improve. We’ll respond with next steps and a suggested demo agenda.
         </p>
@@ -74,7 +69,7 @@ export default function ContactPage() {
           </div>
  
           <Reveal delayMs={80}>
-            <ContactForm />
+            <ContactForm variant="simple" />
           </Reveal>
         </div>
       </Container>
