@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import HeaderNav from "./HeaderNav";
+import ThemeButton from "./ThemeButton";
 import ButtonLink from "./ButtonLink";
 import { site } from "../lib/site";
 
@@ -22,6 +23,7 @@ export default function Header() {
 
 					<div className="flex items-center gap-2">
 						<div className="hidden items-center gap-2 md:flex">
+							<ThemeButton />
 							<ButtonLink href="/demo" variant="primary" className="btn-demo">
 								{site.ctaPrimary}
 							</ButtonLink>
