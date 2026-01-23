@@ -18,21 +18,22 @@ export default function AboutPage() {
 
         <h1 className="text-3xl font-bold tracking-tight">About {site.name}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
-          {site.name} was built for HR teams who need fewer spreadsheets and more automation.
-          We combine employee data, workflows, and payroll-ready exports so HR can focus on people.
+          {site.name} is built for HR teams who need trusted data, consistent workflows, and a platform
+          that scales with the business. We bring HR, payroll, and people insights together so teams can
+          operate with confidence.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">Our mission</div>
             <p className="mt-2 text-sm text-slate-600">
-              Help HR teams scale by automating repetitive work and providing trusted people data.
+              Help HR teams scale by automating core processes and delivering reliable people data.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">How we work</div>
             <p className="mt-2 text-sm text-slate-600">
-              We listen to HR problems, prioritize secure integrations, and iterate quickly with customers.
+              We partner closely with HR leaders, prioritize secure integrations, and iterate quickly.
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">

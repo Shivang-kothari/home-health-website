@@ -1,12 +1,42 @@
 import { NextResponse } from 'next/server';
 
 const items = [
-  { key: 'nursing', title: 'Skilled Nursing', desc: 'Medication management, wound care, chronic condition monitoring, education, and coordination.', icon: '/icons/service-nursing.svg' },
-  { key: 'pt', title: 'Physical Therapy (PT)', desc: 'Strength, balance, mobility training, fall-risk reduction, and recovery planning.', icon: '/icons/service-therapy.svg' },
-  { key: 'ot', title: 'Occupational Therapy (OT)', desc: 'Activities of daily living, safety at home, energy conservation, and adaptive strategies.', icon: '/icons/service-therapy.svg' },
-  { key: 'st', title: 'Speech Therapy (ST)', desc: 'Swallowing, communication, cognition support, and personalized therapy plans.', icon: '/icons/service-therapy.svg' },
-  { key: 'aide', title: 'Home Health Aide', desc: 'Support with hygiene, light assistance, and comfort measures under a care plan.', icon: '/icons/service-nursing.svg' },
-  { key: 'social', title: 'Medical Social Work', desc: 'Resources, care navigation, and support for patients and families.', icon: '/icons/service-therapy.svg' },
+  {
+    key: "implementation",
+    title: "Implementation & onboarding",
+    desc: "Project planning, configuration, and launch support tailored to your workflows.",
+    icon: "/file.svg",
+  },
+  {
+    key: "migration",
+    title: "Data migration",
+    desc: "Clean imports, field mapping, and validation for a smooth transition.",
+    icon: "/file.svg",
+  },
+  {
+    key: "integrations",
+    title: "Payroll & benefits integrations",
+    desc: "Connect payroll, benefits, and accounting systems with reliable exports.",
+    icon: "/globe.svg",
+  },
+  {
+    key: "security",
+    title: "Security & access review",
+    desc: "Role-based access, audit readiness, and secure identity setup.",
+    icon: "/globe.svg",
+  },
+  {
+    key: "training",
+    title: "Training & change management",
+    desc: "Enable HR teams and managers with live sessions and documentation.",
+    icon: "/file.svg",
+  },
+  {
+    key: "success",
+    title: "Ongoing success & support",
+    desc: "Dedicated support, success check-ins, and continuous optimization.",
+    icon: "/file.svg",
+  },
 ];
 
 export async function GET() {

@@ -2,9 +2,11 @@
  
 import { useState } from "react";
 import Image from "next/image";
+import { site } from "../lib/site";
  
 type FormState = {
   name: string;
+  company: string;
   phone: string;
   email: string;
   profession?: string;
@@ -12,7 +14,14 @@ type FormState = {
 };
  
 export default function ContactForm() {
-  const [state, setState] = useState<FormState>({ name: "", phone: "", email: "", profession: "", message: "" });
+  const [state, setState] = useState<FormState>({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    profession: "",
+    message: "",
+  });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -35,7 +44,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(data?.error || "Failed to send.");
  
       setStatus("sent");
-      setState({ name: "", phone: "", email: "", profession: "", message: "" });
+      setState({ name: "", company: "", phone: "", email: "", profession: "", message: "" });
       setPreviewUrl(data?.previewUrl || null);
     } catch (err: any) {
       setStatus("error");
@@ -53,54 +62,66 @@ export default function ContactForm() {
         </div>
         <div>
           <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-1 text-sm">
-          <span className="font-medium text-slate-900">Name</span>
-          <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-            value={state.name}
-            onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
-            placeholder="Jane Doe"
-            required
-          />
-        </label>
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Name</span>
+              <input
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+                value={state.name}
+                onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
+                placeholder="Jane Doe"
+                required
+              />
+            </label>
  
-        <label className="grid gap-1 text-sm">
-          <span className="font-medium text-slate-900">Phone</span>
-          <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-            value={state.phone}
-            onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
-            placeholder="(555) 123-4567"
-          />
-        </label>
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Company</span>
+              <input
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+                value={state.company}
+                onChange={(e) => setState((s) => ({ ...s, company: e.target.value }))}
+                placeholder="Acme Inc."
+              />
+            </label>
+ 
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Email</span>
+              <input
+                type="email"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+                value={state.email}
+                onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
+                placeholder="you@company.com"
+              />
+            </label>
+ 
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Phone</span>
+              <input
+                type="tel"
+                className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+                value={state.phone}
+                onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
+                placeholder="(555) 123-4567"
+              />
+            </label>
           </div>
         </div>
       </div>
  
       <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Email</span>
-        <input
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-          value={state.email}
-          onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
-          placeholder="you@example.com"
-        />
-      </label>
- 
-      <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Profession</span>
+        <span className="font-medium text-slate-900">Role / Department</span>
         <select
           className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.profession}
           onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
         >
           <option value="">Select...</option>
-          <option>Patient / Client</option>
-          <option>Family Member</option>
-          <option>Caregiver</option>
-          <option>Nurse</option>
-          <option>Physician</option>
-          <option>Agency / Organization</option>
+          <option>HR / People Operations</option>
+          <option>Payroll</option>
+          <option>Finance</option>
+          <option>IT / Security</option>
+          <option>Operations</option>
+          <option>Executive / Founder</option>
           <option>Other</option>
         </select>
       </label>
@@ -111,7 +132,7 @@ export default function ContactForm() {
           className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us what services you need, your preferred start date, and your city."
+          placeholder="Tell us your team size, current HR tools, and timeline."
           required
         />
       </label>
@@ -122,14 +143,16 @@ export default function ContactForm() {
           disabled={status === "sending"}
           className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 disabled:opacity-60 shadow-sm"
         >
-          {status === "sending" ? "Sending..." : "Send Message"}
+          {status === "sending" ? "Sending..." : "Send request"}
         </button>
-        <div className="text-sm muted">Prefer a call? <a href={"tel:" + (typeof window !== 'undefined' ? window.location.host : '')}>Call us</a></div>
+        <div className="text-sm muted">
+          Prefer a call? <a href={site.phoneHref}>{site.phone}</a>
+        </div>
       </div>
  
       {status === "sent" && (
         <div className="grid gap-2">
-          <p className="text-sm text-teal-700">Message sent.</p>
+          <p className="text-sm text-teal-700">Thanks for reaching out. We will respond shortly.</p>
           {previewUrl && (
             <a className="text-sm text-slate-700 underline" href={previewUrl} target="_blank" rel="noreferrer">
               View test email (Ethereal preview)

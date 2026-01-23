@@ -5,6 +5,7 @@ export async function POST(req: Request) {
     const body = await req.json().catch(() => null);
  
     const name = String(body?.name || "").trim();
+    const company = String(body?.company || "").trim();
     const phone = String(body?.phone || "").trim();
     const email = String(body?.email || "").trim();
     const profession = String(body?.profession || "").trim();
@@ -52,10 +53,11 @@ export async function POST(req: Request) {
       toEmail = testAccount.user; // send to the test inbox
     }
  
-    const subject = `New website inquiry — ${name}`;
+    const subject = `New website inquiry - ${name}`;
     const text = [
       `Name: ${name}`,
-      `Profession: ${profession || "-"}`,
+      `Company: ${company || "-"}`,
+      `Role/Department: ${profession || "-"}`,
       `Phone: ${phone || "-"}`,
       `Email: ${email || "-"}`,
       "",

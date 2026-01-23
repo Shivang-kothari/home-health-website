@@ -4,19 +4,24 @@ import { useMemo, useState } from "react";
 
 export default function CoverageSearch({ areas }: { areas: string[] }) {
   const [query, setQuery] = useState("");
-  const [zip, setZip] = useState("");
+  const [region, setRegion] = useState("");
 
   const filtered = useMemo(() => {
-    const q = (query + ' ' + zip).trim().toLowerCase();
+    const q = (query + " " + region).trim().toLowerCase();
     if (!q) return areas;
     return areas.filter((a) => a.toLowerCase().includes(q));
-  }, [areas, query, zip]);
+  }, [areas, query, region]);
 
   return (
     <div className="mt-6">
       <div className="flex gap-3">
-        <input className="flex-1 rounded-lg border px-3 py-2" placeholder="Search town or ZIP" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <input className="w-32 rounded-lg border px-3 py-2" placeholder="ZIP" value={zip} onChange={(e) => setZip(e.target.value)} />
+        <input
+          className="flex-1 rounded-lg border px-3 py-2"
+          placeholder="Search country, state, or city"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <input className="w-32 rounded-lg border px-3 py-2" placeholder="Region" value={region} onChange={(e) => setRegion(e.target.value)} />
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

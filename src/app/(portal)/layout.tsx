@@ -10,7 +10,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     <div className="min-h-dvh bg-slate-50">
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="font-semibold">Home Health • HR Portal</div>
+          <div className="font-semibold">HRMS Suite | Admin Portal</div>
           <Link className="text-sm text-slate-600 hover:text-slate-900" href="/login">Sign out</Link>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function ContactPage() {
 
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Tell us what you need and where you’re located. We’ll respond as soon as possible.
+          Tell us about your team and goals. We will respond with next steps and a tailored walkthrough.
         </p>
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">

@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Ava Johnson", role: "RN", status: "Active" },
-  { id: "2", name: "Noah Patel", role: "HHA", status: "Active" },
-  { id: "3", name: "Mia Chen", role: "PT", status: "Inactive" },
+  { id: "1", name: "Ava Johnson", role: "People Operations Manager", status: "Active" },
+  { id: "2", name: "Noah Patel", role: "Payroll Specialist", status: "Active" },
+  { id: "3", name: "Mia Chen", role: "Product Designer", status: "Inactive" },
 ];
  
 export default function EmployeesPage() {
@@ -12,7 +12,7 @@ export default function EmployeesPage() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Employees</h1>
-          <p className="mt-2 text-sm text-slate-600">Manage staff, credentials, and documents.</p>
+          <p className="mt-2 text-sm text-slate-600">Manage employee records, roles, and status changes.</p>
         </div>
         <button className="rounded-xl bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500">
           Add employee
@@ -34,7 +34,7 @@ export default function EmployeesPage() {
       </div>
  
       <p className="mt-4 text-xs text-slate-500">
-        Next step: load employees from your backend `/api/users` and replace mock data.
+        Demo data shown for illustration purposes.
       </p>
     </div>
   );
