@@ -53,7 +53,7 @@ export default function ContactForm({ variant = "default" }: Props) {
       onSubmit={onSubmit}
       className={
         variant === "simple"
-          ? "card grid gap-6 p-6"
+          ? "grid gap-6 rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
           : "card grid gap-6 p-6"
       }
     >

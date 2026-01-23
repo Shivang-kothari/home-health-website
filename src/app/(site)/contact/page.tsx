@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Container from "../../components/Container";
 import ContactForm from "../../components/ContactForm";
 import { site } from "../../lib/site";
-import Card from "../../components/Card";
 import Reveal from "../../components/Reveal";
  
 export const metadata: Metadata = {
@@ -22,7 +21,7 @@ export default function ContactPage() {
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <Reveal>
-              <Card className="p-6">
+              <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">Direct</div>
                 <div className="mt-3 grid gap-3 text-sm text-slate-700">
                   <div>
@@ -46,11 +45,11 @@ export default function ContactPage() {
                     )}
                   </div>
                 </div>
-              </Card>
+              </div>
             </Reveal>
  
             <Reveal delayMs={120}>
-              <Card className="p-6">
+              <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">Office & hours</div>
                 <div className="mt-3 grid gap-3 text-sm text-slate-700">
                   <div>
@@ -64,7 +63,7 @@ export default function ContactPage() {
                     <div className="mt-1 text-slate-600">{site.hoursLines.map((l) => <div key={l}>{l}</div>)}</div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </Reveal>
           </div>
  
