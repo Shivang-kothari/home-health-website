@@ -12,7 +12,7 @@ export default function DemoPage() {
 
             <div className="mt-6 space-y-4 text-sm text-slate-600">
               <div><strong>What to expect</strong><br/>A 30-minute walkthrough, sample data, and integration discussion.</div>
-              <div><strong>Availability</strong><br/>Weekdays 9am–6pm. We'll confirm a specific time after you request a demo.</div>
+              <div><strong>Availability</strong><br/>Weekdays 9am–6pm. We&apos;ll confirm a specific time after you request a demo.</div>
             </div>
           </div>
 

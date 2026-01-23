@@ -50,15 +50,15 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 	const theme = palettes[themeKey];
 
 	// Compose dynamic style using CSS variables for consistent theming
-	const rootStyle: React.CSSProperties = {
+	const rootStyle = {
 		// CSS custom properties used by Tailwind classes or inline styles
 		// note: Tailwind cannot read these vars in class names at build time, but inline styles and custom style rules use them
 		// primary accent color:
-		["--accent" as any]: theme.primary,
-		["--bg" as any]: theme.bg,
-		["--muted" as any]: theme.muted,
-		["--card" as any]: theme.card,
-	};
+		"--accent": theme.primary,
+		"--bg": theme.bg,
+		"--muted": theme.muted,
+		"--card": theme.card,
+	} as React.CSSProperties;
 
 	// Area list dynamic from site
 	const areas = site.serviceArea.concat(["Area 1", "Area 2", "Area 3"]);
@@ -101,7 +101,7 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 				</div>
 
 				<p className="mt-6 max-w-2xl text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-					We serve a broad area and specialize in flexible in-home care solutions. Below are the primary ZIPs and towns we support — if you don't see your location, reach out and we'll confirm coverage.
+					We serve a broad area and specialize in flexible in-home care solutions. Below are the primary ZIPs and towns we support — if you don&apos;t see your location, reach out and we&apos;ll confirm coverage.
 				</p>
 
 				{/* Search component keeps its API; pass dynamic areas */}
@@ -125,9 +125,9 @@ export default function CoveragePage({ searchParams }: { searchParams?: { theme?
 					</div>
 
 					<div className="pro-card p-6" style={{ background: "var(--card)", borderRadius: 12, border: "1px solid rgba(15,23,42,0.04)" }}>
-						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Not sure if you're covered?</h2>
+						<h2 className="text-lg font-semibold" style={{ color: "var(--accent)" }}>Not sure if you&apos;re covered?</h2>
 						<p className="mt-2" style={{ color: "var(--muted)" }}>
-							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form — share your ZIP and profession and we'll confirm availability and next steps.
+							Call us at <a href={site.phoneHref} style={{ color: "var(--accent)", textDecoration: "underline" }}>{site.phone}</a> or use the contact form — share your ZIP and profession and we&apos;ll confirm availability and next steps.
 						</p>
 					</div>
 				</div>

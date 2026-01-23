@@ -37,9 +37,9 @@ export default function ContactForm() {
       setStatus("sent");
       setState({ name: "", phone: "", email: "", profession: "", message: "" });
       setPreviewUrl(data?.previewUrl || null);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setStatus("error");
-      setError(err?.message || "Failed to send.");
+      setError(err instanceof Error ? err.message : "Failed to send.");
     }
   }
  

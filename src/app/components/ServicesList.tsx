@@ -12,7 +12,7 @@ export default function ServicesList() {
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
+    // setLoading(true); // removed to avoid set-state-in-effect warning as it is already true
     fetch('/api/services')
       .then((r) => r.json())
       .then((data) => {

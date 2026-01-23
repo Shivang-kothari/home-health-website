@@ -73,7 +73,8 @@ export async function POST(req: Request) {
     const previewUrl = nodemailer.getTestMessageUrl(info) || null;
  
     return Response.json({ ok: true, previewUrl });
-  } catch (err: any) {
-    return Response.json({ ok: false, error: err?.message || "Failed to send message." }, { status: 500 });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : "Failed to send message.";
+    return Response.json({ ok: false, error: errorMessage }, { status: 500 });
   }
 }

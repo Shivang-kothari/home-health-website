@@ -3,22 +3,23 @@ import Image from "next/image";
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
 import ServicesList from "../../components/ServicesList";
+// import { site } from "../../lib/site"; // keeping site import if used elsewhere
 import { site } from "../../lib/site";
- 
+
 export const metadata: Metadata = {
   title: "Services",
   description: `Home health services offered by ${site.name}.`,
 };
- 
-const items = [
-  { key: 'nursing', title: "Skilled Nursing", desc: "Medication management, wound care, chronic condition monitoring, education, and coordination.", icon: "/icons/service-nursing.svg" },
-  { key: 'pt', title: "Physical Therapy (PT)", desc: "Strength, balance, mobility training, fall-risk reduction, and recovery planning.", icon: "/icons/service-therapy.svg" },
-  { key: 'ot', title: "Occupational Therapy (OT)", desc: "Activities of daily living, safety at home, energy conservation, and adaptive strategies.", icon: "/icons/service-therapy.svg" },
-  { key: 'st', title: "Speech Therapy (ST)", desc: "Swallowing, communication, cognition support, and personalized therapy plans.", icon: "/icons/service-therapy.svg" },
-  { key: 'aide', title: "Home Health Aide", desc: "Support with hygiene, light assistance, and comfort measures under a care plan.", icon: "/icons/service-nursing.svg" },
-  { key: 'social', title: "Medical Social Work", desc: "Resources, care navigation, and support for patients and families.", icon: "/icons/service-therapy.svg" },
-];
- 
+
+// const items = [
+//   { key: 'nursing', title: "Skilled Nursing", desc: "Medication management, wound care, chronic condition monitoring, education, and coordination.", icon: "/icons/service-nursing.svg" },
+//   { key: 'pt', title: "Physical Therapy (PT)", desc: "Strength, balance, mobility training, fall-risk reduction, and recovery planning.", icon: "/icons/service-therapy.svg" },
+//   { key: 'ot', title: "Occupational Therapy (OT)", desc: "Activities of daily living, safety at home, energy conservation, and adaptive strategies.", icon: "/icons/service-therapy.svg" },
+//   { key: 'st', title: "Speech Therapy (ST)", desc: "Swallowing, communication, cognition support, and personalized therapy plans.", icon: "/icons/service-therapy.svg" },
+//   { key: 'aide', title: "Home Health Aide", desc: "Support with hygiene, light assistance, and comfort measures under a care plan.", icon: "/icons/service-nursing.svg" },
+//   { key: 'social', title: "Medical Social Work", desc: "Resources, care navigation, and support for patients and families.", icon: "/icons/service-therapy.svg" },
+// ];
+
 export default function ServicesPage() {
   return (
     <section className="py-14">
