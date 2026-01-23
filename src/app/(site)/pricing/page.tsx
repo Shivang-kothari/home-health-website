@@ -1,37 +1,57 @@
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
 import { site } from "../../lib/site";
+import Card from "../../components/Card";
+import Reveal from "../../components/Reveal";
 
 const tiers = [
-  { name: "Starter", price: "$49", bullets: ["Up to 50 employees", "Basic HR records", "Email support"] },
-  { name: "Growth", price: "$199", bullets: ["Up to 500 employees", "Leave & attendance", "Payroll exports", "Priority support"] },
-  { name: "Enterprise", price: "Custom", bullets: ["Unlimited employees", "SLA & onboarding", "Custom integrations"] },
+  { name: "Starter", price: "$99", bullets: ["Up to 50 staff profiles", "Credential tracking", "Email support"] },
+  { name: "Growth", price: "$299", bullets: ["Up to 500 staff profiles", "Onboarding checklists", "Payroll exports", "Priority support"], featured: true },
+  { name: "Enterprise", price: "Custom", bullets: ["Unlimited staff profiles", "SLA & onboarding", "Custom workflows", "Advanced reporting"] },
 ];
 
 export default function PricingPage() {
   return (
     <section className="py-14">
       <Container>
-        <div className="flex items-end justify-between gap-6">
+        <div className="grid gap-6 md:grid-cols-2 md:items-end">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Pricing</h1>
-            <p className="mt-2 text-sm text-slate-600">Simple, transparent pricing. Contact us for custom enterprise terms.</p>
+            <h1 className="text-slate-900">Pricing</h1>
+            <p className="mt-3 text-sm text-slate-600">
+              Straightforward tiers for agencies of different sizes. Need something tailored? We’ll scope it with you.
+            </p>
           </div>
-          <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+          <div className="flex gap-3 md:justify-end">
+            <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
+          </div>
         </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {tiers.map((t) => (
-            <div key={t.name} className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-lg font-semibold">{t.name}</div>
-              <div className="mt-2 text-2xl font-bold">{t.price}</div>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                {t.bullets.map((b) => <li key={b}>• {b}</li>)}
-              </ul>
-              <div className="mt-4">
-                <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
-              </div>
-            </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {tiers.map((t, idx) => (
+            <Reveal key={t.name} delayMs={idx * 80}>
+              <Card className={`p-6 ${t.featured ? "ring-1 ring-black/10" : ""}`.trim()}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-base font-semibold text-slate-900">{t.name}</div>
+                    <div className="mt-2 text-3xl font-semibold text-slate-900">{t.price}</div>
+                  </div>
+                  {t.featured ? (
+                    <div className="rounded-full bg-[color:var(--brand-soft)] px-3 py-1 text-xs font-semibold text-slate-900">
+                      Popular
+                    </div>
+                  ) : null}
+                </div>
+                <ul className="mt-5 space-y-2 text-sm text-slate-600">
+                  {t.bullets.map((b) => <li key={b}>• {b}</li>)}
+                </ul>
+                <div className="mt-6">
+                  <ButtonLink href="/contact" variant={t.featured ? "primary" : "secondary"}>
+                    {t.featured ? site.ctaPrimary : site.ctaSecondary}
+                  </ButtonLink>
+                </div>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Container>

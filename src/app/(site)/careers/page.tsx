@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
 import { site } from "../../lib/site";
+import Card from "../../components/Card";
+import Reveal from "../../components/Reveal";
  
 export const metadata: Metadata = {
   title: "Careers",
@@ -12,9 +14,9 @@ export default function CareersPage() {
   return (
     <section className="py-14">
       <Container>
-        <h1 className="text-3xl font-bold tracking-tight">Careers</h1>
+        <h1 className="text-slate-900">Careers</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Join a team that values craft, customer empathy, and clear communication.
+          We’re building calm, reliable software for home health agencies. If you care about quality and clarity, we’d love to hear from you.
         </p>
  
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -25,13 +27,15 @@ export default function CareersPage() {
             "Implementation Specialist",
             "Security & Compliance Lead",
             "Technical Support Engineer",
-          ].map((role) => (
-            <div key={role} className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="font-semibold">{role}</div>
-              <p className="mt-2 text-sm text-slate-600">
-                We hire across product, engineering, customer success, and operations. Share your background and we’ll follow up if there’s a fit.
-              </p>
-            </div>
+          ].map((role, idx) => (
+            <Reveal key={role} delayMs={idx * 60}>
+              <Card className="p-6">
+                <div className="font-semibold text-slate-900">{role}</div>
+                <p className="mt-2 text-sm text-slate-600">
+                  Share your background and what you want to build. We’ll follow up if there’s a fit.
+                </p>
+              </Card>
+            </Reveal>
           ))}
         </div>
  

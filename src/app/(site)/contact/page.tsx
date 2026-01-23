@@ -3,6 +3,8 @@ import Image from "next/image";
 import Container from "../../components/Container";
 import ContactForm from "../../components/ContactForm";
 import { site } from "../../lib/site";
+import Card from "../../components/Card";
+import Reveal from "../../components/Reveal";
  
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,51 +19,63 @@ export default function ContactPage() {
           <Image src="/illustrations/contact-hero.svg" alt="Contact" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
         </div>
 
-        <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
+        <h1 className="mt-10 text-slate-900">Contact</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Tell us what you need and where you’re located. We’ll respond as soon as possible.
+          Tell us what you’re trying to improve. We’ll respond with next steps and a suggested demo agenda.
         </p>
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold">Call</div>
-              {site.phone && site.phoneHref ? (
-                <a className="mt-2 block text-sm text-[color:var(--brand)] hover:opacity-90" href={site.phoneHref}>
-                  {site.phone}
-                </a>
-              ) : (
-                <div className="mt-2 text-sm text-slate-600">Available on request</div>
-              )}
-              <div className="mt-4 text-sm font-semibold">Email</div>
-              {site.email && site.emailHref ? (
-                <a className="mt-2 block text-sm text-[color:var(--brand)] hover:opacity-90" href={site.emailHref}>
-                  {site.email}
-                </a>
-              ) : (
-                <div className="mt-2 text-sm text-slate-600">Available on request</div>
-              )}
-            </div>
+            <Reveal>
+              <Card className="p-6">
+                <div className="text-sm font-semibold text-slate-900">Direct</div>
+                <div className="mt-3 grid gap-3 text-sm text-slate-700">
+                  <div>
+                    <div className="text-xs font-semibold text-slate-600">Phone</div>
+                    {site.phone && site.phoneHref ? (
+                      <a className="mt-1 inline-block hover:opacity-90" href={site.phoneHref}>
+                        {site.phone}
+                      </a>
+                    ) : (
+                      <div className="mt-1 text-slate-600">Available on request</div>
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-slate-600">Email</div>
+                    {site.email && site.emailHref ? (
+                      <a className="mt-1 inline-block hover:opacity-90" href={site.emailHref}>
+                        {site.email}
+                      </a>
+                    ) : (
+                      <div className="mt-1 text-slate-600">Available on request</div>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            </Reveal>
  
-            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold">Office</div>
-              <div className="mt-2 text-sm text-slate-600">
-                {site.addressLines.length ? (
-                  site.addressLines.map((l) => <div key={l}>{l}</div>)
-                ) : (
-                  <div>Remote-first</div>
-                )}
-              </div>
-              <div className="mt-4 text-sm font-semibold">Hours</div>
-              <div className="mt-2 text-sm text-slate-600">
-                {site.hoursLines.map((l) => (
-                  <div key={l}>{l}</div>
-                ))}
-              </div>
-            </div>
+            <Reveal delayMs={120}>
+              <Card className="p-6">
+                <div className="text-sm font-semibold text-slate-900">Office & hours</div>
+                <div className="mt-3 grid gap-3 text-sm text-slate-700">
+                  <div>
+                    <div className="text-xs font-semibold text-slate-600">Office</div>
+                    <div className="mt-1 text-slate-600">
+                      {site.addressLines.length ? site.addressLines.map((l) => <div key={l}>{l}</div>) : <div>Remote-first</div>}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-slate-600">Hours</div>
+                    <div className="mt-1 text-slate-600">{site.hoursLines.map((l) => <div key={l}>{l}</div>)}</div>
+                  </div>
+                </div>
+              </Card>
+            </Reveal>
           </div>
  
-          <ContactForm />
+          <Reveal delayMs={80}>
+            <ContactForm />
+          </Reveal>
         </div>
       </Container>
     </section>
