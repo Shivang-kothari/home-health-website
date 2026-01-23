@@ -14,28 +14,28 @@ export default function ContactPage() {
     <section className="py-14">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/contact-hero.svg" alt="Contact" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
+          <Image src="/illustrations/hrms-portal.svg" alt="HealthHR portal" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Tell us what you need and where you’re located. We’ll respond as soon as possible.
+          Share your agency goals and timeline. We will respond within one business day.
         </p>
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-sm font-semibold">Call</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.phoneHref}>
+              <a className="mt-2 block text-sm text-sky-700 hover:text-sky-600" href={site.phoneHref}>
                 {site.phone}
               </a>
               <div className="mt-4 text-sm font-semibold">Email</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.emailHref}>
+              <a className="mt-2 block text-sm text-sky-700 hover:text-sky-600" href={site.emailHref}>
                 {site.email}
               </a>
             </div>
  
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
               <div className="text-sm font-semibold">Office</div>
               <div className="mt-2 text-sm text-slate-600">
                 {site.addressLines.map((l) => (
@@ -48,6 +48,27 @@ export default function ContactPage() {
                   <div key={l}>{l}</div>
                 ))}
               </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
+              <div className="text-sm font-semibold">What to include</div>
+              <ul className="mt-2 space-y-2 text-sm text-slate-600">
+                <li>Agency size and locations</li>
+                <li>Current HR or time tracking tools</li>
+                <li>Compliance needs</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
+              <div className="text-sm font-semibold">Portal preview</div>
+              <p className="mt-2 text-sm text-slate-600">See how caregivers and supervisors use HealthHR.</p>
+              <Image
+                src="/illustrations/services-hero.svg"
+                alt="HealthHR portal preview"
+                width={800}
+                height={360}
+                className="mt-4 w-full rounded-xl img-float"
+              />
             </div>
           </div>
  

@@ -16,6 +16,9 @@ export default function Footer() {
 								<p className="mt-1 text-sm muted">{site.tagline}</p>
 							</div>
 						</div>
+						<p className="mt-4 text-sm muted">
+							HealthHR helps home health agencies manage HR, time tracking, and compliance in one portal.
+						</p>
 					</div>
 
 					<div className="text-sm">
@@ -32,6 +35,11 @@ export default function Footer() {
 									<div key={l}>{l}</div>
 								))}
 							</div>
+							<div className="pt-2">
+								{site.hoursLines.map((l) => (
+									<div key={l}>{l}</div>
+								))}
+							</div>
 						</div>
 					</div>
 
@@ -39,17 +47,19 @@ export default function Footer() {
 						<div className="font-semibold text-slate-900">Quick links</div>
 						<div className="mt-2 grid gap-2 muted">
 							<Link className="hover:text-slate-900" href="/features">Features</Link>
+							<Link className="hover:text-slate-900" href="/services">Modules</Link>
 							<Link className="hover:text-slate-900" href="/pricing">Pricing</Link>
-							<Link className="hover:text-slate-900" href="/demo">Demo</Link>
+							<Link className="hover:text-slate-900" href="/coverage">Coverage</Link>
+							<Link className="hover:text-slate-900" href="/careers">Careers</Link>
 							<Link className="hover:text-slate-900" href="/contact">Contact</Link>
 						</div>
 					</div>
 				</div>
 
 				<div className="flex flex-col gap-2 border-t border-slate-200 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-					<div>© {new Date().getFullYear()} {site.name}. All rights reserved.</div>
+					<div>(c) {new Date().getFullYear()} {site.name}. All rights reserved.</div>
 					<div className="max-w-2xl muted">
-						Marketing site for your HRMS product. Replace placeholder content and confirm legal text.
+						HIPAA-aligned workflows with secure document storage and audit-ready reporting.
 					</div>
 				</div>
 			</Container>

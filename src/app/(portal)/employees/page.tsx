@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Ava Johnson", role: "RN", status: "Active" },
-  { id: "2", name: "Noah Patel", role: "HHA", status: "Active" },
-  { id: "3", name: "Mia Chen", role: "PT", status: "Inactive" },
+  { id: "1", name: "Mia Johnson", role: "RN", status: "Active" },
+  { id: "2", name: "Ethan Rivera", role: "HHA", status: "Active" },
+  { id: "3", name: "Lena Patel", role: "PT", status: "Inactive" },
 ];
  
 export default function EmployeesPage() {
@@ -11,15 +11,15 @@ export default function EmployeesPage() {
     <div>
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Employees</h1>
-          <p className="mt-2 text-sm text-slate-600">Manage staff, credentials, and documents.</p>
+          <h1 className="text-2xl font-bold tracking-tight">Staff</h1>
+          <p className="mt-2 text-sm text-slate-600">Manage caregivers, roles, and credential status.</p>
         </div>
-        <button className="rounded-xl bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500">
-          Add employee
+        <button className="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-500">
+          Add staff
         </button>
       </div>
  
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 card-surface">
         <div className="grid grid-cols-3 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
           <div>Name</div><div>Role</div><div>Status</div>
         </div>
@@ -34,7 +34,7 @@ export default function EmployeesPage() {
       </div>
  
       <p className="mt-4 text-xs text-slate-500">
-        Next step: load employees from your backend `/api/users` and replace mock data.
+        Next step: connect this list to your employee directory and credential records.
       </p>
     </div>
   );

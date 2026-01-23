@@ -10,9 +10,9 @@ export default function LoginPage() {
  
   return (
     <div className="min-h-dvh bg-slate-50 flex items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h1 className="text-2xl font-bold tracking-tight">HR Portal Login</h1>
-        <p className="mt-2 text-sm text-slate-600">Sign in to manage employees & credentials.</p>
+      <div className="w-full max-w-md rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
+        <h1 className="text-2xl font-bold tracking-tight">Agency Portal Login</h1>
+        <p className="mt-2 text-sm text-slate-600">Sign in to manage staff, time, and compliance.</p>
  
         <div className="mt-6 grid gap-4">
           <label className="grid gap-1 text-sm">
@@ -27,10 +27,10 @@ export default function LoginPage() {
           </label>
  
           <button
-            className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+            className="rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-500"
             onClick={() => {
               // TEMP: mock auth
-              localStorage.setItem("hrms_session", JSON.stringify({ email, at: Date.now() }));
+              localStorage.setItem("portal_session", JSON.stringify({ email, at: Date.now() }));
               r.push("/portal/dashboard");
             }}
           >

@@ -13,33 +13,55 @@ export default function AboutPage() {
     <section className="py-14">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/about-hero.svg" alt="About" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
+          <Image src="/illustrations/about-hero.svg" alt="Home health HR portal" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight">About {site.name}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
-          {site.name} was built for HR teams who need fewer spreadsheets and more automation.
-          We combine employee data, workflows, and payroll-ready exports so HR can focus on people.
+          HealthHR is built for home health agencies that need a secure, compliant HR system without the complexity.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
             <div className="text-base font-semibold">Our mission</div>
             <p className="mt-2 text-sm text-slate-600">
-              Help HR teams scale by automating repetitive work and providing trusted people data.
+              Help agencies stay compliant and deliver care without admin overload.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
             <div className="text-base font-semibold">How we work</div>
             <p className="mt-2 text-sm text-slate-600">
-              We listen to HR problems, prioritize secure integrations, and iterate quickly with customers.
+              Secure-by-design software with guided onboarding and support.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
             <div className="text-base font-semibold">What to expect</div>
             <p className="mt-2 text-sm text-slate-600">
-              A reliable HR system that centralizes records, simplifies processes, and supports compliance.
+              A simple portal for HR, time, and compliance with clear reporting.
             </p>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="rounded-2xl border border-slate-200 p-6 shadow-sm card-surface">
+            <h2 className="text-lg font-semibold">Leadership team</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Our team blends healthcare operations, HR compliance, and product engineering.
+            </p>
+            <div className="mt-4 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+              <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Clinical operations</div>
+              <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">HR compliance</div>
+              <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Security and privacy</div>
+              <div className="rounded-xl border border-slate-200 px-4 py-3 card-surface">Product engineering</div>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-slate-200 p-6 card-surface">
+            <h3 className="text-base font-semibold">Operating principles</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              <li>Protect patient data with HIPAA-aligned workflows.</li>
+              <li>Design for caregivers first.</li>
+              <li>Make audits predictable and painless.</li>
+            </ul>
           </div>
         </div>
       </Container>

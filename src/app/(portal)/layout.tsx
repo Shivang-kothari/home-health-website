@@ -1,8 +1,8 @@
 import Link from "next/link";
  
 const nav = [
-  { href: "/portal/dashboard", label: "Dashboard" },
-  { href: "/portal/employees", label: "Employees" },
+  { href: "/portal/dashboard", label: "Overview" },
+  { href: "/portal/employees", label: "Staff" },
 ];
  
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
@@ -10,13 +10,13 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     <div className="min-h-dvh bg-slate-50">
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="font-semibold">Home Health • HR Portal</div>
+          <div className="font-semibold">HealthHR Agency Portal</div>
           <Link className="text-sm text-slate-600 hover:text-slate-900" href="/login">Sign out</Link>
         </div>
       </div>
  
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[220px_1fr] lg:px-8">
-        <aside className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <aside className="rounded-2xl border border-slate-200 p-4 shadow-sm card-surface">
           <div className="text-xs font-semibold text-slate-500">NAVIGATION</div>
           <nav className="mt-3 grid gap-1">
             {nav.map((n) => (
@@ -27,7 +27,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
           </nav>
         </aside>
  
-        <main className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <main className="rounded-2xl border border-slate-200 p-5 shadow-sm card-surface">
           {children}
         </main>
       </div>

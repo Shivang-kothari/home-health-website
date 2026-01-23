@@ -8,11 +8,21 @@ export default function DemoPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">Request a demo</h1>
-            <p className="mt-2 text-sm text-slate-600">Tell us about your needs and we’ll arrange a personalized walkthrough.</p>
+            <p className="mt-2 text-sm text-slate-600">
+              Tell us about your agency and we will tailor a HealthHR demo.
+            </p>
 
             <div className="mt-6 space-y-4 text-sm text-slate-600">
-              <div><strong>What to expect</strong><br/>A 30-minute walkthrough, sample data, and integration discussion.</div>
-              <div><strong>Availability</strong><br/>Weekdays 9am–6pm. We'll confirm a specific time after you request a demo.</div>
+              <div>
+                <strong>What to expect</strong>
+                <br />
+                A 30-minute walkthrough of onboarding, time tracking, and compliance workflows.
+              </div>
+              <div>
+                <strong>Availability</strong>
+                <br />
+                Weekdays 8:00am-6:00pm. We will confirm a specific time after your request.
+              </div>
             </div>
           </div>
 

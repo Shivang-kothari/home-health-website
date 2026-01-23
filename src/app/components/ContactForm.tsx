@@ -1,135 +1,223 @@
 "use client";
- 
+
 import { useState } from "react";
 import Image from "next/image";
- 
+import { site } from "../lib/site";
+
 type FormState = {
   name: string;
-  phone: string;
   email: string;
-  profession?: string;
+  company: string;
+  phone: string;
+  focus: string;
+  size: string;
+  state: string;
   message: string;
 };
- 
+
+const initialState: FormState = {
+  name: "",
+  email: "",
+  company: "",
+  phone: "",
+  focus: "",
+  size: "",
+  state: "",
+  message: "",
+};
+
 export default function ContactForm() {
-  const [state, setState] = useState<FormState>({ name: "", phone: "", email: "", profession: "", message: "" });
+  const [state, setState] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
- 
+  const fieldClass =
+    "rounded-xl border border-slate-200 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-sky-200 shadow-sm";
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
     setError("");
     setPreviewUrl(null);
- 
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(state),
       });
- 
+
       const data = await res.json().catch(() => ({}));
- 
+
       if (!res.ok) throw new Error(data?.error || "Failed to send.");
- 
+
       setStatus("sent");
-      setState({ name: "", phone: "", email: "", profession: "", message: "" });
+      setState(initialState);
       setPreviewUrl(data?.previewUrl || null);
     } catch (err: any) {
       setStatus("error");
       setError(err?.message || "Failed to send.");
     }
   }
- 
+
   return (
-    <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 elev-sm">
-      <div className="grid gap-6 lg:grid-cols-2 items-start">
-        <div className="hidden lg:block">
-          <div className="p-4">
-            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+    <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 p-6 elev-sm card-surface">
+      <div className="rounded-xl border border-slate-200 p-5 card-surface">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+          <div className="flex-1">
+            <div className="text-sm font-semibold text-slate-900">Send a request</div>
+            <p className="mt-1 text-sm text-slate-600">
+              Get a tailored demo covering HR onboarding, time tracking, and compliance workflows.
+            </p>
+            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">HIPAA-aligned</div>
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">1-day response</div>
+              <div className="rounded-lg border border-slate-200 px-3 py-2 card-surface">Guided onboarding</div>
+            </div>
+          </div>
+          <div className="w-full sm:w-40">
+            <Image src="/illustrations/contact-side.svg" alt="Home health support" width={240} height={240} className="w-full rounded-xl img-float" />
           </div>
         </div>
-        <div>
-          <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-1 text-sm">
-          <span className="font-medium text-slate-900">Name</span>
-          <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-            value={state.name}
-            onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
-            placeholder="Jane Doe"
-            required
-          />
-        </label>
- 
-        <label className="grid gap-1 text-sm">
-          <span className="font-medium text-slate-900">Phone</span>
-          <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-            value={state.phone}
-            onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
-            placeholder="(555) 123-4567"
-          />
-        </label>
+        <Image
+          src="/illustrations/services-hero.svg"
+          alt="HealthHR demo preview"
+          width={900}
+          height={320}
+          className="mt-4 w-full rounded-xl img-float"
+        />
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="rounded-xl border border-slate-200 p-4 card-surface">
+          <div className="text-sm font-semibold text-slate-900">Contact details</div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Name</span>
+              <input
+                className={fieldClass}
+                value={state.name}
+                onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
+                placeholder="Jane Doe"
+                required
+              />
+            </label>
+
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Work email</span>
+              <input
+                className={fieldClass}
+                value={state.email}
+                onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
+                placeholder="jane@company.com"
+                type="email"
+                required
+              />
+            </label>
+
+            <label className="grid gap-1 text-sm sm:col-span-2">
+              <span className="font-medium text-slate-900">Phone</span>
+              <input
+                className={fieldClass}
+                value={state.phone}
+                onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
+                placeholder="(555) 123-4567"
+                type="tel"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-slate-200 p-4 card-surface">
+          <div className="text-sm font-semibold text-slate-900">Agency details</div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1 text-sm sm:col-span-2">
+              <span className="font-medium text-slate-900">Agency</span>
+              <input
+                className={fieldClass}
+                value={state.company}
+                onChange={(e) => setState((s) => ({ ...s, company: e.target.value }))}
+                placeholder="Healthy Steps Home Care"
+              />
+            </label>
+
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Agency size</span>
+              <select
+                className={fieldClass}
+                value={state.size}
+                onChange={(e) => setState((s) => ({ ...s, size: e.target.value }))}
+              >
+                <option value="">Select a size</option>
+                <option>1-25 employees</option>
+                <option>26-100 employees</option>
+                <option>101-250 employees</option>
+                <option>250+ employees</option>
+              </select>
+            </label>
+
+            <label className="grid gap-1 text-sm">
+              <span className="font-medium text-slate-900">Service state</span>
+              <input
+                className={fieldClass}
+                value={state.state}
+                onChange={(e) => setState((s) => ({ ...s, state: e.target.value }))}
+                placeholder="e.g., Texas"
+              />
+            </label>
           </div>
         </div>
       </div>
- 
-      <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Email</span>
-        <input
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-          value={state.email}
-          onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
-          placeholder="you@example.com"
-        />
-      </label>
- 
-      <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Profession</span>
-        <select
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-          value={state.profession}
-          onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
-        >
-          <option value="">Select...</option>
-          <option>Patient / Client</option>
-          <option>Family Member</option>
-          <option>Caregiver</option>
-          <option>Nurse</option>
-          <option>Physician</option>
-          <option>Agency / Organization</option>
-          <option>Other</option>
-        </select>
-      </label>
 
-      <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">How can we help?</span>
-        <textarea
-          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
-          value={state.message}
-          onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us what services you need, your preferred start date, and your city."
-          required
-        />
-      </label>
- 
-      <div className="mt-2 flex items-center gap-3">
+      <div className="rounded-xl border border-slate-200 p-4 card-surface">
+        <div className="text-sm font-semibold text-slate-900">Needs</div>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <label className="grid gap-1 text-sm">
+            <span className="font-medium text-slate-900">Primary need</span>
+            <select
+              className={fieldClass}
+              value={state.focus}
+              onChange={(e) => setState((s) => ({ ...s, focus: e.target.value }))}
+            >
+              <option value="">Select a focus</option>
+              <option>HR and onboarding</option>
+              <option>Time and attendance</option>
+              <option>Compliance and audits</option>
+              <option>Credential tracking</option>
+              <option>Payroll exports</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label className="grid gap-1 text-sm sm:col-span-2">
+            <span className="font-medium text-slate-900">Tell us about your agency</span>
+            <textarea
+              className={`${fieldClass} min-h-28`}
+              value={state.message}
+              onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
+              placeholder="Share goals, timeline, and current tools."
+              required
+            />
+          </label>
+        </div>
+      </div>
+
+      <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-900 hover:bg-sky-200 disabled:opacity-60 shadow-sm border border-sky-200"
         >
-          {status === "sending" ? "Sending..." : "Send Message"}
+          {status === "sending" ? "Sending..." : "Send request"}
         </button>
-        <div className="text-sm muted">Prefer a call? <a href={"tel:" + (typeof window !== 'undefined' ? window.location.host : '')}>Call us</a></div>
+        <div className="text-sm muted">
+          Prefer a call? <a className="underline" href={site.phoneHref}>Call {site.phone}</a>
+        </div>
       </div>
- 
+
       {status === "sent" && (
         <div className="grid gap-2">
-          <p className="text-sm text-teal-700">Message sent.</p>
+          <p className="text-sm text-emerald-700">Request sent. Our team will respond within one business day.</p>
           {previewUrl && (
             <a className="text-sm text-slate-700 underline" href={previewUrl} target="_blank" rel="noreferrer">
               View test email (Ethereal preview)
@@ -137,7 +225,7 @@ export default function ContactForm() {
           )}
         </div>
       )}
- 
+
       {status === "error" && <p className="text-sm text-red-600">{error}</p>}
     </form>
   );
