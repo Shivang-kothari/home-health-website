@@ -17,6 +17,20 @@ const featureCards = [
   { title: "Role-based access", desc: "The right people see the right information—by default." },
 ];
 
+const details = [
+  { k: "Credential expirations", v: "Track license expirations and required renewals with a single source of truth." },
+  { k: "Document workflows", v: "Collect, verify, and store documents with consistent naming and audit trails." },
+  { k: "Staffing clarity", v: "Know who is eligible, available, and onboarded—before you build schedules." },
+  { k: "Payroll-ready outputs", v: "Export clean, structured data so payroll doesn’t become a monthly fire drill." },
+];
+
+const faqs = [
+  { q: "Is this built specifically for home health?", a: "Yes—our workflows are designed around staffing, credential tracking, and compliance needs common to home health agencies." },
+  { q: "Can we start small and expand later?", a: "Yes. Most teams start with staff records + compliance, then add onboarding workflows and exports as they scale." },
+  { q: "Do you support role-based access?", a: "Yes. You can restrict access by role so admins, managers, and schedulers only see what they need." },
+  { q: "How does the demo work?", a: "We’ll review your current process, map it to the product, and show reporting and exports with example data." },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -156,6 +170,60 @@ export default function HomePage() {
                 </Card>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <h2 className="text-slate-900">Details that matter day-to-day</h2>
+              <p className="mt-2 text-sm text-slate-600">
+                The product is built to reduce operational risk: fewer missing documents, fewer expired credentials, fewer last‑minute schedule changes.
+              </p>
+              <div className="mt-6 grid gap-3">
+                {details.map((d, idx) => (
+                  <Reveal key={d.k} delayMs={idx * 70}>
+                    <Card className="p-5">
+                      <div className="text-sm font-semibold text-slate-900">{d.k}</div>
+                      <p className="mt-2 text-sm text-slate-600">{d.v}</p>
+                    </Card>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-7">
+              <Card className="p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900">FAQ</div>
+                    <p className="mt-1 text-sm text-slate-600">Quick answers to common questions.</p>
+                  </div>
+                  <div className="rounded-xl bg-white/70 px-3 py-1 text-xs font-semibold text-slate-900 ring-1 ring-black/5">
+                    Clear & simple
+                  </div>
+                </div>
+
+                <div className="mt-5 grid gap-3">
+                  {faqs.map((f) => (
+                    <details
+                      key={f.q}
+                      className="group rounded-2xl border border-black/10 bg-white/60 px-4 py-3"
+                    >
+                      <summary className="cursor-pointer list-none text-sm font-semibold text-slate-900">
+                        <span className="inline-flex items-center justify-between gap-3">
+                          {f.q}
+                          <span className="text-slate-500 transition-transform duration-200 group-open:rotate-180">▾</span>
+                        </span>
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </Card>
+            </div>
           </div>
         </Container>
       </section>
