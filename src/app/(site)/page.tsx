@@ -84,7 +84,7 @@ export default function HomePage() {
                     ].map((x) => (
                       <div
                         key={x.t}
-                        className="rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur"
+                        className="mini-hover rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur"
                       >
                         <div className="font-semibold">{x.t}</div>
                         <div className="mt-1 text-slate-600">{x.d}</div>

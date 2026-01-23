@@ -6,7 +6,10 @@ import Reveal from "../../components/Reveal";
 
 const tiers = [
   { name: "Starter", price: "$99", bullets: ["Up to 50 staff profiles", "Credential tracking", "Email support"] },
+  { name: "Team", price: "$199", bullets: ["Up to 150 staff profiles", "Document vault", "Standard support"] },
   { name: "Growth", price: "$299", bullets: ["Up to 500 staff profiles", "Onboarding checklists", "Payroll exports", "Priority support"], featured: true },
+  { name: "Agency", price: "$499", bullets: ["Up to 1,500 staff profiles", "Compliance dashboard", "Advanced exports"] },
+  { name: "Multi‑site", price: "$899", bullets: ["Multiple locations", "Role-based access", "Operational reporting"] },
   { name: "Enterprise", price: "Custom", bullets: ["Unlimited staff profiles", "SLA & onboarding", "Custom workflows", "Advanced reporting"] },
 ];
 

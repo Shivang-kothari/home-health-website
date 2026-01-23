@@ -137,6 +137,20 @@ input, textarea, select {
   box-shadow: 0 0 0 4px var(--ring), var(--shadow);
 }
 
+/* Small hover-only effect (no color overlays) */
+.mini-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.mini-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 23, 42, 0.16);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mini-hover { transition: none; }
+  .mini-hover:hover { transform: none; }
+}
+
 /* Reveal animation */
 .reveal {
   opacity: 0;
