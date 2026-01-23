@@ -33,4 +33,7 @@ export const site = {
 
   ctaPrimary: process.env.NEXT_PUBLIC_SITE_CTA_PRIMARY || "Book a demo",
   ctaSecondary: process.env.NEXT_PUBLIC_SITE_CTA_SECONDARY || "Talk to sales",
+
+  // Home hero image (place the provided image at `public/illustrations/home-hero.png`)
+  homeHeroImage: process.env.NEXT_PUBLIC_HOME_HERO_IMAGE || "/illustrations/home-hero.png",
 };

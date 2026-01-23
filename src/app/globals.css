@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbfdfe; /* very light */
+  --background: #f8fafc; /* slate-50 */
   --surface: #ffffff;
   --muted: #6b7280;
-  --text: #07132a; /* dark text */
-  --brand: #0f766e; /* teal accent */
-  --accent: #f0fdfa; /* subtle card tint */
+  --text: #0b1220; /* deep slate */
+  --brand: #4f46e5; /* indigo */
+  --accent: #eef2ff; /* subtle indigo tint */
 }
 
 /* Force a light-only design: remove dark-mode overrides */
@@ -39,8 +39,8 @@ h2 { font-size: 1.25rem; }
 }
 
 .pro-card:focus-within {
-  border-color: rgba(15, 118, 110, 0.35);
-  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12), 0 10px 30px rgba(15, 23, 42, 0.08);
+  border-color: color-mix(in oklab, var(--brand) 35%, rgba(7, 19, 42, 0.12));
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 18%, transparent), 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -60,3 +60,34 @@ input, textarea, select {
 
 /* Subtle elevated shadow used for hero cards */
 .elev-sm { box-shadow: 0 6px 20px rgba(15,23,42,0.06); }
+
+/* Home hero image effects */
+.hero-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 20%, rgba(79, 70, 229, 0.18), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(99, 102, 241, 0.14), transparent 50%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+.hero-image {
+  animation: hero-float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes hero-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image { animation: none; }
+}

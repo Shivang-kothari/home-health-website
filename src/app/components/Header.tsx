@@ -46,7 +46,7 @@ export default function Header() {
 								{site.ctaPrimary}
 							</ButtonLink>
 							<details className="relative">
-								<summary className="list-none cursor-pointer rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-200 focus:ring-offset-2 focus:ring-offset-white">
+								<summary className="list-none cursor-pointer rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:ring-offset-2 focus:ring-offset-white">
 									Menu
 								</summary>
 								<div className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
@@ -63,7 +63,7 @@ export default function Header() {
 										<div className="my-2 border-t border-slate-200" />
 										<Link
 											href="/contact"
-											className="rounded-lg px-3 py-2 text-sm font-semibold text-teal-700 hover:bg-slate-50"
+											className="rounded-lg px-3 py-2 text-sm font-semibold text-indigo-700 hover:bg-slate-50"
 										>
 											{site.ctaSecondary}
 										</Link>

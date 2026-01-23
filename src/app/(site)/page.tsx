@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "../components/Container";
 import ButtonLink from "../components/ButtonLink";
 import { site } from "../lib/site";
@@ -14,18 +15,18 @@ const highlights = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
         <Container>
           <div className="grid gap-10 py-14 md:grid-cols-2 md:items-center md:py-20">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                HR • Payroll • Recruiting
+                Scheduling • Staffing • Payroll
               </p>
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Powerful HRMS for modern HR teams
+                A modern HRMS for home health teams
               </h1>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                Centralize HR, automate payroll, and make better people decisions with one intuitive platform.
+                Keep staff records, scheduling workflows, and payroll-ready reporting in one place—built for compliance and fast onboarding.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -40,8 +41,22 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="pro-card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="pro-card rounded-2xl bg-slate-900 px-5 py-4 text-white">
+            <div className="grid gap-6">
+              <div className="pro-card hero-media group rounded-3xl border border-slate-200 bg-white p-3 shadow-sm">
+                <div className="overflow-hidden rounded-2xl bg-white">
+                  <Image
+                    src={site.homeHeroImage}
+                    alt="Home health HRMS illustration"
+                    width={1400}
+                    height={900}
+                    priority
+                    className="hero-image h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+
+              <div className="pro-card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+                <div className="pro-card rounded-2xl bg-slate-900 px-5 py-4 text-white">
                 <div className="text-sm font-semibold">Quick snapshot</div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-200">
                   <li>• Employee records & org charts</li>
@@ -49,15 +64,16 @@ export default function HomePage() {
                   <li>• Payroll exports & tax reports</li>
                   <li>• Applicant tracking & onboarding</li>
                 </ul>
-              </div>
+                </div>
 
-              <div className="mt-6 grid gap-3">
-                {highlights.map((h) => (
-                  <div key={h.title} className="pro-card rounded-2xl border border-slate-200 p-4">
-                    <div className="text-sm font-semibold">{h.title}</div>
-                    <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
-                  </div>
-                ))}
+                <div className="mt-6 grid gap-3">
+                  {highlights.map((h) => (
+                    <div key={h.title} className="pro-card rounded-2xl border border-slate-200 p-4">
+                      <div className="text-sm font-semibold">{h.title}</div>
+                      <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
