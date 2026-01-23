@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
+import HeaderNav from "./HeaderNav";
 import ButtonLink from "./ButtonLink";
 import { site } from "../lib/site";
 
@@ -17,17 +18,7 @@ export default function Header() {
 						</div>
 					</Link>
 
-					<nav className="hidden items-center gap-6 md:flex">
-						{site.navLinks.map((item) => (
-							<Link
-								key={item.href}
-								href={item.href}
-								className="text-sm font-medium text-slate-700 hover:text-slate-900"
-							>
-								{item.label}
-							</Link>
-						))}
-					</nav>
+					<HeaderNav links={site.navLinks} />
 
 					<div className="flex items-center gap-2">
 						<div className="hidden items-center gap-2 md:flex">
