@@ -3,12 +3,30 @@ import Image from "next/image";
 import Container from "./Container";
 import { site } from "../lib/site";
 
+const productLinks = [
+	{ href: "/features", label: "Features" },
+	{ href: "/services", label: "Modules" },
+	{ href: "/pricing", label: "Pricing" },
+	{ href: "/demo", label: "Book a demo" },
+];
+
+const companyLinks = [
+	{ href: "/about", label: "About" },
+	{ href: "/careers", label: "Careers" },
+	{ href: "/contact", label: "Contact" },
+];
+
+const legalLinks = [
+	{ href: "/privacy", label: "Privacy" },
+	{ href: "/terms", label: "Terms" },
+];
+
 export default function Footer() {
 	return (
-		<footer className="mt-10 border-t border-black/10 bg-white/60 backdrop-blur">
+		<footer className="mt-14 border-t border-black/10 bg-white/60 backdrop-blur">
 			<Container>
 				<div className="grid gap-10 py-12 md:grid-cols-12">
-					<div className="md:col-span-5">
+					<div className="md:col-span-4">
 						<div className="flex items-center gap-3">
 							<Image src="/logo.svg" alt={site.name} width={34} height={34} className="rounded-xl ring-1 ring-black/5" />
 							<div>
@@ -16,42 +34,58 @@ export default function Footer() {
 								<p className="mt-1 text-sm text-slate-600">{site.tagline}</p>
 							</div>
 						</div>
-						<p className="mt-4 max-w-sm text-sm text-slate-600">
-							Professional tooling for home health agencies: staff records, compliance workflows, and payroll-ready exports.
-						</p>
+					</div>
+
+					<div className="md:col-span-5">
+						<div className="grid gap-8 sm:grid-cols-3">
+							<div>
+								<div className="text-sm font-semibold text-slate-900">Product</div>
+								<div className="mt-3 grid gap-2 text-sm text-slate-600">
+									{productLinks.map((l) => (
+										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+											{l.label}
+										</Link>
+									))}
+								</div>
+							</div>
+
+							<div>
+								<div className="text-sm font-semibold text-slate-900">Company</div>
+								<div className="mt-3 grid gap-2 text-sm text-slate-600">
+									{companyLinks.map((l) => (
+										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+											{l.label}
+										</Link>
+									))}
+								</div>
+							</div>
+
+							<div>
+								<div className="text-sm font-semibold text-slate-900">Legal</div>
+								<div className="mt-3 grid gap-2 text-sm text-slate-600">
+									{legalLinks.map((l) => (
+										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+											{l.label}
+										</Link>
+									))}
+								</div>
+							</div>
+						</div>
 					</div>
 
 					<div className="md:col-span-3">
 						<div className="text-sm font-semibold text-slate-900">Contact</div>
 						<div className="mt-3 space-y-2 text-sm text-slate-600">
-							{site.phone && site.phoneHref ? (
-								<a className="block hover:text-slate-900" href={site.phoneHref}>
-									{site.phone}
-								</a>
-							) : null}
 							{site.email && site.emailHref ? (
 								<a className="block hover:text-slate-900" href={site.emailHref}>
 									{site.email}
 								</a>
 							) : null}
-							{site.addressLines.length ? (
-								<div className="pt-1">
-									{site.addressLines.map((l) => (
-										<div key={l}>{l}</div>
-									))}
-								</div>
+							{site.phone && site.phoneHref ? (
+								<a className="block hover:text-slate-900" href={site.phoneHref}>
+									{site.phone}
+								</a>
 							) : null}
-						</div>
-					</div>
-
-					<div className="md:col-span-4">
-						<div className="text-sm font-semibold text-slate-900">Company</div>
-						<div className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
-							{site.footerLinks.map((l) => (
-								<Link key={l.href} className="hover:text-slate-900" href={l.href}>
-									{l.label}
-								</Link>
-							))}
 						</div>
 					</div>
 				</div>
