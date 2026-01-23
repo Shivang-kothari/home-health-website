@@ -15,29 +15,27 @@ const nav = [
 
 export default function Header() {
 	return (
-		<header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/95 backdrop-blur">
 			<Container>
 				<div className="flex min-h-16 items-center justify-between gap-4 py-3">
-					<Link href="/" className="flex items-center gap-3 font-bold tracking-tight">
-						<Image src="/logo.svg" alt={site.name} width={38} height={38} className="rounded-xl ring-1 ring-slate-200" />
-						<div className="hidden sm:flex flex-col">
+					<Link href="/" className="flex items-center gap-3 font-semibold tracking-tight">
+						<Image src="/logo.svg" alt={site.name} width={38} height={38} className="rounded-xl ring-1 ring-slate-200 bg-white" />
+						<div className="hidden sm:flex flex-col leading-tight">
 							<span className="text-lg">{site.name}</span>
-							<span className="text-xs text-slate-500">HIPAA-ready HR portal</span>
+							<span className="text-xs text-slate-500">HIPAA-compliant HRMS</span>
 						</div>
 					</Link>
 
-					<nav className="hidden items-center md:flex">
-						<div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 shadow-sm">
-							{nav.map((item) => (
-								<Link
-									key={item.href}
-									href={item.href}
-									className="rounded-full px-3 py-1 text-xs font-semibold text-slate-600 transition-colors hover:bg-sky-50 hover:text-sky-900"
-								>
-									{item.label}
-								</Link>
-							))}
-						</div>
+					<nav className="hidden items-center gap-6 md:flex">
+						{nav.map((item) => (
+							<Link
+								key={item.href}
+								href={item.href}
+								className="border-b-2 border-transparent px-1 text-sm font-medium text-slate-600 transition-colors hover:border-sky-500 hover:text-sky-900"
+							>
+								{item.label}
+							</Link>
+						))}
 					</nav>
 
 					<div className="flex items-center gap-2">

@@ -20,7 +20,7 @@ const stats = [
 ];
 
 const gallery = [
-  { title: "Caregiver portal", desc: "Mobile-friendly clock-in and daily notes.", image: "/illustrations/contact-hero.svg" },
+  { title: "Caregiver portal", desc: "Mobile-friendly clock-in and daily notes.", image: "/illustrations/hrms-portal.svg" },
   { title: "HR onboarding", desc: "Digital forms, policies, and e-signatures.", image: "/illustrations/about-hero.svg" },
   { title: "Compliance dashboard", desc: "Credential alerts and audit-ready reports.", image: "/illustrations/coverage-hero.svg" },
 ];
@@ -91,7 +91,7 @@ export default function HomePage() {
 
             <div className="glass-card rounded-3xl p-6">
               <Image
-                src="/illustrations/services-hero.svg"
+                src="/illustrations/hrms-portal.svg"
                 alt="HealthHR portal preview"
                 width={1200}
                 height={720}

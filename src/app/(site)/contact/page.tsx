@@ -14,7 +14,7 @@ export default function ContactPage() {
     <section className="py-14">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/contact-hero.svg" alt="Home health portal support" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
+          <Image src="/illustrations/hrms-portal.svg" alt="HealthHR portal" width={1200} height={360} className="w-full rounded-2xl shadow-sm img-float" />
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
