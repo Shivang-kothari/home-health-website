@@ -1,9 +1,9 @@
 import Link from "next/link";
  
 const mock = [
-  { id: "1", name: "Ava Johnson", role: "RN", status: "Active" },
-  { id: "2", name: "Noah Patel", role: "HHA", status: "Active" },
-  { id: "3", name: "Mia Chen", role: "PT", status: "Inactive" },
+  { id: "1", name: "Ava Johnson", role: "People Ops", status: "Active" },
+  { id: "2", name: "Noah Patel", role: "Software Engineer", status: "Active" },
+  { id: "3", name: "Mia Chen", role: "Finance", status: "Inactive" },
 ];
  
 export default function EmployeesPage() {
@@ -32,10 +32,6 @@ export default function EmployeesPage() {
           </Link>
         ))}
       </div>
- 
-      <p className="mt-4 text-xs text-slate-500">
-        Next step: load employees from your backend `/api/users` and replace mock data.
-      </p>
     </div>
   );
 }

@@ -42,6 +42,8 @@ export default function Footer() {
 							<Link className="hover:text-slate-900" href="/pricing">Pricing</Link>
 							<Link className="hover:text-slate-900" href="/demo">Demo</Link>
 							<Link className="hover:text-slate-900" href="/contact">Contact</Link>
+							<Link className="hover:text-slate-900" href="/privacy">Privacy</Link>
+							<Link className="hover:text-slate-900" href="/terms">Terms</Link>
 						</div>
 					</div>
 				</div>
@@ -49,7 +51,7 @@ export default function Footer() {
 				<div className="flex flex-col gap-2 border-t border-slate-200 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
 					<div>© {new Date().getFullYear()} {site.name}. All rights reserved.</div>
 					<div className="max-w-2xl muted">
-						Marketing site for your HRMS product. Replace placeholder content and confirm legal text.
+						Secure-by-default HR operations software. Built for growing teams that need reliable workflows and audit-ready reporting.
 					</div>
 				</div>
 			</Container>

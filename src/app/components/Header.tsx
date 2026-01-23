@@ -32,12 +32,45 @@ export default function Header() {
 					</nav>
 
 					<div className="flex items-center gap-2">
-						<ButtonLink href="/demo" variant="ghost">
-							{site.ctaPrimary}
-						</ButtonLink>
-						<ButtonLink href={site.phoneHref} variant="secondary">
-							{site.ctaSecondary}
-						</ButtonLink>
+						<div className="hidden items-center gap-2 md:flex">
+							<ButtonLink href="/demo" variant="primary">
+								{site.ctaPrimary}
+							</ButtonLink>
+							<ButtonLink href="/contact" variant="secondary">
+								{site.ctaSecondary}
+							</ButtonLink>
+						</div>
+
+						<div className="flex items-center gap-2 md:hidden">
+							<ButtonLink href="/demo" variant="primary">
+								{site.ctaPrimary}
+							</ButtonLink>
+							<details className="relative">
+								<summary className="list-none cursor-pointer rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-200 focus:ring-offset-2 focus:ring-offset-white">
+									Menu
+								</summary>
+								<div className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+									<nav className="grid p-2">
+										{nav.map((item) => (
+											<Link
+												key={item.href}
+												href={item.href}
+												className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+											>
+												{item.label}
+											</Link>
+										))}
+										<div className="my-2 border-t border-slate-200" />
+										<Link
+											href="/contact"
+											className="rounded-lg px-3 py-2 text-sm font-semibold text-teal-700 hover:bg-slate-50"
+										>
+											{site.ctaSecondary}
+										</Link>
+									</nav>
+								</div>
+							</details>
+						</div>
 					</div>
 				</div>
 			</Container>

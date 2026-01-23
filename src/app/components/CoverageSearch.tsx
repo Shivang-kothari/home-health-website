@@ -15,8 +15,18 @@ export default function CoverageSearch({ areas }: { areas: string[] }) {
   return (
     <div className="mt-6">
       <div className="flex gap-3">
-        <input className="flex-1 rounded-lg border px-3 py-2" placeholder="Search town or ZIP" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <input className="w-32 rounded-lg border px-3 py-2" placeholder="ZIP" value={zip} onChange={(e) => setZip(e.target.value)} />
+        <input
+          className="flex-1 rounded-lg border px-3 py-2"
+          placeholder="Search country, state, or province"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <input
+          className="w-32 rounded-lg border px-3 py-2"
+          placeholder="Code"
+          value={zip}
+          onChange={(e) => setZip(e.target.value)}
+        />
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

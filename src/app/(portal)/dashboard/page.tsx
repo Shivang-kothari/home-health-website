@@ -3,7 +3,7 @@ export default function DashboardPage() {
     <div>
       <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
       <p className="mt-2 text-sm text-slate-600">
-        Overview of onboarding, expiring credentials, and missing documents (placeholder).
+        A quick overview of onboarding, upcoming deadlines, and key tasks.
       </p>
  
       <div className="mt-6 grid gap-4 sm:grid-cols-3">

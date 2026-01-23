@@ -9,7 +9,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
  
       <h1 className="mt-3 text-2xl font-bold tracking-tight">Employee #{id}</h1>
       <p className="mt-2 text-sm text-slate-600">
-        This page will show profile fields + credentials + document uploads (placeholder).
+        Employee profile details, credentials, and documents.
       </p>
  
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -24,7 +24,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
  
         <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
           <div className="text-sm font-semibold">Documents</div>
-          <p className="mt-2 text-sm text-slate-700">Upload/view documents per credential (coming next).</p>
+          <p className="mt-2 text-sm text-slate-700">Upload and review employee documents.</p>
         </section>
       </div>
     </div>

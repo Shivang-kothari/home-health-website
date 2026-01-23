@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 
 const items = [
-  { key: 'nursing', title: 'Skilled Nursing', desc: 'Medication management, wound care, chronic condition monitoring, education, and coordination.', icon: '/icons/service-nursing.svg' },
-  { key: 'pt', title: 'Physical Therapy (PT)', desc: 'Strength, balance, mobility training, fall-risk reduction, and recovery planning.', icon: '/icons/service-therapy.svg' },
-  { key: 'ot', title: 'Occupational Therapy (OT)', desc: 'Activities of daily living, safety at home, energy conservation, and adaptive strategies.', icon: '/icons/service-therapy.svg' },
-  { key: 'st', title: 'Speech Therapy (ST)', desc: 'Swallowing, communication, cognition support, and personalized therapy plans.', icon: '/icons/service-therapy.svg' },
-  { key: 'aide', title: 'Home Health Aide', desc: 'Support with hygiene, light assistance, and comfort measures under a care plan.', icon: '/icons/service-nursing.svg' },
-  { key: 'social', title: 'Medical Social Work', desc: 'Resources, care navigation, and support for patients and families.', icon: '/icons/service-therapy.svg' },
+  { key: 'core-hr', title: 'Core HR', desc: 'Centralized employee records, documents, and audit trails with fast search.', icon: '/file.svg' },
+  { key: 'time-off', title: 'Time Off & Attendance', desc: 'Policies, approvals, balances, and shared team calendars.', icon: '/window.svg' },
+  { key: 'payroll', title: 'Payroll Exports', desc: 'Payroll-ready exports, validations, and reporting for accountants.', icon: '/globe.svg' },
+  { key: 'recruiting', title: 'Recruiting & Onboarding', desc: 'Applicant tracking, offers, onboarding checklists, and provisioning.', icon: '/file.svg' },
+  { key: 'performance', title: 'Performance', desc: 'Goals, reviews, and lightweight feedback cycles for managers.', icon: '/window.svg' },
+  { key: 'integrations', title: 'Integrations', desc: 'APIs and SSO support to connect your existing tools securely.', icon: '/globe.svg' },
 ];
 
 export async function GET() {

@@ -2,6 +2,7 @@
  
 import { useState } from "react";
 import Image from "next/image";
+import { site } from "../lib/site";
  
 type FormState = {
   name: string;
@@ -84,23 +85,24 @@ export default function ContactForm() {
           value={state.email}
           onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
           placeholder="you@example.com"
+          required
         />
       </label>
  
       <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Profession</span>
+        <span className="font-medium text-slate-900">Role</span>
         <select
           className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.profession}
           onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
         >
           <option value="">Select...</option>
-          <option>Patient / Client</option>
-          <option>Family Member</option>
-          <option>Caregiver</option>
-          <option>Nurse</option>
-          <option>Physician</option>
-          <option>Agency / Organization</option>
+          <option>HR / People Ops</option>
+          <option>Payroll</option>
+          <option>Operations</option>
+          <option>Finance</option>
+          <option>IT / Security</option>
+          <option>Executive leadership</option>
           <option>Other</option>
         </select>
       </label>
@@ -111,7 +113,7 @@ export default function ContactForm() {
           className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us what services you need, your preferred start date, and your city."
+          placeholder="Tell us your team size, what you use today, and what you’d like to improve."
           required
         />
       </label>
@@ -120,11 +122,16 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-700 disabled:opacity-60 shadow-sm"
         >
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
-        <div className="text-sm muted">Prefer a call? <a href={"tel:" + (typeof window !== 'undefined' ? window.location.host : '')}>Call us</a></div>
+        <div className="text-sm muted">
+          Prefer a call?{" "}
+          <a className="text-teal-700 hover:text-teal-600" href={site.phoneHref}>
+            Call us
+          </a>
+        </div>
       </div>
  
       {status === "sent" && (

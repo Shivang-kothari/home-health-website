@@ -29,8 +29,8 @@ export default function HomePage() {
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <ButtonLink href="/demo" variant="secondary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="primary">{site.ctaSecondary}</ButtonLink>
+                <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
               </div>
 
               <div className="mt-6 grid gap-2 text-xs text-slate-500 sm:grid-cols-3">
@@ -87,7 +87,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
                 <ButtonLink href="/demo" variant="secondary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="ghost">Contact Sales</ButtonLink>
+                <ButtonLink href="/contact" variant="ghost">{site.ctaSecondary}</ButtonLink>
               </div>
             </div>
           </div>
