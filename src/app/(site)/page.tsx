@@ -29,6 +29,10 @@ const faqs = [
   { q: "Can we start small and expand later?", a: "Yes. Most teams start with staff records + compliance, then add onboarding workflows and exports as they scale." },
   { q: "Do you support role-based access?", a: "Yes. You can restrict access by role so admins, managers, and schedulers only see what they need." },
   { q: "How does the demo work?", a: "We’ll review your current process, map it to the product, and show reporting and exports with example data." },
+  { q: "How long does onboarding take?", a: "Most teams can get started quickly. We’ll set up your workflows and import basic staff data, then iterate as your team adopts it." },
+  { q: "Can we export data for payroll?", a: "Yes. The product is designed around payroll-ready exports and structured reporting to reduce corrections." },
+  { q: "What about document storage and compliance?", a: "We support document collection and tracking with consistent records and visibility into what’s missing or expiring." },
+  { q: "Do you integrate with our existing tools?", a: "We’re integration-friendly. During the demo we’ll review your current stack and discuss the best way to connect or export data." },
 ];
 
 export default function HomePage() {
