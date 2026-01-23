@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           </p>
 
           <div className="mt-10 grid gap-6 text-sm text-slate-700">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">Information we collect</div>
               <p className="mt-2 text-slate-600">
                 When you request a demo or contact sales, we may collect your name, email address, phone number, role, and the message
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">How we use information</div>
               <p className="mt-2 text-slate-600">
                 We use your information to respond to your inquiry, schedule a demo, provide requested materials, and improve our
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">Contact</div>
               <p className="mt-2 text-slate-600">
                 Questions about privacy? Contact us at{" "}

@@ -18,7 +18,7 @@ export default function TermsPage() {
           </p>
 
           <div className="mt-10 grid gap-6 text-sm text-slate-700">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">Use of the website</div>
               <p className="mt-2 text-slate-600">
                 You may use this site to learn about {site.name} and to request information. You agree not to misuse the site or
@@ -26,14 +26,14 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">No warranties</div>
               <p className="mt-2 text-slate-600">
                 The site is provided “as is” without warranties of any kind. Product features and availability may change.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">Contact</div>
               <p className="mt-2 text-slate-600">
                 Questions about these terms? Contact{" "}

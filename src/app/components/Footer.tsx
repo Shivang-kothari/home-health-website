@@ -21,17 +21,23 @@ export default function Footer() {
 					<div className="text-sm">
 						<div className="font-semibold text-slate-900">Contact</div>
 						<div className="mt-2 space-y-1 muted">
-							<a className="block hover:text-slate-900" href={site.phoneHref}>
-								{site.phone}
-							</a>
-							<a className="block hover:text-slate-900" href={site.emailHref}>
-								{site.email}
-							</a>
-							<div className="pt-2">
-								{site.addressLines.map((l) => (
-									<div key={l}>{l}</div>
-								))}
-							</div>
+							{site.phone && site.phoneHref ? (
+								<a className="block hover:text-slate-900" href={site.phoneHref}>
+									{site.phone}
+								</a>
+							) : null}
+							{site.email && site.emailHref ? (
+								<a className="block hover:text-slate-900" href={site.emailHref}>
+									{site.email}
+								</a>
+							) : null}
+							{site.addressLines.length ? (
+								<div className="pt-2">
+									{site.addressLines.map((l) => (
+										<div key={l}>{l}</div>
+									))}
+								</div>
+							) : null}
 						</div>
 					</div>
 

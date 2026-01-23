@@ -26,7 +26,7 @@ export default function CareersPage() {
             "Security & Compliance Lead",
             "Technical Support Engineer",
           ].map((role) => (
-            <div key={role} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={role} className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">{role}</div>
               <p className="mt-2 text-sm text-slate-600">
                 We hire across product, engineering, customer success, and operations. Share your background and we’ll follow up if there’s a fit.

@@ -25,7 +25,7 @@ export default function FeaturesPage() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div key={f.title} className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="text-lg font-semibold">{f.title}</div>
               <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
             </div>

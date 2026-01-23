@@ -35,7 +35,7 @@ export default function CoveragePage() {
         <CoverageSearch areas={areas} />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">What “coverage” means</div>
             <p className="mt-2 text-sm text-slate-600">
               Coverage indicates where we support standardized workflows, reporting, and integrations. Requirements vary by region;
@@ -43,7 +43,7 @@ export default function CoveragePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">Need a new region?</div>
             <p className="mt-2 text-sm text-slate-600">
               Reach out at <a className="text-teal-700 hover:text-teal-600" href={site.emailHref}>{site.email}</a> and we’ll discuss

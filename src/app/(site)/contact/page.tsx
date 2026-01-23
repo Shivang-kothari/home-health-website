@@ -24,23 +24,33 @@ export default function ContactPage() {
  
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="text-sm font-semibold">Call</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.phoneHref}>
-                {site.phone}
-              </a>
+              {site.phone && site.phoneHref ? (
+                <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.phoneHref}>
+                  {site.phone}
+                </a>
+              ) : (
+                <div className="mt-2 text-sm text-slate-600">Available on request</div>
+              )}
               <div className="mt-4 text-sm font-semibold">Email</div>
-              <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.emailHref}>
-                {site.email}
-              </a>
+              {site.email && site.emailHref ? (
+                <a className="mt-2 block text-sm text-teal-700 hover:text-teal-600" href={site.emailHref}>
+                  {site.email}
+                </a>
+              ) : (
+                <div className="mt-2 text-sm text-slate-600">Available on request</div>
+              )}
             </div>
  
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="text-sm font-semibold">Office</div>
               <div className="mt-2 text-sm text-slate-600">
-                {site.addressLines.map((l) => (
-                  <div key={l}>{l}</div>
-                ))}
+                {site.addressLines.length ? (
+                  site.addressLines.map((l) => <div key={l}>{l}</div>)
+                ) : (
+                  <div>Remote-first</div>
+                )}
               </div>
               <div className="mt-4 text-sm font-semibold">Hours</div>
               <div className="mt-2 text-sm text-slate-600">

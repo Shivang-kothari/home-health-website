@@ -23,19 +23,19 @@ export default function AboutPage() {
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">Our mission</div>
             <p className="mt-2 text-sm text-slate-600">
               Help HR teams scale by automating repetitive work and providing trusted people data.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">How we work</div>
             <p className="mt-2 text-sm text-slate-600">
               We listen to HR problems, prioritize secure integrations, and iterate quickly with customers.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">What to expect</div>
             <p className="mt-2 text-sm text-slate-600">
               A reliable HR system that centralizes records, simplifies processes, and supports compliance.

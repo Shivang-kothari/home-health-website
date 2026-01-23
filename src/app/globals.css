@@ -24,7 +24,29 @@ body {
 h1 { font-size: 1.875rem; line-height: 1.1; }
 h2 { font-size: 1.25rem; }
 
-.pro-card { background: var(--surface); border: 1px solid rgba(7,19,42,0.06); border-radius: 14px; }
+.pro-card {
+  background: var(--surface);
+  border: 1px solid rgba(7,19,42,0.06);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.pro-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(7, 19, 42, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.pro-card:focus-within {
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12), 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pro-card { transition: none; }
+  .pro-card:hover { transform: none; }
+}
 
 a { color: var(--brand); }
 

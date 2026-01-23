@@ -40,8 +40,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="rounded-2xl bg-slate-900 px-5 py-4 text-white">
+            <div className="pro-card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="pro-card rounded-2xl bg-slate-900 px-5 py-4 text-white">
                 <div className="text-sm font-semibold">Quick snapshot</div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-200">
                   <li>• Employee records & org charts</li>
@@ -53,7 +53,7 @@ export default function HomePage() {
 
               <div className="mt-6 grid gap-3">
                 {highlights.map((h) => (
-                  <div key={h.title} className="rounded-2xl border border-slate-200 p-4">
+                  <div key={h.title} className="pro-card rounded-2xl border border-slate-200 p-4">
                     <div className="text-sm font-semibold">{h.title}</div>
                     <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
                   </div>
@@ -68,7 +68,7 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-6 md:grid-cols-3">
             {highlights.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={f.title} className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="text-lg font-semibold">{f.title}</div>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
               </div>
