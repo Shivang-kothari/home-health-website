@@ -25,7 +25,7 @@ export default function FeaturesPage() {
             </p>
           </div>
           <div className="flex gap-3 md:justify-end">
-            <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+            <ButtonLink href="/demo" variant="primary" className="btn-demo">{site.ctaPrimary}</ButtonLink>
             <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
           </div>
         </div>

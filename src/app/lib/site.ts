@@ -36,4 +36,7 @@ export const site = {
 
   // Home hero image (place the provided image at `public/illustrations/home-hero.png`)
   homeHeroImage: process.env.NEXT_PUBLIC_HOME_HERO_IMAGE || "/illustrations/home-hero.png",
+
+  // Optional second image for the home page (set to your file in /public, e.g. "/illustrations/my-hero1.png")
+  homeSecondaryImage: process.env.NEXT_PUBLIC_HOME_SECONDARY_IMAGE || "",
 };

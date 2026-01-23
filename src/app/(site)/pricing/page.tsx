@@ -22,7 +22,7 @@ export default function PricingPage() {
             </p>
           </div>
           <div className="flex gap-3 md:justify-end">
-            <ButtonLink href="/demo" variant="primary">{site.ctaPrimary}</ButtonLink>
+            <ButtonLink href="/demo" variant="primary" className="btn-demo">{site.ctaPrimary}</ButtonLink>
             <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function PricingPage() {
                   {t.bullets.map((b) => <li key={b}>• {b}</li>)}
                 </ul>
                 <div className="mt-6">
-                  <ButtonLink href="/contact" variant={t.featured ? "primary" : "secondary"}>
+                  <ButtonLink href="/contact" variant={t.featured ? "primary" : "secondary"} className={t.featured ? "btn-demo" : ""}>
                     {t.featured ? site.ctaPrimary : site.ctaSecondary}
                   </ButtonLink>
                 </div>

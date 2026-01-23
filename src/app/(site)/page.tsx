@@ -42,7 +42,7 @@ export default function HomePage() {
 
               <Reveal delayMs={200}>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <ButtonLink href="/demo" variant="primary">
+                  <ButtonLink href="/demo" variant="primary" className="btn-demo">
                     {site.ctaPrimary}
                   </ButtonLink>
                   <ButtonLink href="/contact" variant="secondary">
@@ -84,6 +84,22 @@ export default function HomePage() {
                   </div>
                 </Card>
               </Reveal>
+
+              {site.homeSecondaryImage ? (
+                <Reveal delayMs={80}>
+                  <Card className="hero-media media-tilt group p-3">
+                    <div className="overflow-hidden rounded-2xl bg-white">
+                      <Image
+                        src={site.homeSecondaryImage}
+                        alt="Home health operations preview"
+                        width={1400}
+                        height={900}
+                        className="hero-image-secondary h-auto w-full transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                    </div>
+                  </Card>
+                </Reveal>
+              ) : null}
 
               <Reveal delayMs={120}>
                 <Card className="p-6">
@@ -155,7 +171,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-                <ButtonLink href="/demo" variant="primary">
+                <ButtonLink href="/demo" variant="primary" className="btn-demo">
                   {site.ctaPrimary}
                 </ButtonLink>
                 <ButtonLink href="/contact" variant="secondary">

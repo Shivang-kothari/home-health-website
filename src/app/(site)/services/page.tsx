@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </div>
  
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <ButtonLink href="/demo" variant="primary">
+          <ButtonLink href="/demo" variant="primary" className="btn-demo">
             {site.ctaPrimary}
           </ButtonLink>
           <ButtonLink href="/contact" variant="secondary">

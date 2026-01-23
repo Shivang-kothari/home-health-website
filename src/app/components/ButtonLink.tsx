@@ -1,8 +1,13 @@
 import Link from "next/link";
  
-type Props = { href: string; variant?: "primary" | "secondary" | "ghost"; children: React.ReactNode };
+type Props = {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost";
+  className?: string;
+  children: React.ReactNode;
+};
  
-export default function ButtonLink({ href, variant = "primary", children }: Props) {
+export default function ButtonLink({ href, variant = "primary", className = "", children }: Props) {
   const base =
     "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white";
   const styles =
@@ -16,7 +21,7 @@ export default function ButtonLink({ href, variant = "primary", children }: Prop
     "bg-[linear-gradient(135deg,var(--brand),var(--brand-2))] ring-1 ring-black/5 hover:translate-y-[-1px]";
 
   return (
-    <Link className={`${base} ${styles} ${variant === "primary" ? primaryStyle : ""}`} href={href}>
+    <Link className={`${base} ${styles} ${variant === "primary" ? primaryStyle : ""} ${className}`.trim()} href={href}>
       {children}
     </Link>
   );

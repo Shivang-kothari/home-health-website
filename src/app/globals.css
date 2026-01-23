@@ -17,6 +17,15 @@
   --ring: rgba(29, 78, 216, 0.20);
 }
 
+/* CTA override: Book demo button */
+.btn-demo {
+  background: linear-gradient(135deg, #0b1220, #1d4ed8) !important;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.18);
+}
+.btn-demo:hover {
+  box-shadow: 0 14px 34px rgba(29, 78, 216, 0.22);
+}
+
 /* Force a light-only design: remove dark-mode overrides */
 
 body {
@@ -103,6 +112,24 @@ input, textarea, select {
   will-change: transform;
 }
 
+/* Secondary image effect */
+.media-tilt img {
+  transition: transform 260ms ease;
+}
+.media-tilt:hover img {
+  transform: scale(1.03) rotate(0.6deg);
+}
+
+.hero-image-secondary {
+  animation: hero-float-2 8.5s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes hero-float-2 {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
 @keyframes hero-float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
@@ -111,4 +138,6 @@ input, textarea, select {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-image { animation: none; }
+  .hero-image-secondary { animation: none; }
+  .media-tilt:hover img { transform: none; }
 }

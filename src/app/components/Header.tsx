@@ -40,7 +40,7 @@ export default function Header() {
 
 					<div className="flex items-center gap-2">
 						<div className="hidden items-center gap-2 md:flex">
-							<ButtonLink href="/demo" variant="primary">
+							<ButtonLink href="/demo" variant="primary" className="btn-demo">
 								{site.ctaPrimary}
 							</ButtonLink>
 							<ButtonLink href="/contact" variant="secondary">
@@ -49,7 +49,7 @@ export default function Header() {
 						</div>
 
 						<div className="flex items-center gap-2 md:hidden">
-							<ButtonLink href="/demo" variant="primary">
+							<ButtonLink href="/demo" variant="primary" className="btn-demo">
 								{site.ctaPrimary}
 							</ButtonLink>
 							<details className="relative">
