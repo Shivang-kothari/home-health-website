@@ -12,7 +12,11 @@ type FormState = {
   message: string;
 };
  
-export default function ContactForm() {
+type Props = {
+  variant?: "default" | "plain";
+};
+
+export default function ContactForm({ variant = "default" }: Props) {
   const [state, setState] = useState<FormState>({ name: "", phone: "", email: "", profession: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
@@ -45,13 +49,22 @@ export default function ContactForm() {
   }
  
   return (
-    <form onSubmit={onSubmit} className="card grid gap-6 p-6">
-      <div className="grid gap-6 lg:grid-cols-2 items-start">
-        <div className="hidden lg:block">
-          <div className="p-4">
-            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+    <form
+      onSubmit={onSubmit}
+      className={
+        variant === "plain"
+          ? "grid gap-6 rounded-2xl border border-black/10 bg-white p-6"
+          : "card grid gap-6 p-6"
+      }
+    >
+      <div className={`grid gap-6 items-start ${variant === "plain" ? "" : "lg:grid-cols-2"}`}>
+        {variant === "plain" ? null : (
+          <div className="hidden lg:block">
+            <div className="p-4">
+              <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+            </div>
           </div>
-        </div>
+        )}
         <div>
           <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-1 text-sm">
@@ -60,7 +73,7 @@ export default function ContactForm() {
             className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.name}
             onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
-            placeholder="Jane Doe"
+            placeholder={variant === "plain" ? "" : "Jane Doe"}
             required
           />
         </label>
@@ -71,7 +84,7 @@ export default function ContactForm() {
             className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.phone}
             onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
-            placeholder="(555) 123-4567"
+            placeholder={variant === "plain" ? "" : "(555) 123-4567"}
           />
         </label>
           </div>
@@ -84,7 +97,7 @@ export default function ContactForm() {
           className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.email}
           onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
-          placeholder="you@example.com"
+          placeholder={variant === "plain" ? "" : "you@example.com"}
           required
         />
       </label>
@@ -113,7 +126,11 @@ export default function ContactForm() {
           className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us your team size, what you use today, and what you’d like to improve."
+          placeholder={
+            variant === "plain"
+              ? ""
+              : "Tell us your team size, what you use today, and what you’d like to improve."
+          }
           required
         />
       </label>
