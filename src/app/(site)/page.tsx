@@ -66,18 +66,25 @@ export default function HomePage() {
               </Reveal>
 
               <Reveal delayMs={260}>
-                <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur">
-                    <div className="font-semibold">Audit-ready</div>
-                    <div className="mt-1 text-slate-600">Consistent records & exports</div>
-                  </div>
-                  <div className="rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur">
-                    <div className="font-semibold">Faster onboarding</div>
-                    <div className="mt-1 text-slate-600">Clear steps & checklists</div>
-                  </div>
-                  <div className="rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur">
-                    <div className="font-semibold">Less rework</div>
-                    <div className="mt-1 text-slate-600">Structured, validated data</div>
+                <div className="mt-8">
+                  <div className="text-xs font-semibold text-slate-600">Services included</div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {[
+                      { t: "Staff profiles", d: "Records, roles, and employment history" },
+                      { t: "Credential tracking", d: "Expirations, renewals, audit trail" },
+                      { t: "Document management", d: "Collect, verify, store, and export" },
+                      { t: "Onboarding workflows", d: "Checklists, reminders, consistency" },
+                      { t: "Scheduling support", d: "Eligibility & availability visibility" },
+                      { t: "Payroll exports", d: "Structured outputs for payroll teams" },
+                    ].map((x) => (
+                      <div
+                        key={x.t}
+                        className="rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur"
+                      >
+                        <div className="font-semibold">{x.t}</div>
+                        <div className="mt-1 text-slate-600">{x.d}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Reveal>
