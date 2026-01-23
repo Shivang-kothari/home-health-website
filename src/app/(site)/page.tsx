@@ -39,9 +39,10 @@ export default function HomePage() {
           <div className="grid gap-10 py-14 md:grid-cols-2 md:items-center md:py-20">
             <div className="max-w-xl">
               <Reveal>
-                <p className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-black/5 backdrop-blur">
+                <div className="card inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-slate-700">
+                  <span className="h-2 w-2 rounded-full bg-[color:var(--brand-2)]" />
                   Home health • Staffing • Compliance
-                </p>
+                </div>
               </Reveal>
               <Reveal delayMs={80}>
                 <h1 className="mt-4 text-[color:var(--heading)]">
