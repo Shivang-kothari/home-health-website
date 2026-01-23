@@ -48,8 +48,9 @@ export default function Footer() {
 
 				<div className="flex flex-col gap-2 border-t border-slate-200 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
 					<div>© {new Date().getFullYear()} {site.name}. All rights reserved.</div>
-					<div className="max-w-2xl muted">
-						Marketing site for your HRMS product. Replace placeholder content and confirm legal text.
+					<div className="flex gap-4 muted">
+						<Link className="hover:text-slate-900" href="/privacy">Privacy Policy</Link>
+						<Link className="hover:text-slate-900" href="/terms">Terms of Service</Link>
 					</div>
 				</div>
 			</Container>

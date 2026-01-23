@@ -88,19 +88,20 @@ export default function ContactForm() {
       </label>
  
       <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Profession</span>
+        <span className="font-medium text-slate-900">Your Role</span>
         <select
           className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.profession}
           onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
         >
-          <option value="">Select...</option>
-          <option>Patient / Client</option>
-          <option>Family Member</option>
-          <option>Caregiver</option>
-          <option>Nurse</option>
-          <option>Physician</option>
-          <option>Agency / Organization</option>
+          <option value="">Select your role...</option>
+          <option>HR Manager / Director</option>
+          <option>CHRO / VP of People</option>
+          <option>Payroll Administrator</option>
+          <option>IT / Systems Admin</option>
+          <option>Finance / CFO</option>
+          <option>Business Owner / CEO</option>
+          <option>Consultant / Advisor</option>
           <option>Other</option>
         </select>
       </label>
@@ -111,7 +112,7 @@ export default function ContactForm() {
           className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us what services you need, your preferred start date, and your city."
+          placeholder="Tell us about your company, team size, and what HR challenges you're looking to solve."
           required
         />
       </label>

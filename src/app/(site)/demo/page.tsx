@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Container from "../../components/Container";
 import ContactForm from "../../components/ContactForm";
+import { site } from "../../lib/site";
+
+export const metadata: Metadata = {
+  title: "Request a Demo",
+  description: `Schedule a personalized demo of ${site.name} and see how it can transform your HR operations.`,
+};
 
 export default function DemoPage() {
   return (

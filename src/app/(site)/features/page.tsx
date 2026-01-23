@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
+import { site } from "../../lib/site";
+
+export const metadata: Metadata = {
+  title: "Features",
+  description: `Explore ${site.name} features: employee records, time off, payroll exports, recruiting, performance management, and integrations.`,
+};
 
 const features = [
   { title: "Employee records", desc: "Centralized profiles, documents, and history with robust search." },
