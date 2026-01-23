@@ -28,8 +28,10 @@ export const metadata: Metadata = {
  
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <ThemeInitScript />
+    <html lang="en" data-theme="blue" suppressHydrationWarning>
+      <head>
+        <ThemeInitScript />
+      </head>
       <body className="min-h-dvh bg-white text-[color:var(--text)] antialiased">{children}</body>
     </html>
   );

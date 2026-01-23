@@ -1,11 +1,8 @@
-import Script from "next/script";
-
 export default function ThemeInitScript() {
   // Apply saved theme early to avoid flash.
   return (
-    <Script
-      id="theme-init"
-      strategy="beforeInteractive"
+    <script
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: `
 (() => {
