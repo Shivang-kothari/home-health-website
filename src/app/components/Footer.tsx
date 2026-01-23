@@ -47,12 +47,11 @@ export default function Footer() {
 					<div className="md:col-span-4">
 						<div className="text-sm font-semibold text-slate-900">Company</div>
 						<div className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
-							<Link className="hover:text-slate-900" href="/features">Features</Link>
-							<Link className="hover:text-slate-900" href="/pricing">Pricing</Link>
-							<Link className="hover:text-slate-900" href="/services">Modules</Link>
-							<Link className="hover:text-slate-900" href="/demo">Demo</Link>
-							<Link className="hover:text-slate-900" href="/privacy">Privacy</Link>
-							<Link className="hover:text-slate-900" href="/terms">Terms</Link>
+							{site.footerLinks.map((l) => (
+								<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+									{l.label}
+								</Link>
+							))}
 						</div>
 					</div>
 				</div>
@@ -61,7 +60,7 @@ export default function Footer() {
 					<div>© {new Date().getFullYear()} {site.name}. All rights reserved.</div>
 					<div className="max-w-2xl">
 						<span className="rounded-full bg-white px-3 py-1 ring-1 ring-black/5">
-							Security-minded • Audit-ready • Built for teams
+							{site.footerBadge}
 						</span>
 					</div>
 				</div>

@@ -4,15 +4,6 @@ import Container from "./Container";
 import ButtonLink from "./ButtonLink";
 import { site } from "../lib/site";
 
-const nav = [
-	{ href: "/", label: "Home" },
-	{ href: "/features", label: "Features" },
-	{ href: "/pricing", label: "Pricing" },
-	{ href: "/demo", label: "Demo" },
-	{ href: "/about", label: "About" },
-	{ href: "/contact", label: "Contact" },
-];
-
 export default function Header() {
 	return (
 		<header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/75 backdrop-blur">
@@ -22,12 +13,12 @@ export default function Header() {
 						<Image src="/logo.svg" alt={site.name} width={34} height={34} className="rounded-xl ring-1 ring-black/5" />
 						<div className="leading-tight">
 							<div className="text-[15px] text-slate-900">{site.name}</div>
-							<div className="hidden text-xs text-slate-500 sm:block">Home health operations platform</div>
+							<div className="hidden text-xs text-slate-500 sm:block">{site.headerSubtitle}</div>
 						</div>
 					</Link>
 
 					<nav className="hidden items-center gap-6 md:flex">
-						{nav.map((item) => (
+						{site.navLinks.map((item) => (
 							<Link
 								key={item.href}
 								href={item.href}
@@ -58,7 +49,7 @@ export default function Header() {
 								</summary>
 								<div className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
 									<nav className="grid p-2">
-										{nav.map((item) => (
+										{site.navLinks.map((item) => (
 											<Link
 												key={item.href}
 												href={item.href}

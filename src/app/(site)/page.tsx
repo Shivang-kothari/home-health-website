@@ -106,22 +106,6 @@ export default function HomePage() {
                 </Card>
               </Reveal>
 
-              {site.homeSecondaryImage ? (
-                <Reveal delayMs={80}>
-                  <Card className="hero-media media-tilt group p-3">
-                    <div className="overflow-hidden rounded-2xl bg-white">
-                      <Image
-                        src={site.homeSecondaryImage}
-                        alt="Home health operations preview"
-                        width={1400}
-                        height={900}
-                        className="hero-image-secondary h-auto w-full transition-transform duration-300 group-hover:scale-[1.01]"
-                      />
-                    </div>
-                  </Card>
-                </Reveal>
-              ) : null}
-
               <Reveal delayMs={120}>
                 <Card className="p-6">
                   <div className="flex items-center justify-between gap-4">
