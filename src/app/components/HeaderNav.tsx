@@ -25,7 +25,9 @@ export default function HeaderNav({ links }: { links: NavLink[] }) {
               aria-current={active ? "page" : undefined}
               className={[
                 "rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
-                active ? "bg-black/5 text-slate-900" : "text-slate-700 hover:bg-black/5 hover:text-slate-900",
+                active
+                  ? "bg-black/5 text-[color:var(--heading)]"
+                  : "text-slate-700 hover:bg-black/5 hover:text-[color:var(--heading)]",
               ].join(" ")}
             >
               {l.label}

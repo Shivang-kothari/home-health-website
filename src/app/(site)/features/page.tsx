@@ -19,7 +19,7 @@ export default function FeaturesPage() {
       <Container>
         <div className="grid gap-6 md:grid-cols-2 md:items-end">
           <div>
-            <h1 className="text-slate-900">Features</h1>
+            <h1 className="text-[color:var(--heading)]">Features</h1>
             <p className="mt-3 text-sm text-slate-600">
               A streamlined set of tools for home health operations—built to reduce admin work and keep compliance clear.
             </p>
@@ -37,7 +37,7 @@ export default function FeaturesPage() {
                 <div className="flex items-start gap-3">
                   <div className="mt-1 h-9 w-9 rounded-2xl bg-[color:var(--brand-soft)] ring-1 ring-black/5" />
                   <div>
-                    <div className="text-base font-semibold text-slate-900">{f.title}</div>
+                    <div className="text-base font-semibold text-[color:var(--heading)]">{f.title}</div>
                     <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
                   </div>
                 </div>

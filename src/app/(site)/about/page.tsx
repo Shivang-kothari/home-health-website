@@ -18,7 +18,7 @@ export default function AboutPage() {
           <Image src="/illustrations/about-hero.svg" alt="About" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
         </div>
 
-        <h1 className="mt-10 text-slate-900">About {site.name}</h1>
+        <h1 className="mt-10 text-[color:var(--heading)]">About {site.name}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
           {site.name} is built for home health agencies that need clear staff records, reliable compliance workflows, and less admin friction.
         </p>
@@ -31,7 +31,7 @@ export default function AboutPage() {
           ].map((x, idx) => (
             <Reveal key={x.t} delayMs={idx * 70}>
               <Card className="p-6">
-                <div className="text-base font-semibold text-slate-900">{x.t}</div>
+                <div className="text-base font-semibold text-[color:var(--heading)]">{x.t}</div>
                 <p className="mt-2 text-sm text-slate-600">{x.d}</p>
               </Card>
             </Reveal>

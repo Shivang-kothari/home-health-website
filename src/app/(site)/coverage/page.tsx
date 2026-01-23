@@ -28,7 +28,7 @@ export default function CoveragePage() {
           />
         </div>
 
-        <h1 className="mt-10 text-slate-900">Coverage</h1>
+        <h1 className="mt-10 text-[color:var(--heading)]">Coverage</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
           Search our current supported regions. If you don’t see what you need, contact us and we’ll confirm feasibility and timeline.
         </p>
@@ -38,7 +38,7 @@ export default function CoveragePage() {
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <Reveal>
             <Card className="p-6">
-              <div className="text-base font-semibold text-slate-900">What “coverage” means</div>
+              <div className="text-base font-semibold text-[color:var(--heading)]">What “coverage” means</div>
               <p className="mt-2 text-sm text-slate-600">
                 Coverage reflects where we support standardized workflows and reporting. Requirements vary by region—we’ll confirm details in a demo.
               </p>
@@ -47,7 +47,7 @@ export default function CoveragePage() {
 
           <Reveal delayMs={120}>
             <Card className="p-6">
-              <div className="text-base font-semibold text-slate-900">Need a new region?</div>
+              <div className="text-base font-semibold text-[color:var(--heading)]">Need a new region?</div>
               <p className="mt-2 text-sm text-slate-600">
                 Reach out at{" "}
                 <a className="hover:opacity-90" href={site.emailHref}>

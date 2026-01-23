@@ -16,7 +16,7 @@ export default function PricingPage() {
       <Container>
         <div className="grid gap-6 md:grid-cols-2 md:items-end">
           <div>
-            <h1 className="text-slate-900">Pricing</h1>
+            <h1 className="text-[color:var(--heading)]">Pricing</h1>
             <p className="mt-3 text-sm text-slate-600">
               Straightforward tiers for agencies of different sizes. Need something tailored? We’ll scope it with you.
             </p>
@@ -33,11 +33,11 @@ export default function PricingPage() {
               <Card className={`p-6 ${t.featured ? "ring-1 ring-black/10" : ""}`.trim()}>
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-base font-semibold text-slate-900">{t.name}</div>
-                    <div className="mt-2 text-3xl font-semibold text-slate-900">{t.price}</div>
+                    <div className="text-base font-semibold text-[color:var(--heading)]">{t.name}</div>
+                    <div className="mt-2 text-3xl font-semibold text-[color:var(--heading)]">{t.price}</div>
                   </div>
                   {t.featured ? (
-                    <div className="rounded-full bg-[color:var(--brand-soft)] px-3 py-1 text-xs font-semibold text-slate-900">
+                    <div className="rounded-full bg-[color:var(--brand-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--heading)]">
                       Popular
                     </div>
                   ) : null}

@@ -30,7 +30,7 @@ export default function Footer() {
 						<div className="flex items-center gap-3">
 							<Image src="/logo.svg" alt={site.name} width={34} height={34} className="rounded-xl ring-1 ring-black/5" />
 							<div>
-								<div className="text-base font-semibold text-slate-900">{site.name}</div>
+								<div className="text-base font-semibold text-[color:var(--heading)]">{site.name}</div>
 								<p className="mt-1 text-sm text-slate-600">{site.tagline}</p>
 							</div>
 						</div>
@@ -39,10 +39,10 @@ export default function Footer() {
 					<div className="md:col-span-5">
 						<div className="grid gap-8 sm:grid-cols-3">
 							<div>
-								<div className="text-sm font-semibold text-slate-900">Product</div>
+								<div className="text-sm font-semibold text-[color:var(--heading)]">Product</div>
 								<div className="mt-3 grid gap-2 text-sm text-slate-600">
 									{productLinks.map((l) => (
-										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+										<Link key={l.href} className="hover:text-[color:var(--heading)]" href={l.href}>
 											{l.label}
 										</Link>
 									))}
@@ -50,10 +50,10 @@ export default function Footer() {
 							</div>
 
 							<div>
-								<div className="text-sm font-semibold text-slate-900">Company</div>
+								<div className="text-sm font-semibold text-[color:var(--heading)]">Company</div>
 								<div className="mt-3 grid gap-2 text-sm text-slate-600">
 									{companyLinks.map((l) => (
-										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+										<Link key={l.href} className="hover:text-[color:var(--heading)]" href={l.href}>
 											{l.label}
 										</Link>
 									))}
@@ -61,10 +61,10 @@ export default function Footer() {
 							</div>
 
 							<div>
-								<div className="text-sm font-semibold text-slate-900">Legal</div>
+								<div className="text-sm font-semibold text-[color:var(--heading)]">Legal</div>
 								<div className="mt-3 grid gap-2 text-sm text-slate-600">
 									{legalLinks.map((l) => (
-										<Link key={l.href} className="hover:text-slate-900" href={l.href}>
+										<Link key={l.href} className="hover:text-[color:var(--heading)]" href={l.href}>
 											{l.label}
 										</Link>
 									))}
@@ -74,15 +74,15 @@ export default function Footer() {
 					</div>
 
 					<div className="md:col-span-3">
-						<div className="text-sm font-semibold text-slate-900">Contact</div>
+						<div className="text-sm font-semibold text-[color:var(--heading)]">Contact</div>
 						<div className="mt-3 space-y-2 text-sm text-slate-600">
 							{site.email && site.emailHref ? (
-								<a className="block hover:text-slate-900" href={site.emailHref}>
+								<a className="block hover:text-[color:var(--heading)]" href={site.emailHref}>
 									{site.email}
 								</a>
 							) : null}
 							{site.phone && site.phoneHref ? (
-								<a className="block hover:text-slate-900" href={site.phoneHref}>
+								<a className="block hover:text-[color:var(--heading)]" href={site.phoneHref}>
 									{site.phone}
 								</a>
 							) : null}

@@ -14,7 +14,7 @@ export default function CareersPage() {
   return (
     <section className="py-14">
       <Container>
-        <h1 className="text-slate-900">Careers</h1>
+        <h1 className="text-[color:var(--heading)]">Careers</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
           We’re building calm, reliable software for home health agencies. If you care about quality and clarity, we’d love to hear from you.
         </p>
@@ -30,7 +30,7 @@ export default function CareersPage() {
           ].map((role, idx) => (
             <Reveal key={role} delayMs={idx * 60}>
               <Card className="p-6">
-                <div className="font-semibold text-slate-900">{role}</div>
+                <div className="font-semibold text-[color:var(--heading)]">{role}</div>
                 <p className="mt-2 text-sm text-slate-600">
                   Share your background and what you want to build. We’ll follow up if there’s a fit.
                 </p>

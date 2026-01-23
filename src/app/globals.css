@@ -6,6 +6,7 @@
   --surface: #ffffff;
   --surface-2: #fbfcff;
   --text: #0b1220;
+  --heading: #0b1b3a; /* dark blue for large text */
   --muted: #5b677a;
   --border: rgba(15, 23, 42, 0.10);
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -73,9 +74,9 @@ body {
 }
 
 /* Typography */
-h1 { font-size: 2.25rem; line-height: 1.08; letter-spacing: -0.02em; }
-h2 { font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.01em; }
-h3 { font-size: 1.125rem; line-height: 1.25; }
+h1 { font-size: 2.25rem; line-height: 1.08; letter-spacing: -0.02em; color: var(--heading); }
+h2 { font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--heading); }
+h3 { font-size: 1.125rem; line-height: 1.25; color: var(--heading); }
 
 a { color: var(--brand); }
 .muted { color: var(--muted); }

@@ -13,7 +13,7 @@ export default function Header() {
 					<Link href="/" className="flex items-center gap-3 font-semibold tracking-tight">
 						<Image src="/logo.svg" alt={site.name} width={34} height={34} className="rounded-xl ring-1 ring-black/5" />
 						<div className="leading-tight">
-							<div className="text-[15px] text-slate-900">{site.name}</div>
+							<div className="text-[15px] text-[color:var(--heading)]">{site.name}</div>
 							<div className="hidden text-xs text-slate-500 sm:block">{site.headerSubtitle}</div>
 						</div>
 					</Link>
@@ -44,7 +44,7 @@ export default function Header() {
 											<Link
 												key={item.href}
 												href={item.href}
-												className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+												className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[color:var(--heading)]"
 											>
 												{item.label}
 											</Link>
@@ -52,7 +52,7 @@ export default function Header() {
 										<div className="my-2 border-t border-slate-200" />
 										<Link
 											href="/contact"
-											className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+											className="rounded-lg px-3 py-2 text-sm font-semibold text-[color:var(--heading)] hover:bg-slate-50"
 										>
 											{site.ctaSecondary}
 										</Link>

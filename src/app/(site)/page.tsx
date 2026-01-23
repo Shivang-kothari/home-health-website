@@ -44,7 +44,7 @@ export default function HomePage() {
                 </p>
               </Reveal>
               <Reveal delayMs={80}>
-                <h1 className="mt-4 text-slate-900">
+                <h1 className="mt-4 text-[color:var(--heading)]">
                   Run a compliant, staffed, on-time operation.
                 </h1>
               </Reveal>
@@ -139,7 +139,7 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <h2 className="text-slate-900">Everything teams need—without the clutter</h2>
+              <h2 className="text-[color:var(--heading)]">Everything teams need—without the clutter</h2>
               <p className="mt-2 text-sm text-slate-600">
                 A clean system for staff records, compliance workflows, and payroll outputs. Designed to feel calm, clear, and fast.
               </p>
@@ -154,7 +154,7 @@ export default function HomePage() {
                   <div className="flex items-start gap-3">
                     <div className="mt-1 h-9 w-9 rounded-2xl bg-[color:var(--brand-soft)] ring-1 ring-black/5" />
                     <div>
-                      <div className="text-base font-semibold text-slate-900">{f.title}</div>
+                      <div className="text-base font-semibold text-[color:var(--heading)]">{f.title}</div>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
-              <h2 className="text-slate-900">Details that matter day-to-day</h2>
+              <h2 className="text-[color:var(--heading)]">Details that matter day-to-day</h2>
               <p className="mt-2 text-sm text-slate-600">
                 The product is built to reduce operational risk: fewer missing documents, fewer expired credentials, fewer last‑minute schedule changes.
               </p>
@@ -177,7 +177,7 @@ export default function HomePage() {
                 {details.map((d, idx) => (
                   <Reveal key={d.k} delayMs={idx * 70}>
                     <Card className="p-5">
-                      <div className="text-sm font-semibold text-slate-900">{d.k}</div>
+                      <div className="text-sm font-semibold text-[color:var(--heading)]">{d.k}</div>
                       <p className="mt-2 text-sm text-slate-600">{d.v}</p>
                     </Card>
                   </Reveal>
@@ -189,10 +189,10 @@ export default function HomePage() {
               <Card className="p-6">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <div className="text-sm font-semibold text-slate-900">FAQ</div>
+                    <div className="text-sm font-semibold text-[color:var(--heading)]">FAQ</div>
                     <p className="mt-1 text-sm text-slate-600">Quick answers to common questions.</p>
                   </div>
-                  <div className="rounded-xl bg-white/70 px-3 py-1 text-xs font-semibold text-slate-900 ring-1 ring-black/5">
+                  <div className="rounded-xl bg-white/70 px-3 py-1 text-xs font-semibold text-[color:var(--heading)] ring-1 ring-black/5">
                     Clear & simple
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default function HomePage() {
                       key={f.q}
                       className="group rounded-2xl border border-black/10 bg-white/60 px-4 py-3"
                     >
-                      <summary className="cursor-pointer list-none text-sm font-semibold text-slate-900">
+                      <summary className="cursor-pointer list-none text-sm font-semibold text-[color:var(--heading)]">
                         <span className="inline-flex items-center justify-between gap-3">
                           {f.q}
                           <span className="text-slate-500 transition-transform duration-200 group-open:rotate-180">▾</span>
@@ -224,7 +224,7 @@ export default function HomePage() {
           <Card className="p-8">
             <div className="grid gap-6 md:grid-cols-2 md:items-center">
               <div>
-                <h2 className="text-slate-900">Ready to see it with your workflow?</h2>
+                <h2 className="text-[color:var(--heading)]">Ready to see it with your workflow?</h2>
                 <p className="mt-2 text-sm text-slate-600">
                   We’ll walk through scheduling, credential tracking, and payroll exports with a setup that matches your team.
                 </p>
