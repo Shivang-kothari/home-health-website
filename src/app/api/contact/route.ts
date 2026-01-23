@@ -10,8 +10,8 @@ export async function POST(req: Request) {
     const profession = String(body?.profession || "").trim();
     const message = String(body?.message || "").trim();
  
-    if (!name || !message) {
-      return Response.json({ ok: false, error: "Name and message are required." }, { status: 400 });
+    if (!name || !email || !message) {
+      return Response.json({ ok: false, error: "Name, email, and message are required." }, { status: 400 });
     }
  
     // If real SMTP is configured, use it. Otherwise use Ethereal (test inbox).
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     const subject = `New website inquiry — ${name}`;
     const text = [
       `Name: ${name}`,
-      `Profession: ${profession || "-"}`,
+      `Role: ${profession || "-"}`,
       `Phone: ${phone || "-"}`,
       `Email: ${email || "-"}`,
       "",

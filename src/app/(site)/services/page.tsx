@@ -1,49 +1,52 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";
-import ServicesList from "../../components/ServicesList";
 import { site } from "../../lib/site";
+import { modules } from "../../lib/modules";
+import Card from "../../components/Card";
+import Reveal from "../../components/Reveal";
+import Image from "next/image";
  
 export const metadata: Metadata = {
-  title: "Services",
-  description: `Home health services offered by ${site.name}.`,
+  title: "Modules",
+  description: `Modules available in ${site.name}.`,
 };
- 
-const items = [
-  { key: 'nursing', title: "Skilled Nursing", desc: "Medication management, wound care, chronic condition monitoring, education, and coordination.", icon: "/icons/service-nursing.svg" },
-  { key: 'pt', title: "Physical Therapy (PT)", desc: "Strength, balance, mobility training, fall-risk reduction, and recovery planning.", icon: "/icons/service-therapy.svg" },
-  { key: 'ot', title: "Occupational Therapy (OT)", desc: "Activities of daily living, safety at home, energy conservation, and adaptive strategies.", icon: "/icons/service-therapy.svg" },
-  { key: 'st', title: "Speech Therapy (ST)", desc: "Swallowing, communication, cognition support, and personalized therapy plans.", icon: "/icons/service-therapy.svg" },
-  { key: 'aide', title: "Home Health Aide", desc: "Support with hygiene, light assistance, and comfort measures under a care plan.", icon: "/icons/service-nursing.svg" },
-  { key: 'social', title: "Medical Social Work", desc: "Resources, care navigation, and support for patients and families.", icon: "/icons/service-therapy.svg" },
-];
  
 export default function ServicesPage() {
   return (
     <section className="py-14">
       <Container>
-        <div className="mx-auto max-w-4xl">
-          <Image src="/illustrations/services-hero.svg" alt="Services" width={1200} height={360} className="w-full rounded-2xl shadow-sm" />
+        <div className="grid gap-6 md:grid-cols-2 md:items-end">
+          <div>
+            <h1 className="text-[color:var(--heading)]">Modules</h1>
+            <p className="mt-3 text-sm text-slate-600">
+              Choose the modules you need today, and expand as your team grows. Everything stays consistent with shared records and audit trails.
+            </p>
+          </div>
+          <div className="flex gap-3 md:justify-end">
+            <ButtonLink href="/demo" variant="primary" className="btn-demo">{site.ctaPrimary}</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">{site.ctaSecondary}</ButtonLink>
+          </div>
         </div>
-
-        <h1 className="text-3xl font-bold tracking-tight">Services</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          We tailor care to your goals with a team approach—so you always know what’s next and why it matters.
-        </p>
  
-        <div className="mt-10">
-          <ServicesList />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {modules.map((m, idx) => (
+            <Reveal key={m.key} delayMs={idx * 60}>
+              <Card className="p-6">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 grid h-9 w-9 place-items-center rounded-2xl bg-[color:var(--brand-soft)] ring-1 ring-black/5">
+                    {m.icon ? <Image src={m.icon} alt="" width={18} height={18} /> : null}
+                  </div>
+                  <div>
+                    <div className="text-base font-semibold text-[color:var(--heading)]">{m.title}</div>
+                    <p className="mt-2 text-sm text-slate-600">{m.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            </Reveal>
+          ))}
         </div>
  
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <ButtonLink href="/contact" variant="secondary">
-            {site.ctaPrimary}
-          </ButtonLink>
-          <ButtonLink href={site.phoneHref} variant="primary">
-            {site.ctaSecondary}: {site.phone}
-          </ButtonLink>
-        </div>
       </Container>
     </section>
   );

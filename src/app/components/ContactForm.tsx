@@ -2,6 +2,7 @@
  
 import { useState } from "react";
 import Image from "next/image";
+import { site } from "../lib/site";
  
 type FormState = {
   name: string;
@@ -11,7 +12,11 @@ type FormState = {
   message: string;
 };
  
-export default function ContactForm() {
+type Props = {
+  variant?: "default" | "simple";
+};
+
+export default function ContactForm({ variant = "default" }: Props) {
   const [state, setState] = useState<FormState>({ name: "", phone: "", email: "", profession: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string>("");
@@ -44,22 +49,31 @@ export default function ContactForm() {
   }
  
   return (
-    <form onSubmit={onSubmit} className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 elev-sm">
-      <div className="grid gap-6 lg:grid-cols-2 items-start">
-        <div className="hidden lg:block">
-          <div className="p-4">
-            <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+    <form
+      onSubmit={onSubmit}
+      className={
+        variant === "simple"
+          ? "card grid gap-6 p-6"
+          : "card grid gap-6 p-6"
+      }
+    >
+      <div className={`grid gap-6 items-start ${variant === "simple" ? "" : "lg:grid-cols-2"}`}>
+        {variant === "simple" ? null : (
+          <div className="hidden lg:block">
+            <div className="p-4">
+              <Image src="/illustrations/contact-side.svg" alt="Contact illustration" width={240} height={240} className="rounded-lg" />
+            </div>
           </div>
-        </div>
+        )}
         <div>
           <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-1 text-sm">
           <span className="font-medium text-slate-900">Name</span>
           <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.name}
             onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
-            placeholder="Jane Doe"
+            placeholder={variant === "simple" ? "" : "Jane Doe"}
             required
           />
         </label>
@@ -67,10 +81,10 @@ export default function ContactForm() {
         <label className="grid gap-1 text-sm">
           <span className="font-medium text-slate-900">Phone</span>
           <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.phone}
             onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
-            placeholder="(555) 123-4567"
+            placeholder={variant === "simple" ? "" : "(555) 123-4567"}
           />
         </label>
           </div>
@@ -80,27 +94,28 @@ export default function ContactForm() {
       <label className="grid gap-1 text-sm">
         <span className="font-medium text-slate-900">Email</span>
         <input
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.email}
           onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
-          placeholder="you@example.com"
+          placeholder={variant === "simple" ? "" : "you@example.com"}
+          required
         />
       </label>
  
       <label className="grid gap-1 text-sm">
-        <span className="font-medium text-slate-900">Profession</span>
+        <span className="font-medium text-slate-900">Role</span>
         <select
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.profession}
           onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
         >
           <option value="">Select...</option>
-          <option>Patient / Client</option>
-          <option>Family Member</option>
-          <option>Caregiver</option>
-          <option>Nurse</option>
-          <option>Physician</option>
-          <option>Agency / Organization</option>
+          <option>HR / People Ops</option>
+          <option>Payroll</option>
+          <option>Operations</option>
+          <option>Finance</option>
+          <option>IT / Security</option>
+          <option>Executive leadership</option>
           <option>Other</option>
         </select>
       </label>
@@ -108,10 +123,14 @@ export default function ContactForm() {
       <label className="grid gap-1 text-sm">
         <span className="font-medium text-slate-900">How can we help?</span>
         <textarea
-          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-teal-200"
+          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
-          placeholder="Tell us what services you need, your preferred start date, and your city."
+          placeholder={
+            variant === "simple"
+              ? ""
+              : "Tell us your team size, what you use today, and what you’d like to improve."
+          }
           required
         />
       </label>
@@ -120,16 +139,21 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-[color:var(--brand)] px-4 py-2 text-sm font-semibold text-white hover:opacity-95 disabled:opacity-60 shadow-sm"
         >
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
-        <div className="text-sm muted">Prefer a call? <a href={"tel:" + (typeof window !== 'undefined' ? window.location.host : '')}>Call us</a></div>
+        <div className="text-sm muted">
+          Prefer a call?{" "}
+          <a className="text-[color:var(--brand)] hover:opacity-90" href={site.phoneHref}>
+            Call us
+          </a>
+        </div>
       </div>
  
       {status === "sent" && (
         <div className="grid gap-2">
-          <p className="text-sm text-teal-700">Message sent.</p>
+          <p className="text-sm text-[color:var(--brand)]">Message sent.</p>
           {previewUrl && (
             <a className="text-sm text-slate-700 underline" href={previewUrl} target="_blank" rel="noreferrer">
               View test email (Ethereal preview)

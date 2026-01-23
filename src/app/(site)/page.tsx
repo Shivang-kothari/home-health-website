@@ -1,96 +1,265 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "../components/Container";
 import ButtonLink from "../components/ButtonLink";
 import { site } from "../lib/site";
+import Card from "../components/Card";
+import Reveal from "../components/Reveal";
 
 export const metadata: Metadata = { title: "Home", description: site.tagline };
 
-const highlights = [
-  { title: "Employee database", desc: "Single source of truth for employee records, documents, and history." },
-  { title: "Leave & attendance", desc: "Smart leave workflows, approvals, and team calendars." },
-  { title: "Payroll & compliance", desc: "Integrations and reports that keep payroll accurate and audit-ready." },
+const featureCards = [
+  { title: "Staff profiles", desc: "Credentials, documents, and history in one clean record." },
+  { title: "Scheduling-ready", desc: "Track availability, assignments, and changes with clarity." },
+  { title: "Compliance checks", desc: "Stay audit-ready with consistent data and reporting." },
+  { title: "Payroll exports", desc: "Structured exports to reduce rework and corrections." },
+  { title: "Onboarding flows", desc: "Standardize steps, reminders, and required documents." },
+  { title: "Role-based access", desc: "The right people see the right information—by default." },
+];
+
+const details = [
+  { k: "Credential expirations", v: "Track license expirations and required renewals with a single source of truth." },
+  { k: "Document workflows", v: "Collect, verify, and store documents with consistent naming and audit trails." },
+  { k: "Staffing clarity", v: "Know who is eligible, available, and onboarded—before you build schedules." },
+  { k: "Payroll-ready outputs", v: "Export clean, structured data so payroll doesn’t become a monthly fire drill." },
+];
+
+const faqs = [
+  { q: "Is this built specifically for home health?", a: "Yes—our workflows are designed around staffing, credential tracking, and compliance needs common to home health agencies." },
+  { q: "Can we start small and expand later?", a: "Yes. Most teams start with staff records + compliance, then add onboarding workflows and exports as they scale." },
+  { q: "Do you support role-based access?", a: "Yes. You can restrict access by role so admins, managers, and schedulers only see what they need." },
+  { q: "How does the demo work?", a: "We’ll review your current process, map it to the product, and show reporting and exports with example data." },
+  { q: "How long does onboarding take?", a: "Most teams can get started quickly. We’ll set up your workflows and import basic staff data, then iterate as your team adopts it." },
+  { q: "Can we export data for payroll?", a: "Yes. The product is designed around payroll-ready exports and structured reporting to reduce corrections." },
+  { q: "What about document storage and compliance?", a: "We support document collection and tracking with consistent records and visibility into what’s missing or expiring." },
+  { q: "Do you integrate with our existing tools?", a: "We’re integration-friendly. During the demo we’ll review your current stack and discuss the best way to connect or export data." },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+      <section className="relative overflow-hidden">
         <Container>
           <div className="grid gap-10 py-14 md:grid-cols-2 md:items-center md:py-20">
-            <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
-                HR • Payroll • Recruiting
-              </p>
-              <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                Powerful HRMS for modern HR teams
-              </h1>
-              <p className="mt-4 text-base leading-relaxed text-slate-600">
-                Centralize HR, automate payroll, and make better people decisions with one intuitive platform.
-              </p>
+            <div className="max-w-xl">
+              <Reveal>
+                <div className="card inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-slate-700">
+                  <span className="h-2 w-2 rounded-full bg-[color:var(--brand-2)]" />
+                  Home health • Staffing • Compliance
+                </div>
+              </Reveal>
+              <Reveal delayMs={80}>
+                <h1 className="mt-4 text-[color:var(--heading)]">
+                  Run a compliant, staffed, on-time operation.
+                </h1>
+              </Reveal>
+              <Reveal delayMs={140}>
+                <p className="mt-4 text-base leading-relaxed text-slate-700">
+                  A modern HRMS built for home health agencies—organize staff records, reduce admin work, and keep reporting audit-ready.
+                </p>
+              </Reveal>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <ButtonLink href="/demo" variant="secondary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="primary">{site.ctaSecondary}</ButtonLink>
-              </div>
+              <Reveal delayMs={200}>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <ButtonLink href="/demo" variant="primary" className="btn-demo">
+                    {site.ctaPrimary}
+                  </ButtonLink>
+                  <ButtonLink href="/contact" variant="secondary">
+                    {site.ctaSecondary}
+                  </ButtonLink>
+                </div>
+              </Reveal>
 
-              <div className="mt-6 grid gap-2 text-xs text-slate-500 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Secure & compliant</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Integrations-ready</div>
-                <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">Fast onboarding</div>
-              </div>
+              <Reveal delayMs={260}>
+                <div className="mt-8">
+                  <div className="text-xs font-semibold text-slate-600">Services included</div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {[
+                      { t: "Staff profiles", d: "Records, roles, and employment history" },
+                      { t: "Credential tracking", d: "Expirations, renewals, audit trail" },
+                      { t: "Document management", d: "Collect, verify, store, and export" },
+                      { t: "Onboarding workflows", d: "Checklists, reminders, consistency" },
+                      { t: "Scheduling support", d: "Eligibility & availability visibility" },
+                      { t: "Payroll exports", d: "Structured outputs for payroll teams" },
+                    ].map((x) => (
+                      <div
+                        key={x.t}
+                        className="mini-hover rounded-2xl border border-black/10 bg-white/70 px-3 py-3 text-xs text-slate-700 backdrop-blur"
+                      >
+                        <div className="font-semibold">{x.t}</div>
+                        <div className="mt-1 text-slate-600">{x.d}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="rounded-2xl bg-slate-900 px-5 py-4 text-white">
-                <div className="text-sm font-semibold">Quick snapshot</div>
-                <ul className="mt-3 space-y-2 text-sm text-slate-200">
-                  <li>• Employee records & org charts</li>
-                  <li>• Time off workflows</li>
-                  <li>• Payroll exports & tax reports</li>
-                  <li>• Applicant tracking & onboarding</li>
-                </ul>
-              </div>
-
-              <div className="mt-6 grid gap-3">
-                {highlights.map((h) => (
-                  <div key={h.title} className="rounded-2xl border border-slate-200 p-4">
-                    <div className="text-sm font-semibold">{h.title}</div>
-                    <p className="mt-1 text-sm text-slate-600">{h.desc}</p>
+            <div className="grid gap-6">
+              <Reveal>
+                <Card className="hero-media group p-3">
+                  <div className="overflow-hidden rounded-2xl bg-white">
+                    <Image
+                      src={site.homeHeroImage}
+                      alt="Home health platform illustration"
+                      width={1400}
+                      height={900}
+                      priority
+                      className="hero-image h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
                   </div>
+                </Card>
+              </Reveal>
+
+              <Reveal delayMs={120}>
+                <Card className="p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <div className="text-sm font-semibold text-slate-900">Operations snapshot</div>
+                      <p className="mt-1 text-sm text-slate-600">At-a-glance tracking for managers and admins.</p>
+                    </div>
+                    <div className="rounded-xl bg-[color:var(--brand-soft)] px-3 py-1 text-xs font-semibold text-slate-900">
+                      Live-ready
+                    </div>
+                  </div>
+
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-black/10 bg-white px-4 py-4">
+                      <div className="text-xs font-semibold text-slate-600">Upcoming expirations</div>
+                      <div className="mt-2 text-2xl font-semibold text-slate-900">7</div>
+                    </div>
+                    <div className="rounded-2xl border border-black/10 bg-white px-4 py-4">
+                      <div className="text-xs font-semibold text-slate-600">Open onboarding tasks</div>
+                      <div className="mt-2 text-2xl font-semibold text-slate-900">12</div>
+                    </div>
+                  </div>
+                </Card>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14">
+        <Container>
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-[color:var(--heading)]">Everything teams need—without the clutter</h2>
+              <p className="mt-2 text-sm text-slate-600">
+                A clean system for staff records, compliance workflows, and payroll outputs. Designed to feel calm, clear, and fast.
+              </p>
+            </div>
+            <div className="text-sm text-slate-600">Built for admins, managers, and schedulers.</div>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featureCards.map((f, idx) => (
+              <Reveal key={f.title} delayMs={idx * 60}>
+                <Card className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 h-9 w-9 rounded-2xl bg-[color:var(--brand-soft)] ring-1 ring-black/5" />
+                    <div>
+                      <div className="text-base font-semibold text-[color:var(--heading)]">{f.title}</div>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+                    </div>
+                  </div>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-relaxed text-slate-600">
+            <p>
+              Home health operations move fast. When staff profiles, credential status, and required documents live in different places,
+              teams lose time—and risk missing critical deadlines. This platform centralizes the information that schedulers, admins, and
+              managers need every day.
+            </p>
+            <p>
+              Workflows are designed to be repeatable: onboarding checklists, document collection, and compliance review steps are clear and
+              consistent across the team. Instead of chasing updates, you can see what’s missing, what’s expiring, and what’s ready.
+            </p>
+            <p>
+              When it’s time to run payroll or reporting, exports are structured and predictable—reducing corrections and manual spreadsheet work.
+              The goal is simple: fewer surprises, faster onboarding, and calm operations.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <h2 className="text-[color:var(--heading)]">Details that matter day-to-day</h2>
+              <p className="mt-2 text-sm text-slate-600">
+                The product is built to reduce operational risk: fewer missing documents, fewer expired credentials, fewer last‑minute schedule changes.
+              </p>
+              <div className="mt-6 grid gap-3">
+                {details.map((d, idx) => (
+                  <Reveal key={d.k} delayMs={idx * 70}>
+                    <Card className="p-5">
+                      <div className="text-sm font-semibold text-[color:var(--heading)]">{d.k}</div>
+                      <p className="mt-2 text-sm text-slate-600">{d.v}</p>
+                    </Card>
+                  </Reveal>
                 ))}
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
 
-      <section className="py-14">
-        <Container>
-          <div className="grid gap-6 md:grid-cols-3">
-            {highlights.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="text-lg font-semibold">{f.title}</div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+            <div className="lg:col-span-7">
+              <Card className="p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <div className="text-sm font-semibold text-[color:var(--heading)]">FAQ</div>
+                    <p className="mt-1 text-sm text-slate-600">Quick answers to common questions.</p>
+                  </div>
+                  <div className="rounded-xl bg-white/70 px-3 py-1 text-xs font-semibold text-[color:var(--heading)] ring-1 ring-black/5">
+                    Clear & simple
+                  </div>
+                </div>
 
-      <section className="py-14">
-        <Container>
-          <div className="rounded-3xl bg-slate-900 px-6 py-10 text-white md:px-10">
-            <div className="grid gap-6 md:grid-cols-2 md:items-center">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight">See HRMS Suite in action</h2>
-                <p className="mt-2 text-sm text-slate-200">Book a live demo and see how it fits your workflows.</p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
-                <ButtonLink href="/demo" variant="secondary">{site.ctaPrimary}</ButtonLink>
-                <ButtonLink href="/contact" variant="ghost">Contact Sales</ButtonLink>
-              </div>
+                <div className="mt-5 grid gap-3">
+                  {faqs.map((f) => (
+                    <details
+                      key={f.q}
+                      className="group rounded-2xl border border-black/10 bg-white/60 px-4 py-3"
+                    >
+                      <summary className="cursor-pointer list-none text-sm font-semibold text-[color:var(--heading)]">
+                        <span className="inline-flex items-center justify-between gap-3">
+                          {f.q}
+                          <span className="text-slate-500 transition-transform duration-200 group-open:rotate-180">▾</span>
+                        </span>
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </Card>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="py-14">
+        <Container>
+          <Card className="p-8">
+            <div className="grid gap-6 md:grid-cols-2 md:items-center">
+              <div>
+                <h2 className="text-[color:var(--heading)]">Ready to see it with your workflow?</h2>
+                <p className="mt-2 text-sm text-slate-600">
+                  We’ll walk through scheduling, credential tracking, and payroll exports with a setup that matches your team.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
+                <ButtonLink href="/demo" variant="primary" className="btn-demo">
+                  {site.ctaPrimary}
+                </ButtonLink>
+                <ButtonLink href="/contact" variant="secondary">
+                  {site.ctaSecondary}
+                </ButtonLink>
+              </div>
+            </div>
+          </Card>
         </Container>
       </section>
     </>

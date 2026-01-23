@@ -5,14 +5,14 @@ import { useState } from "react";
  
 export default function LoginPage() {
   const r = useRouter();
-  const [email, setEmail] = useState("admin@example.com");
-  const [password, setPassword] = useState("password");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
  
   return (
     <div className="min-h-dvh bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h1 className="text-2xl font-bold tracking-tight">HR Portal Login</h1>
-        <p className="mt-2 text-sm text-slate-600">Sign in to manage employees & credentials.</p>
+        <p className="mt-2 text-sm text-slate-600">Sign in to manage employee records and workflows.</p>
  
         <div className="mt-6 grid gap-4">
           <label className="grid gap-1 text-sm">
@@ -37,9 +37,7 @@ export default function LoginPage() {
             Sign in
           </button>
  
-          <p className="text-xs text-slate-500">
-            This is a starter UI. Next step is wiring this to your backend `/api/auth/login`.
-          </p>
+          <p className="text-xs text-slate-500">Demo mode: any email/password will sign you in.</p>
         </div>
       </div>
     </div>

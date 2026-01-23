@@ -31,8 +31,8 @@ export default function ServicesList() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search services (e.g., nursing, therapy)"
-          className="w-full rounded-lg border px-3 py-2"
+          placeholder="Search modules (e.g., payroll, time off, recruiting)"
+          className="w-full rounded-xl border px-3 py-2"
         />
       </div>
 
@@ -40,7 +40,7 @@ export default function ServicesList() {
         {loading && <div className="muted">Loading services…</div>}
         {!loading && filtered.length === 0 && <div className="muted">No services found.</div>}
         {filtered.map((i) => (
-          <div key={i.key} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex gap-4 items-start">
+          <div key={i.key} className="card flex gap-4 items-start p-6">
             {i.icon && (
               <div className="h-14 w-14 flex-shrink-0">
                 <Image src={i.icon} alt="" width={56} height={56} className="rounded-lg" />
