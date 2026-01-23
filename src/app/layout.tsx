@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { site } from "./lib/site";
-import ThemeInitScript from "./components/ThemeInitScript";
  
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <ThemeInitScript />
       <body className="min-h-dvh bg-white text-slate-900 antialiased">{children}</body>
     </html>
   );
