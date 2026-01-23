@@ -15,7 +15,7 @@ const highlights = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[color:var(--accent)] via-white to-white">
         <Container>
           <div className="grid gap-10 py-14 md:grid-cols-2 md:items-center md:py-20">
             <div>

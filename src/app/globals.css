@@ -1,12 +1,50 @@
 @import "tailwindcss";
 
 :root {
+  /* Default theme (professional light blue) */
   --background: #f8fafc; /* slate-50 */
   --surface: #ffffff;
-  --muted: #6b7280;
+  --muted: #64748b; /* slate-500 */
   --text: #0b1220; /* deep slate */
+  --brand: #2563eb; /* blue-600 */
+  --accent: #eff6ff; /* blue-50 */
+}
+
+/* Optional palettes (all light, professional) */
+:root[data-theme="blue"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --text: #0b1220;
+  --brand: #2563eb; /* blue */
+  --accent: #eff6ff;
+}
+
+:root[data-theme="indigo"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --text: #0b1220;
   --brand: #4f46e5; /* indigo */
-  --accent: #eef2ff; /* subtle indigo tint */
+  --accent: #eef2ff;
+}
+
+:root[data-theme="slate"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --text: #0b1220;
+  --brand: #0f172a; /* slate-900 */
+  --accent: #f1f5f9; /* slate-100 */
+}
+
+:root[data-theme="emerald"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --text: #0b1220;
+  --brand: #059669; /* emerald-600 */
+  --accent: #ecfdf5; /* emerald-50 */
 }
 
 /* Force a light-only design: remove dark-mode overrides */
@@ -71,8 +109,9 @@ input, textarea, select {
   content: "";
   position: absolute;
   inset: -40%;
-  background: radial-gradient(circle at 30% 20%, rgba(79, 70, 229, 0.18), transparent 45%),
-    radial-gradient(circle at 70% 60%, rgba(99, 102, 241, 0.14), transparent 50%);
+  background:
+    radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 45%),
+    radial-gradient(circle at 70% 60%, color-mix(in oklab, var(--brand) 14%, transparent), transparent 50%);
   transform: translate3d(0, 0, 0);
   pointer-events: none;
 }

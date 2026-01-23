@@ -14,7 +14,7 @@ export default function EmployeesPage() {
           <h1 className="text-2xl font-bold tracking-tight">Employees</h1>
           <p className="mt-2 text-sm text-slate-600">Manage staff, credentials, and documents.</p>
         </div>
-        <button className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+        <button className="rounded-xl bg-[color:var(--brand)] px-4 py-2 text-sm font-semibold text-white hover:opacity-95">
           Add employee
         </button>
       </div>

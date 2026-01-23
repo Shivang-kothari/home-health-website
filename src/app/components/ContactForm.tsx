@@ -57,7 +57,7 @@ export default function ContactForm() {
         <label className="grid gap-1 text-sm">
           <span className="font-medium text-slate-900">Name</span>
           <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.name}
             onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))}
             placeholder="Jane Doe"
@@ -68,7 +68,7 @@ export default function ContactForm() {
         <label className="grid gap-1 text-sm">
           <span className="font-medium text-slate-900">Phone</span>
           <input
-            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+            className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
             value={state.phone}
             onChange={(e) => setState((s) => ({ ...s, phone: e.target.value }))}
             placeholder="(555) 123-4567"
@@ -81,7 +81,7 @@ export default function ContactForm() {
       <label className="grid gap-1 text-sm">
         <span className="font-medium text-slate-900">Email</span>
         <input
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.email}
           onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
           placeholder="you@example.com"
@@ -92,7 +92,7 @@ export default function ContactForm() {
       <label className="grid gap-1 text-sm">
         <span className="font-medium text-slate-900">Role</span>
         <select
-          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+          className="rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.profession}
           onChange={(e) => setState((s) => ({ ...s, profession: e.target.value }))}
         >
@@ -110,7 +110,7 @@ export default function ContactForm() {
       <label className="grid gap-1 text-sm">
         <span className="font-medium text-slate-900">How can we help?</span>
         <textarea
-          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-200"
+          className="min-h-28 rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:color-mix(in_oklab,var(--brand)_25%,transparent)]"
           value={state.message}
           onChange={(e) => setState((s) => ({ ...s, message: e.target.value }))}
           placeholder="Tell us your team size, what you use today, and what you’d like to improve."
@@ -122,13 +122,13 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60 shadow-sm"
+          className="inline-flex items-center justify-center rounded-lg bg-[color:var(--brand)] px-4 py-2 text-sm font-semibold text-white hover:opacity-95 disabled:opacity-60 shadow-sm"
         >
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
         <div className="text-sm muted">
           Prefer a call?{" "}
-          <a className="text-indigo-700 hover:text-indigo-600" href={site.phoneHref}>
+          <a className="text-[color:var(--brand)] hover:opacity-90" href={site.phoneHref}>
             Call us
           </a>
         </div>
@@ -136,7 +136,7 @@ export default function ContactForm() {
  
       {status === "sent" && (
         <div className="grid gap-2">
-          <p className="text-sm text-indigo-700">Message sent.</p>
+          <p className="text-sm text-[color:var(--brand)]">Message sent.</p>
           {previewUrl && (
             <a className="text-sm text-slate-700 underline" href={previewUrl} target="_blank" rel="noreferrer">
               View test email (Ethereal preview)

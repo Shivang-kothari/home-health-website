@@ -5,7 +5,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
  
   return (
     <div>
-      <Link href="/portal/employees" className="text-sm text-indigo-700 hover:text-indigo-600">← Back to employees</Link>
+      <Link href="/portal/employees" className="text-sm text-[color:var(--brand)] hover:opacity-90">← Back to employees</Link>
  
       <h1 className="mt-3 text-2xl font-bold tracking-tight">Employee #{id}</h1>
       <p className="mt-2 text-sm text-slate-600">

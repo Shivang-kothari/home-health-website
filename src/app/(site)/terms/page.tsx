@@ -37,7 +37,7 @@ export default function TermsPage() {
               <div className="font-semibold">Contact</div>
               <p className="mt-2 text-slate-600">
                 Questions about these terms? Contact{" "}
-                <a className="text-indigo-700 hover:text-indigo-600" href={site.emailHref}>
+                <a className="text-[color:var(--brand)] hover:opacity-90" href={site.emailHref}>
                   {site.email}
                 </a>
                 .

@@ -46,7 +46,7 @@ export default function CoveragePage() {
           <div className="pro-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div className="text-base font-semibold">Need a new region?</div>
             <p className="mt-2 text-sm text-slate-600">
-              Reach out at <a className="text-indigo-700 hover:text-indigo-600" href={site.emailHref}>{site.email}</a> and we’ll discuss
+              Reach out at <a className="text-[color:var(--brand)] hover:opacity-90" href={site.emailHref}>{site.email}</a> and we’ll discuss
               your requirements and timeline.
             </p>
           </div>
